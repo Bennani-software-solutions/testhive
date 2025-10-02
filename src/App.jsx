@@ -1,33 +1,56 @@
-import { Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
+// src/App.jsx
+import { Routes, Route } from "react-router-dom";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import WhyTestHivePage from "./pages/WhyTestHive";
+import Blog from "./pages/Blog";
+import FAQ from "./pages/FAQ";
+import PricingPage from "./pages/PricingPage";
+import PartnerProgram from "./pages/PartnerProgram";
+import Nearshore from "./pages/Nearshore";
+import Accelerator from "./pages/Accelerator";
+import POCDetails from "./pages/POCDetails";
+import NotFound from "./pages/NotFound";
 
-// pages
-import Home from './pages/Home'
-import PricingPage from './pages/PricingPage'
-import POCDetails from './pages/POCDetails'
-import Accelerator from './pages/Accelerator'
-import PartnerProgram from './pages/PartnerProgram'
-import Blog from './pages/Blog'
-import FAQ from './pages/FAQ'
-import NotFound from './pages/NotFound'
-import Nearshore from './pages/Nearshore'
-import WhyTestHive from './pages/WhyTestHive'
-export default function App() {
+// ✅ Service pages
+import AutomationService from "./pages/services/Automation";
+import FunctionalTestingService from "./pages/services/FunctionalTesting";
+import PenTestingService from "./pages/services/PenTesting";
+import LoadTestingService from "./pages/services/LoadTesting";
+import QAOutsourcingService from "./pages/services/QAOutsourcing";
+import ConsultingService from "./pages/services/Consulting";
+
+function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      {/* Layout wrapper geeft Navbar + Footer */}
+      <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
-        <Route path="/pricing" element={<PricingPage />} />
-        <Route path="/poc" element={<POCDetails />} />
-        <Route path="/accelerator" element={<Accelerator />} />
-        <Route path="/partner" element={<PartnerProgram />} />
-        <Route path="/nearshore" element={<Nearshore />} />
-        <Route path="/whytesthive" element={<WhyTestHive />} />
+        <Route path="whytesthive" element={<WhyTestHivePage />} />
+        <Route path="blog" element={<Blog />} />
+        <Route path="faq" element={<FAQ />} />
+        <Route path="pricing" element={<PricingPage />} />
+        <Route path="partner" element={<PartnerProgram />} />
+        <Route path="nearshore" element={<Nearshore />} />
+        <Route path="accelerator" element={<Accelerator />} />
+        <Route path="pocdetails" element={<POCDetails />} />
 
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/faq" element={<FAQ />} />
+        {/* ✅ Services routes */}
+        <Route path="services/automation" element={<AutomationService />} />
+        <Route
+          path="services/functional-testing"
+          element={<FunctionalTestingService />}
+        />
+        <Route path="services/pen-testing" element={<PenTestingService />} />
+        <Route path="services/load-testing" element={<LoadTestingService />} />
+        <Route path="services/qa-outsourcing" element={<QAOutsourcingService />} />
+        <Route path="services/consulting" element={<ConsultingService />} />
+
+        {/* Catch-all route */}
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
-  )
+  );
 }
+
+export default App;

@@ -9,32 +9,25 @@ const active = "text-sky-600 font-semibold";
 const idle = "text-slate-600 hover:text-slate-900";
 
 export default function Navbar({ onBook }) {
-  const [openDropdown, setOpenDropdown] = useState(null); // desktop dropdowns
-  const [mobileOpen, setMobileOpen] = useState(false);    // mobile drawer
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const mobileRef = useRef(null);
 
-  const toggleDropdown = (name) => {
-    setOpenDropdown((cur) => (cur === name ? null : name));
-  };
-
-  // Close mobile menu on ESC or outside click
+  // sluit dropdown bij klik buiten services-menu
   useEffect(() => {
-    if (!mobileOpen) return;
-    const onKey = (e) => e.key === "Escape" && setMobileOpen(false);
-    const onClick = (e) => {
-      if (mobileRef.current && !mobileRef.current.contains(e.target)) {
-        setMobileOpen(false);
+    const handleClickOutside = (e) => {
+      if (!e.target.closest(".services-dropdown")) {
+        setOpenDropdown(null);
       }
     };
-    document.addEventListener("keydown", onKey);
-    document.addEventListener("mousedown", onClick);
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.removeEventListener("mousedown", onClick);
-    };
-  }, [mobileOpen]);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  // Utility: close all menus
+  const toggleDropdown = () => {
+    setOpenDropdown((cur) => (cur === "services" ? null : "services"));
+  };
+
   const closeAll = () => {
     setOpenDropdown(null);
     setMobileOpen(false);
@@ -59,99 +52,62 @@ export default function Navbar({ onBook }) {
 
         {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <NavLink to="/whytesthive" className={({ isActive }) => `${base} ${isActive ? active : idle}`}>
+          <NavLink
+            to="/whytesthive"
+            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+          >
             Why TestHive?
           </NavLink>
 
-          {/* Pricing dropdown (desktop) */}
-          <div className="relative">
+          {/* Services dropdown (CLICK only) */}
+          <div className="relative services-dropdown">
             <button
-              onClick={() => toggleDropdown("pricing")}
+              onClick={toggleDropdown}
               className={`${base} ${idle} flex items-center gap-1`}
               aria-haspopup="menu"
-              aria-expanded={openDropdown === "pricing"}
+              aria-expanded={openDropdown === "services"}
             >
-              Pricing <ChevronDown className="h-4 w-4" />
+              Services <ChevronDown className="h-4 w-4" />
             </button>
-            {openDropdown === "pricing" && (
+
+            {openDropdown === "services" && (
               <div
                 role="menu"
-                className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2"
+                className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
               >
-                <NavLink
-                  to="/pricing"
-                  className={({ isActive }) =>
-                    `block rounded-lg px-3 py-2 text-sm ${isActive ? "text-sky-600 font-medium" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                  role="menuitem"
-                >
-                  Pricing Overview
+                <NavLink to="/services/automation" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  Test Automation
                 </NavLink>
-                <NavLink
-                  to="/accelerator"
-                  className={({ isActive }) =>
-                    `block rounded-lg px-3 py-2 text-sm ${isActive ? "text-sky-600 font-medium" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                  role="menuitem"
-                >
-                  Accelerator
+                <NavLink to="/services/functional-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  Functional Testing
                 </NavLink>
-                <NavLink
-                  to="/partner"
-                  className={({ isActive }) =>
-                    `block rounded-lg px-3 py-2 text-sm ${isActive ? "text-sky-600 font-medium" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                  role="menuitem"
-                >
-                  Partner Program
+                <NavLink to="/services/pen-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  Pen Testing
+                </NavLink>
+                <NavLink to="/services/load-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  Load Testing
+                </NavLink>
+                <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  QA Outsourcing
+                </NavLink>
+                <NavLink to="/services/consulting" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  QA Consulting
                 </NavLink>
               </div>
             )}
           </div>
 
-          {/* Blog dropdown (desktop) */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("blog")}
-              className={`${base} ${idle} flex items-center gap-1`}
-              aria-haspopup="menu"
-              aria-expanded={openDropdown === "blog"}
-            >
-              Blog <ChevronDown className="h-4 w-4" />
-            </button>
-            {openDropdown === "blog" && (
-              <div
-                role="menu"
-                className="absolute left-0 mt-2 w-48 rounded-xl border border-slate-200 bg-white shadow-lg p-2"
-              >
-                <NavLink
-                  to="/blog"
-                  className={({ isActive }) =>
-                    `block rounded-lg px-3 py-2 text-sm ${isActive ? "text-sky-600 font-medium" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                  role="menuitem"
-                >
-                  Blog
-                </NavLink>
-                <NavLink
-                  to="/nearshore"
-                  className={({ isActive }) =>
-                    `block rounded-lg px-3 py-2 text-sm ${isActive ? "text-sky-600 font-medium" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                  role="menuitem"
-                >
-                  Nearshore
-                </NavLink>
-              </div>
-            )}
-          </div>
+          <NavLink
+            to="/blog"
+            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+          >
+            Blog
+          </NavLink>
 
-          <NavLink to="/faq" className={({ isActive }) => `${base} ${isActive ? active : idle}`}>
+          <NavLink
+            to="/faq"
+            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+          >
             FAQ
           </NavLink>
 
@@ -178,16 +134,13 @@ export default function Navbar({ onBook }) {
       </div>
 
       {/* Mobile overlay */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-40 bg-black/40" />
-      )}
+      {mobileOpen && <div className="fixed inset-0 z-40 bg-black/40" />}
 
       {/* Mobile drawer */}
       <div
         ref={mobileRef}
-        className={`fixed inset-x-0 top-0 z-50 origin-top rounded-b-2xl border-b border-slate-200 bg-white p-4 shadow-xl md:hidden transition-transform duration-300 ${
-          mobileOpen ? "translate-y-0" : "-translate-y-full"
-        }`}
+        className={`fixed inset-x-0 top-0 z-50 origin-top rounded-b-2xl border-b border-slate-200 bg-white p-4 shadow-xl md:hidden transition-transform duration-300 ${mobileOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
         role="dialog"
         aria-modal="true"
       >
@@ -210,90 +163,51 @@ export default function Navbar({ onBook }) {
 
           {/* Mobile links */}
           <nav className="mt-6 space-y-1">
-            <NavLink
-              to="/whytesthive"
-              className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-              }
-              onClick={closeAll}
-            >
+            <NavLink to="/whytesthive" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
               Why TestHive?
             </NavLink>
 
-            {/* Pricing group */}
-            <div className="rounded-lg border border-slate-200">
-              <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Pricing
-              </div>
-              <div className="px-1 pb-2">
-                <NavLink
-                  to="/pricing"
-                  className={({ isActive }) =>
-                    `block rounded-md px-2.5 py-2 text-sm ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                >
-                  Pricing Overview
-                </NavLink>
-                <NavLink
-                  to="/accelerator"
-                  className={({ isActive }) =>
-                    `block rounded-md px-2.5 py-2 text-sm ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                >
-                  Accelerator
-                </NavLink>
-                <NavLink
-                  to="/partner"
-                  className={({ isActive }) =>
-                    `block rounded-md px-2.5 py-2 text-sm ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                >
-                  Partner Program
-                </NavLink>
-              </div>
+            {/* Mobile services as collapsible */}
+            <div className="border rounded-lg">
+              <button
+                onClick={toggleDropdown}
+                className="w-full flex items-center justify-between px-3 py-2 text-slate-700"
+              >
+                <span>Services</span>
+                <ChevronDown className="h-4 w-4" />
+              </button>
+              {openDropdown === "services" && (
+                <div className="px-1 pb-2">
+                  <NavLink to="/services/automation" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    Test Automation
+                  </NavLink>
+                  <NavLink to="/services/functional-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    Functional Testing
+                  </NavLink>
+                  <NavLink to="/services/pen-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    Pen Testing
+                  </NavLink>
+                  <NavLink to="/services/load-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    Load Testing
+                  </NavLink>
+                  <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    QA Outsourcing
+                  </NavLink>
+                  <NavLink to="/services/consulting" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    QA Consulting
+                  </NavLink>
+                </div>
+              )}
             </div>
 
-            {/* Blog group */}
-            <div className="rounded-lg border border-slate-200">
-              <div className="px-3 py-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-                Content
-              </div>
-              <div className="px-1 pb-2">
-                <NavLink
-                  to="/blog"
-                  className={({ isActive }) =>
-                    `block rounded-md px-2.5 py-2 text-sm ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                >
-                  Blog
-                </NavLink>
-                <NavLink
-                  to="/nearshore"
-                  className={({ isActive }) =>
-                    `block rounded-md px-2.5 py-2 text-sm ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-                  }
-                  onClick={closeAll}
-                >
-                  Nearshore
-                </NavLink>
-              </div>
-            </div>
+            <NavLink to="/blog" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
+              Blog
+            </NavLink>
 
-            <NavLink
-              to="/faq"
-              className={({ isActive }) =>
-                `block rounded-lg px-3 py-2 ${isActive ? "bg-sky-50 text-sky-700" : "text-slate-700 hover:bg-slate-50"}`
-              }
-              onClick={closeAll}
-            >
+            <NavLink to="/faq" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
               FAQ
             </NavLink>
 
-            {/* CTA */}
             <Button
               onClick={() => {
                 closeAll();

@@ -59,18 +59,28 @@ export default function Hero({ onBook }) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-7 flex items-center gap-4"
+              className="mt-7 flex items-center gap-4 flex-wrap"
             >
-              <button onClick={onBook} className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95">
-  Book Your Call
-</button>
+              {/* New Explore Packages button */}
+              <a
+                href="/services/automation#automation_packages"
+                className="inline-flex items-center rounded-xl bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
+              >
+                Explore Packages
+              </a>
+
+              <button
+                onClick={onBook}
+                className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95"
+              >
+                Book Your Call
+              </button>
 
               <a
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3
-                           text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
               >
                 <WhatsAppIcon className="h-5 w-5 text-green-500" />
                 WhatsApp us
@@ -100,8 +110,7 @@ export default function Hero({ onBook }) {
             <img
               src="/assets/testHive.png"
               alt="TestHive mark"
-              className="absolute -bottom-6 -right-6 w-20 h-20 rounded-xl shadow-soft
-                         border border-slate-200 bg-white p-2"
+              className="absolute -bottom-6 -right-6 w-20 h-20 rounded-xl shadow-soft border border-slate-200 bg-white p-2"
             />
           </Motion.figure>
         </div>
