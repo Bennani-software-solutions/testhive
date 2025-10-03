@@ -119,7 +119,7 @@ export default function Navbar({ onBook }) {
             }}
             className="ml-2 rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
           >
-            Book a Call
+            Get in Touch
           </Button>
         </nav>
 

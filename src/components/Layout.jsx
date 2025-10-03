@@ -6,7 +6,7 @@ import Footer from './Footer'
 import CalendlyModal from './CalendlyModal'
 import ScrollToTop from './ScrollToTop'
 
-const CALENDLY_URL = 'https://calendly.com/medamineya07/30min'
+const CALENDLY_URL = 'https://calendly.com/jointhehive-testhive-phr7/30min'
 
 export default function Layout() {
   const [open, setOpen] = useState(false)

@@ -30,7 +30,7 @@ function App() {
         <Route path="blog" element={<Blog />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="pricing" element={<PricingPage />} />
-        <Route path="partner" element={<PartnerProgram />} />
+        <Route path="partnerprogram" element={<PartnerProgram />} />
         <Route path="nearshore" element={<Nearshore />} />
         <Route path="accelerator" element={<Accelerator />} />
         <Route path="pocdetails" element={<POCDetails />} />
