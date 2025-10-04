@@ -1,105 +1,95 @@
-// src/components/ContactForm.jsx
-import { useState } from "react";
+import React, { useState } from "react";
 
-export default function ContactForm() {
-    const [status, setStatus] = useState(null);
+/**
+ * Contact form for requesting more information.
+ * Works with Formspree and automatically closes the modal after success.
+ *
+ * Props:
+ *   onSuccess: optional callback (e.g. to close modal)
+ */
+export default function InfoRequestForm({ onSuccess }) {
+    const [status, setStatus] = useState("idle"); // idle | sending | success | error
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus("sending");
 
-        const form = e.target;
-        const name = form.name.value;
-        const email = form.email.value;
-        const company = form.company.value;
-        const message = form.message.value;
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
 
-        // Simple mailto fallback (works without backend)
-        const mailto = `mailto:support@testhive.ma?subject=Website Contact from ${encodeURIComponent(
-            name
-        )}&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(
-            email
-        )}%0D%0ACompany: ${encodeURIComponent(
-            company
-        )}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+        try {
+            const response = await fetch("https://formspree.io/f/mgvnzebp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
 
-        window.location.href = mailto;
-        setStatus("sent");
+            if (response.ok) {
+                setStatus("success");
+                e.target.reset();
+
+                // ✅ Show confirmation briefly, then close modal
+                setTimeout(() => {
+                    onSuccess?.(); // close the modal if handler provided
+                    setStatus("idle");
+                }, 2000);
+            } else {
+                throw new Error("Failed to send message");
+            }
+        } catch (err) {
+            console.error(err);
+            setStatus("error");
+        }
     };
 
     return (
         <form
-            id="contact-form"
             onSubmit={handleSubmit}
-            className="mx-auto mt-8 max-w-xl space-y-5 rounded-2xl border border-slate-200 bg-white p-6 shadow"
+            className="space-y-3 text-left"
+            id="info-request-form"
         >
-            <h3 className="text-lg font-semibold text-slate-900">Contact Us</h3>
-            <p className="text-sm text-slate-600">
-                Leave us a message and we’ll get back to you shortly.
-            </p>
-
-            <div>
-                <label htmlFor="name" className="block text-sm font-medium text-slate-700">
-                    Name *
-                </label>
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200"
-                />
-            </div>
-
-            <div>
-                <label htmlFor="email" className="block text-sm font-medium text-slate-700">
-                    Email *
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200"
-                />
-            </div>
-
-            <div>
-                <label htmlFor="company" className="block text-sm font-medium text-slate-700">
-                    Company
-                </label>
-                <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200"
-                />
-            </div>
-
-            <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700">
-                    Message *
-                </label>
-                <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm shadow-sm focus:border-sky-400 focus:ring-2 focus:ring-sky-200"
-                />
-            </div>
+            <input
+                type="text"
+                name="name"
+                placeholder="Your name"
+                required
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+            />
+            <input
+                type="email"
+                name="email"
+                placeholder="Your email"
+                required
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+            />
+            <textarea
+                name="message"
+                placeholder="Tell us what you’d like to know..."
+                rows="4"
+                required
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+            />
 
             <button
                 type="submit"
-                id="btn-submit-contact"
-                className="inline-flex w-full justify-center rounded-lg bg-sky-500 px-4 py-2 font-semibold text-white shadow hover:bg-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-300"
+                disabled={status === "sending"}
+                className="w-full rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 active:scale-95 disabled:opacity-70"
             >
-                {status === "sending" ? "Sending…" : "Send Message"}
+                {status === "sending" ? "Sending..." : "Send Message"}
             </button>
 
-            {status === "sent" && (
-                <p className="mt-2 text-sm text-emerald-600">
-                    Thank you! We’ll be in touch soon.
+            {/* ✅ Inline confirmation / error messages */}
+            {status === "success" && (
+                <p className="text-emerald-600 text-sm mt-2">
+                    ✅ Message sent successfully! We’ll get back to you shortly.
+                </p>
+            )}
+            {status === "error" && (
+                <p className="text-red-600 text-sm mt-2">
+                    ⚠️ Something went wrong. Please try again or email us directly at{" "}
+                    <a href="mailto:support@testhive.ma" className="underline">
+                        support@testhive.ma
+                    </a>
                 </p>
             )}
         </form>

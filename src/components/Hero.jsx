@@ -4,11 +4,18 @@ import { motion as Motion } from "framer-motion";
 
 function WhatsAppIcon({ className = "h-5 w-5" }) {
   return (
-    <svg viewBox="0 0 32 32" aria-hidden="true" className={className} fill="currentColor">
-      <path d="M19.11 17.33c-.31-.16-1.8-.89-2.07-.99..."></path>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+      className={className}
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M16 3C9.373 3 4 8.373 4 15c0 2.57.775 4.964 2.105 6.946L4 29l7.237-2.067A11.945 11.945 0 0 0 16 27c6.627 0 12-5.373 12-12S22.627 3 16 3zm0 22c-1.937 0-3.74-.567-5.257-1.544l-.377-.24-4.31 1.232 1.216-4.204-.246-.387A9.955 9.955 0 0 1 6 15c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10zm5.146-7.146c-.281-.141-1.657-.817-1.913-.91-.257-.094-.445-.141-.634.141-.188.281-.725.91-.889 1.099-.164.188-.329.211-.61.07-.281-.141-1.188-.437-2.263-1.392-.837-.747-1.403-1.671-1.567-1.952-.164-.282-.017-.435.123-.576.127-.126.282-.329.423-.493.141-.164.188-.282.282-.47.094-.188.047-.352-.023-.493-.07-.141-.634-1.523-.868-2.084-.229-.55-.463-.475-.634-.484-.164-.009-.352-.011-.541-.011-.188 0-.494.07-.752.352-.258.282-.99.967-.99 2.358 0 1.391 1.013 2.735 1.155 2.926.141.188 2.003 3.06 4.858 4.291.68.293 1.21.467 1.623.598.681.217 1.3.186 1.789.113.545-.081 1.657-.676 1.892-1.33.235-.655.235-1.216.164-1.33-.07-.114-.258-.188-.54-.329z"/>
     </svg>
   );
 }
+
 
 export default function Hero({ onBook }) {
   const [imgOk, setImgOk] = useState(true);
@@ -54,7 +61,7 @@ export default function Hero({ onBook }) {
               {/* Explore Packages */}
               <a
                 id="btn-explore-packages"
-                href="/services/automation#packages"
+                href="/services/automation#automation_packages"
                 className="inline-flex items-center rounded-xl bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
               >
                 Explore Packages
@@ -78,7 +85,7 @@ export default function Hero({ onBook }) {
                 className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
               >
                 <WhatsAppIcon className="h-5 w-5 text-green-500" />
-                WhatsApp us
+                WhatsApp
               </a>
             </Motion.div>
           </Motion.div>

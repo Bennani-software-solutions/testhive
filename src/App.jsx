@@ -7,7 +7,7 @@ import Blog from "./pages/Blog";
 import FAQ from "./pages/FAQ";
 import PricingPage from "./pages/PricingPage";
 import PartnerProgram from "./pages/PartnerProgram";
-import Nearshore from "./pages/Nearshore";
+// import Nearshore from "./pages/Nearshore";
 import Accelerator from "./pages/Accelerator";
 import POCDetails from "./pages/POCDetails";
 import NotFound from "./pages/NotFound";
@@ -31,7 +31,7 @@ function App() {
         <Route path="faq" element={<FAQ />} />
         <Route path="pricing" element={<PricingPage />} />
         <Route path="partnerprogram" element={<PartnerProgram />} />
-        <Route path="nearshore" element={<Nearshore />} />
+        {/* <Route path="nearshore" element={<Nearshore />} /> */}
         <Route path="accelerator" element={<Accelerator />} />
         <Route path="pocdetails" element={<POCDetails />} />
 
