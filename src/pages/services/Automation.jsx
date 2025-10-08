@@ -180,9 +180,9 @@ export default function AutomationService() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* POC Package */}
                     <div className="p-6 border rounded-2xl shadow hover:shadow-lg transition bg-white">
-                        <h3 className="text-xl font-semibold mb-3">🤔 How’s This Supposed to Work? Pack</h3>
+                        <h3 className="text-xl font-semibold mb-3">🤔 The prove it pack</h3>
                         <ul className="space-y-2 text-slate-600 mb-4">
-                            <li>✔️ Free Proof of Concept using a real scenario from your app.</li>
+                            <li>✔️ Free Proof of Concept using real Scenarios from your app.</li>
                             <li>✔️ See value without risk and decide with data, not guesswork.</li>
                             <li>✔️ Clear next steps if you choose to scale up later.</li>
                         </ul>

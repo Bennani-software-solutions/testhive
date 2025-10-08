@@ -14,8 +14,7 @@ export default function Footer() {
         <div>
           <img src="/assets/testHive.png" alt="TestHive" className="h-12 mb-3" />
           <p className="text-sm text-slate-600">
-            TestHive helps you ship faster and safer with tailored QA and
-            test automation services.
+            TestHive is your partner in delivering reliable software through expert QA services, tailored to your needs.
           </p>
         </div>
 
