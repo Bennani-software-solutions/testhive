@@ -1,6 +1,7 @@
 // src/components/Hero.jsx
 import { useState } from "react";
 import { motion as Motion } from "framer-motion";
+import { HashLink } from "react-router-hash-link";
 
 function WhatsAppIcon({ className = "h-5 w-5" }) {
   return (
@@ -57,13 +58,26 @@ export default function Hero({ onBook }) {
               className="mt-7 flex items-center gap-4 flex-wrap"
             >
               {/* Explore Packages */}
-              <a
-                id="btn-explore-packages"
-                href="/services/automation#automation_packages"
+              <HashLink
+                smooth to="/services/automation#automation_packages"
+                scroll={el => {
+                  if (el) {
+                    // The element exists, scroll smoothly
+                    el.scrollIntoView({ behavior: "smooth", block: "start" });
+                  } else {
+                    // Retry after a short delay if the page hasn't mounted yet
+                    setTimeout(() => {
+                      const element = document.getElementById("automation_packages");
+                      if (element) {
+                        element.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }
+                    }, 500);
+                  }
+                }}
                 className="inline-flex items-center rounded-xl bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
               >
                 Explore Our Packages
-              </a>
+              </HashLink>
 
               {/* Book Call */}
               <button

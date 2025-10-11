@@ -10,8 +10,28 @@ import {
     AlertTriangle,
     Ban
 } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 
 export default function AutomationService() {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            // Wait for the page content to mount fully
+            const scrollToSection = () => {
+                const element = document.querySelector(location.hash);
+                if (element) {
+                    element.scrollIntoView({ behavior: "smooth", block: "start" });
+                }
+            };
+            // Try twice (useful when animations delay mounting)
+            setTimeout(scrollToSection, 300);
+            setTimeout(scrollToSection, 700);
+        }
+    }, [location]);
+
     return (
         <div className="max-w-6xl mx-auto px-6 py-12 space-y-20">
             {/* Hero / Intro */}
