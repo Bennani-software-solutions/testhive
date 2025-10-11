@@ -19,14 +19,12 @@ export default function AutomationService() {
 
     useEffect(() => {
         if (location.hash) {
-            // Wait for the page content to mount fully
             const scrollToSection = () => {
                 const element = document.querySelector(location.hash);
                 if (element) {
                     element.scrollIntoView({ behavior: "smooth", block: "start" });
                 }
             };
-            // Try twice (useful when animations delay mounting)
             setTimeout(scrollToSection, 300);
             setTimeout(scrollToSection, 700);
         }
