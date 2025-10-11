@@ -16,9 +16,9 @@ import NotFound from "./pages/NotFound";
 import AutomationService from "./pages/services/Automation";
 import FunctionalTestingService from "./pages/services/FunctionalTesting";
 import PenTestingService from "./pages/services/PenTesting";
-import LoadTestingService from "./pages/services/LoadTesting";
 import QAOutsourcingService from "./pages/services/QAOutsourcing";
 import ConsultingService from "./pages/services/Consulting";
+import Mentoring from "./pages/services/Mentoring";
 
 function App() {
   return (
@@ -42,9 +42,10 @@ function App() {
           element={<FunctionalTestingService />}
         />
         <Route path="services/pen-testing" element={<PenTestingService />} />
-        <Route path="services/load-testing" element={<LoadTestingService />} />
         <Route path="services/qa-outsourcing" element={<QAOutsourcingService />} />
         <Route path="services/consulting" element={<ConsultingService />} />
+        <Route path="services/mentoring" element={<Mentoring />} />
+
 
         {/* Catch-all route */}
         <Route path="*" element={<NotFound />} />

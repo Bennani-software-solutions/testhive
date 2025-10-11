@@ -26,7 +26,7 @@ export default function Footer() {
               <li><Link to="/services/automation" className="hover:text-sky-600">Automation</Link></li>
               <li><Link to="/services/functional-testing" className="hover:text-sky-600">Functional Testing</Link></li>
               <li><Link to="/services/pen-testing" className="hover:text-sky-600">Pen Testing</Link></li>
-              <li><Link to="/services/load-testing" className="hover:text-sky-600">Load Testing</Link></li>
+              <li><Link to="/services/mentoring" className="hover:text-sky-600">Mentoring</Link></li>
               <li><Link to="/services/qa-outsourcing" className="hover:text-sky-600">QA Outsourcing</Link></li>
               <li><Link to="/services/consulting" className="hover:text-sky-600">Consulting</Link></li>
             </ul>

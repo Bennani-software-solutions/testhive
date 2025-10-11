@@ -18,9 +18,9 @@ const features = [
     link: "/services/pen-testing",
   },
   {
-    title: "Load Testing",
-    desc: "Validate performance under stress.",
-    link: "/services/load-testing",
+    title: "Mentoring",
+    desc: "Work hands-on with experienced QA mentors to build lasting automation skills.",
+    link: "/services/mentoring",
   },
   {
     title: "QA Outsourcing",

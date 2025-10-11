@@ -84,8 +84,8 @@ export default function Navbar({ onBook }) {
                 <NavLink to="/services/pen-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
                   Pen Testing
                 </NavLink>
-                <NavLink to="/services/load-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
-                  Load Testing
+                <NavLink to="/services/mentoring" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                  Mentoring
                 </NavLink>
                 <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
                   QA Outsourcing
@@ -187,8 +187,8 @@ export default function Navbar({ onBook }) {
                   <NavLink to="/services/pen-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
                     Pen Testing
                   </NavLink>
-                  <NavLink to="/services/load-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    Load Testing
+                  <NavLink to="/services/mentoring" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                    Mentoring
                   </NavLink>
                   <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
                     QA Outsourcing

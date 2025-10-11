@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export default function Pricing({
   onBookClick = () => {},                 // opens your Calendly modal
-  calendlyUrl = "https://calendly.com/medamineya07/30min",
+  calendlyUrl = "https://calendly.com/jointhehive-testhive-phr7/30min",
   buyUrl = "https://buy.stripe.com/your-checkout-link" // <- replace with Stripe Checkout URL
 }) {
   const [openPOCForm, setOpenPOCForm] = useState(false)

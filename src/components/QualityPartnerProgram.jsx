@@ -11,7 +11,7 @@ const fadeUp = {
 
 export default function QualityPartnerProgram({
   onBook = () => {},                                  // opens your Calendly modal
-  calendlyUrl = "https://calendly.com/medamineya07/30min",
+  calendlyUrl = "https://calendly.com/jointhehive-testhive-phr7/30min",
   formAction = "https://formspree.io/f/your-form-id", // ← replace with your Formspree endpoint or API
 }) {
   const [openForm, setOpenForm] = useState(false)
