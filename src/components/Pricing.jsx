@@ -220,7 +220,7 @@ export default function Pricing({
                 <input required type="checkbox" name="free" className="mt-1 h-4 w-4 rounded border-gray-300" />
                 <p className="text-xs text-gray-600">
                   I understand this POC is <strong>free</strong>, limited to <strong>1–2 test cases</strong>, and includes
-                  minimal pipeline integration and a demo report — <strong>no commitment required</strong>.
+                  minimal pipeline integration and a demo report, <strong>no commitment required</strong>.
                 </p>
               </div>
 

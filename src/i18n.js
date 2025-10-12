@@ -9,7 +9,7 @@ export const translations = {
     },
     hero: {
       headline: "Quality Assured. Every Release.",
-      sub: "We help IT leaders ship faster with reliable QA — from manual testing to automation in 90 days.",
+      sub: "We help IT leaders ship faster with reliable QA, from manual testing to automation in 90 days.",
     },
   },
   nl: {
@@ -22,7 +22,7 @@ export const translations = {
     },
     hero: {
       headline: "Kwaliteit Gegarandeerd. Elke Release.",
-      sub: "Wij helpen IT-leiders sneller te leveren met betrouwbare QA — van handmatig testen tot automatisering in 90 dagen.",
+      sub: "Wij helpen IT-leiders sneller te leveren met betrouwbare QA, van handmatig testen tot automatisering in 90 dagen.",
     },
   },
 }

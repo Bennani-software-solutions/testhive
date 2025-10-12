@@ -116,7 +116,7 @@ export default function FunctionalTesting({ onBook }) {
                             {
                                 icon: Users,
                                 title: "Early collaboration with development",
-                                text: "We join your team early in the process — during refinement or even before development starts — so testing becomes a natural part of building, not an afterthought.",
+                                text: "We join your team early in the process, during refinement or even before development starts, so testing becomes a natural part of building, not an afterthought.",
                             },
                             {
                                 icon: ClipboardCheck,
@@ -131,7 +131,7 @@ export default function FunctionalTesting({ onBook }) {
                             {
                                 icon: ArrowRight,
                                 title: "Continuous and open feedback",
-                                text: "We share insights continuously, not just at the end of a sprint — creating a transparent feedback loop that helps your team improve faster and smarter.",
+                                text: "We share insights continuously, not just at the end of a sprint, creating a transparent feedback loop that helps your team improve faster and smarter.",
                             },
                         ].map(({ icon: Icon, title, text }) => (
                             <div

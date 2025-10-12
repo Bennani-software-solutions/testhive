@@ -127,7 +127,7 @@ export default function QualityPartnerProgram({
         </div>
       </div>
 
-      {/* Request Proposal — Modal Form */}
+      {/* Request Proposal, Modal Form */}
       {openForm && (
         <div className="fixed inset-0 z-50 grid place-items-center bg-black/40 p-4" role="dialog" aria-modal="true">
           <div className="w-full max-w-xl rounded-2xl border border-gray-200 bg-white p-6 shadow-xl">

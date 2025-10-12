@@ -1,5 +1,5 @@
 // src/components/Navbar.jsx
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui";
@@ -12,8 +12,9 @@ export default function Navbar({ onBook }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const mobileRef = useRef(null);
+  const navigate = useNavigate();
 
-  // sluit dropdown bij klik buiten services-menu
+  // close dropdown on outside click (desktop)
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (!e.target.closest(".services-dropdown")) {
@@ -31,6 +32,21 @@ export default function Navbar({ onBook }) {
   const closeAll = () => {
     setOpenDropdown(null);
     setMobileOpen(false);
+  };
+
+  // close mobile menu on escape
+  useEffect(() => {
+    const onKey = (e) => e.key === "Escape" && setMobileOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const handleNavigate = (path) => {
+    // ensures navigation before dropdown close (fix for mobile)
+    navigate(path);
+    setTimeout(() => {
+      closeAll();
+    }, 120);
   };
 
   return (
@@ -59,7 +75,7 @@ export default function Navbar({ onBook }) {
             Why TestHive?
           </NavLink>
 
-          {/* Services dropdown (CLICK only) */}
+          {/* Services dropdown */}
           <div className="relative services-dropdown">
             <button
               onClick={toggleDropdown}
@@ -75,24 +91,36 @@ export default function Navbar({ onBook }) {
                 role="menu"
                 className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
               >
-                <NavLink to="/services/automation" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                <button
+                  onClick={() => handleNavigate("/services/automation")}
+                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                >
                   Test Automation
-                </NavLink>
-                <NavLink to="/services/functional-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                </button>
+                <button
+                  onClick={() => handleNavigate("/services/functional-testing")}
+                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                >
                   Functional Testing
-                </NavLink>
-                <NavLink to="/services/pen-testing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                </button>
+                <button
+                  onClick={() => handleNavigate("/services/pen-testing")}
+                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                >
                   Pen Testing
-                </NavLink>
-                <NavLink to="/services/mentoring" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                </button>
+                <button
+                  onClick={() => handleNavigate("/services/mentoring")}
+                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                >
                   Mentoring
-                </NavLink>
-                <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
+                </button>
+                <button
+                  onClick={() => handleNavigate("/services/qa-outsourcing")}
+                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                >
                   QA Outsourcing
-                </NavLink>
-                <NavLink to="/services/consulting" onClick={closeAll} className="block px-3 py-2 hover:bg-slate-50">
-                  QA Consulting
-                </NavLink>
+                </button>
               </div>
             )}
           </div>
@@ -111,115 +139,90 @@ export default function Navbar({ onBook }) {
             FAQ
           </NavLink>
 
-          {/* CTA */}
           <Button
-            onClick={() => {
-              closeAll();
-              onBook?.();
-            }}
-            className="ml-2 rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+            onClick={onBook}
+            className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
           >
             Get in Touch
           </Button>
         </nav>
 
-        {/* Mobile hamburger */}
+        {/* Mobile menu button */}
         <button
-          className="md:hidden inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 shadow-sm text-slate-700"
-          aria-label="Open menu"
-          onClick={() => setMobileOpen(true)}
+          className="md:hidden"
+          onClick={() => setMobileOpen((prev) => !prev)}
+          aria-label="Toggle menu"
         >
-          <Menu className="h-5 w-5" />
+          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
-      {/* Mobile overlay */}
-      {mobileOpen && <div className="fixed inset-0 z-40 bg-black/40" />}
-
-      {/* Mobile drawer */}
-      <div
-        ref={mobileRef}
-        className={`fixed inset-x-0 top-0 z-50 origin-top rounded-b-2xl border-b border-slate-200 bg-white p-4 shadow-xl md:hidden transition-transform duration-300 ${mobileOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
-        role="dialog"
-        aria-modal="true"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-3" onClick={closeAll}>
-              <img src="/assets/testHive.png" width={36} height={36} alt="TestHive" className="rounded-md" />
-              <span className="text-lg font-bold tracking-tight">
+      {/* Mobile Drawer */}
+      {mobileOpen && (
+        <div
+          ref={mobileRef}
+          className="md:hidden fixed inset-0 bg-white z-50 p-6 overflow-y-auto"
+        >
+          <div className="flex justify-between items-center mb-6">
+            <Link to="/" onClick={closeAll} className="flex items-center gap-3">
+              <img
+                src="/assets/testHive.png"
+                width={36}
+                height={36}
+                alt="TestHive"
+              />
+              <span className="text-xl font-bold tracking-tight">
                 test<span className="text-sky-500">Hive</span>
               </span>
             </Link>
-            <button
-              className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 shadow-sm text-slate-700"
-              aria-label="Close menu"
-              onClick={() => setMobileOpen(false)}
-            >
-              <X className="h-5 w-5" />
+            <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
+              <X className="h-6 w-6" />
             </button>
           </div>
 
-          {/* Mobile links */}
-          <nav className="mt-6 space-y-1">
-            <NavLink to="/whytesthive" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
+          <nav className="flex flex-col gap-2 text-slate-700">
+            <NavLink
+              to="/whytesthive"
+              onClick={closeAll}
+              className="block rounded-md px-2.5 py-2 hover:bg-slate-50"
+            >
               Why TestHive?
             </NavLink>
 
-            {/* Mobile services as collapsible */}
-            <div className="border rounded-lg">
-              <button
-                onClick={toggleDropdown}
-                className="w-full flex items-center justify-between px-3 py-2 text-slate-700"
-              >
-                <span>Services</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              {openDropdown === "services" && (
-                <div className="px-1 pb-2">
-                  <NavLink to="/services/automation" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    Test Automation
-                  </NavLink>
-                  <NavLink to="/services/functional-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    Functional Testing
-                  </NavLink>
-                  <NavLink to="/services/pen-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    Pen Testing
-                  </NavLink>
-                  <NavLink to="/services/mentoring" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    Mentoring
-                  </NavLink>
-                  <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    QA Outsourcing
-                  </NavLink>
-                  <NavLink to="/services/consulting" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                    QA Consulting
-                  </NavLink>
-                </div>
-              )}
-            </div>
+            {/* Services dropdown on mobile */}
+            <details className="services-dropdown">
+              <summary className="cursor-pointer flex items-center justify-between px-2.5 py-2 rounded-md hover:bg-slate-50">
+                <span>Services</span> <ChevronDown className="h-4 w-4" />
+              </summary>
+              <div className="mt-2 pl-3 space-y-1">
+                <NavLink to="/services/automation" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Test Automation</NavLink>
+                <NavLink to="/services/functional-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Functional Testing</NavLink>
+                <NavLink to="/services/pen-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Pen Testing</NavLink>
+                <NavLink to="/services/mentoring" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Mentoring</NavLink>
+                <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">QA Outsourcing</NavLink>
+              </div>
+            </details>
 
-            <NavLink to="/blog" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
+            <NavLink to="/blog" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
               Blog
             </NavLink>
 
-            <NavLink to="/faq" onClick={closeAll} className="block rounded-lg px-3 py-2 text-slate-700 hover:bg-slate-50">
+            <NavLink to="/faq" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
               FAQ
             </NavLink>
 
             <Button
               onClick={() => {
                 closeAll();
-                onBook?.();
+                onBook();
               }}
-              className="mt-3 w-full rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+              className="mt-4 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 w-full text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
             >
-              Book a Call
+              Get in Touch
             </Button>
           </nav>
         </div>
-      </div>
+      )}
     </header>
   );
 }

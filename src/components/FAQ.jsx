@@ -12,7 +12,7 @@ export default function FAQ() {
   const faqs = [
     {
       q: "Can you provide temporary QA capacity?",
-      a: "Yes, absolutely. Whether you need an interim Test Manager, QA Lead, or Automation Specialist, we can step in quickly to strengthen your team. We work flexibly — short-term support, project-based collaboration, or part-time reinforcement depending on your needs."
+      a: "Yes, absolutely. Whether you need an interim Test Manager, QA Lead, or Automation Specialist, we can step in quickly to strengthen your team. We work flexibly, short-term support, project-based collaboration, or part-time reinforcement depending on your needs."
     },
     {
       q: "Do you also help with tool selection?",
@@ -20,7 +20,7 @@ export default function FAQ() {
     },
     {
       q: "Can I combine in-company training with consulting?",
-      a: "Definitely. We believe people learn best by applying new skills to real situations. That’s why we combine theory with your own scripts, environment, and use cases — so your team builds confidence while solving actual problems."
+      a: "Definitely. We believe people learn best by applying new skills to real situations. That’s why we combine theory with your own scripts, environment, and use cases, so your team builds confidence while solving actual problems."
     },
     {
       q: "How quickly can we get started?",

@@ -46,7 +46,7 @@ export default function Mentoring() {
                     >
                         Taking courses is a great start to explore a new area, but real
                         understanding comes when you apply what you’ve learned in your own
-                        environment — with your own tools, data, and challenges. That’s
+                        environment, with your own tools, data, and challenges. That’s
                         where mentoring makes the difference.
                     </m.p>
                     <m.p
@@ -56,7 +56,7 @@ export default function Mentoring() {
                         Traditional training often ends when the slides do. Our mentoring
                         program bridges that gap by working alongside you and your team to
                         build real-world solutions, tailored to your projects and context.
-                        It’s not theory — it’s about turning knowledge into outcomes that
+                        It’s not theory, it’s about turning knowledge into outcomes that
                         matter.
                     </m.p>
                 </m.div>
@@ -73,7 +73,7 @@ export default function Mentoring() {
                         {
                             icon: Users,
                             title: "Small groups, big impact",
-                            text: "Up to 3 participants per mentor — ensuring personal guidance and deep interaction.",
+                            text: "Up to 3 participants per mentor, ensuring personal guidance and deep interaction.",
                         },
                         {
                             icon: BookOpen,
@@ -88,7 +88,7 @@ export default function Mentoring() {
                         {
                             icon: Clock,
                             title: "Flexible & realistic",
-                            text: "Sessions run 4–8 hours per week, typically over 3–12 months — tailored to your growth pace.",
+                            text: "Sessions run 4–8 hours per week, typically over 3–12 months, tailored to your growth pace.",
                         },
                     ].map((item) => (
                         <m.article
@@ -136,7 +136,7 @@ export default function Mentoring() {
                         <m.li variants={fadeUp} className="flex items-start gap-2">
                             <CheckCircle2 className="mt-1 h-5 w-5 text-emerald-600" />
                             You’ll document, refine, and maintain your own automation
-                            framework — gaining real ownership and confidence.
+                            framework, gaining real ownership and confidence.
                         </m.li>
                         <m.li variants={fadeUp} className="flex items-start gap-2">
                             <CheckCircle2 className="mt-1 h-5 w-5 text-emerald-600" />
@@ -149,10 +149,10 @@ export default function Mentoring() {
                         variants={fadeUp}
                         className="mt-6 text-slate-700 text-sm sm:text-base leading-relaxed"
                     >
-                        Some conditions apply to make sure your investment delivers real
+                        {/* Some conditions apply to make sure your investment delivers real
                         value. We’ll need access to your test environments and repositories
                         and may need to be onboarded as external collaborators. Mentoring
-                        works best when collaboration is real.
+                        works best when collaboration is real. */}
                     </m.p>
                 </m.div>
 
@@ -165,7 +165,7 @@ export default function Mentoring() {
                         Start your mentoring journey
                     </a>
                     <p className="mt-2 text-xs text-slate-500">
-                        Have questions first? Reach out — we’ll help you decide if mentoring
+                        Have questions first? Reach out, we’ll help you decide if mentoring
                         fits your goals.
                     </p>
                 </div>
