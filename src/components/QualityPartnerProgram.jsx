@@ -12,7 +12,7 @@ const fadeUp = {
 export default function QualityPartnerProgram({
   onBook = () => {},                                  // opens your Calendly modal
   calendlyUrl = "https://calendly.com/jointhehive-testhive-phr7/30min",
-  formAction = "https://formspree.io/f/your-form-id", // ← replace with your Formspree endpoint or API
+  formAction = "https://formspree.io/f/mgvnzebp", // ← replace with your Formspree endpoint or API
 }) {
   const [openForm, setOpenForm] = useState(false)
 
@@ -38,7 +38,7 @@ export default function QualityPartnerProgram({
           </m.h2>
           <m.p variants={fadeUp} className="mt-4 text-slate-600">
             When a standard package won’t fit, embed a full-time QA consultant who works <strong>as part of your team</strong>.
-            We co-define priorities after an initial assessment—<strong>no fixed deliverables, no test counts</strong>.
+            We co-define priorities after an initial assessment
           </m.p>
         </m.div>
 
@@ -121,7 +121,7 @@ export default function QualityPartnerProgram({
           <p className="font-semibold text-slate-900">Quality Partner Program – Your Dedicated QA Advisor</p>
           <p className="mt-2">
             When a standard package won’t fit your needs, our Quality Partner Program offers a full-time QA consultant who works alongside your team.
-            There’s no one-size-fits-all scope: together we define the focus areas—whether it’s enhancing your test strategy, building automation frameworks,
+            There’s no one-size-fits-all scope: together we define the focus areas, whether it’s enhancing your test strategy, building automation frameworks,
             coaching your engineers or something entirely different. Engagement length and responsibilities are tailored to your objectives.
           </p>
         </div>

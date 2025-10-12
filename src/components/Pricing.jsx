@@ -151,7 +151,7 @@ export default function Pricing({
             <form
               className="mt-4 space-y-4"
               method="POST"
-              action="https://formspree.io/f/your-form-id"  /* ← replace with your Formspree ID or your API endpoint */
+              action="https://formspree.io/f/mgvnzebp"  /* ← replace with your Formspree ID or your API endpoint */
             >
               {/* Honeypot anti-spam */}
               <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />

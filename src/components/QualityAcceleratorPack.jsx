@@ -51,9 +51,9 @@ export default function QualityAcceleratorPack({
             </div>
 
             <ul className="mt-4 grid gap-3 text-sm text-slate-700 sm:grid-cols-2">
-              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" /> ~10–20 automated E2E tests on your critical paths</li>
-              <li className="flex items-start gap-2"><GitBranch    className="mt-0.5 h-5 w-5 text-sky-600" /> Full CI/CD wiring (GitHub / GitLab / Azure)</li>
-              <li className="flex items-start gap-2"><Zap          className="mt-0.5 h-5 w-5 text-violet-600" /> Executable docs & commands (local + CI)</li>
+              <li className="flex items-start gap-2"><CheckCircle2 className="mt-0.5 h-5 w-5 text-emerald-600" /> Approx 10–20 automated E2E tests on your critical paths</li>
+              <li className="flex items-start gap-2"><GitBranch    className="mt-0.5 h-5 w-5 text-sky-600" /> Full CI/CD wiring</li>
+              <li className="flex items-start gap-2"><Zap          className="mt-0.5 h-5 w-5 text-violet-600" /> Executable docs & commands </li>
               <li className="flex items-start gap-2"><ShieldCheck  className="mt-0.5 h-5 w-5 text-emerald-700" /> Demo report + next-coverage plan, NDA by default</li>
             </ul>
 
@@ -100,8 +100,8 @@ export default function QualityAcceleratorPack({
             </div>
             <ol className="mt-3 grid gap-3 text-sm text-slate-700">
               <li className="rounded-xl border border-gray-200 bg-white p-4">
-                <div className="text-xs font-semibold text-slate-900">Week 0–1</div>
-                <div className="text-slate-600">Kickoff • repo access • finalize target scenarios</div>
+                <div className="text-xs font-semibold text-slate-900">Week 0–2</div>
+                <div className="text-slate-600">Kickoff • repo access • define key test focus</div>
               </li>
               <li className="rounded-xl border border-gray-200 bg-white p-4">
                 <div className="text-xs font-semibold text-slate-900">Weeks 2–10</div>

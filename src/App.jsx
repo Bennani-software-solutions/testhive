@@ -20,6 +20,10 @@ import QAOutsourcingService from "./pages/services/QAOutsourcing";
 import ConsultingService from "./pages/services/Consulting";
 import Mentoring from "./pages/services/Mentoring";
 
+// blog
+import ToAutomateOrNotToAutomate from "./pages/blog/ToAutomateOrNotToAutomate";
+
+// binnen je <Routes>
 function App() {
   return (
     <Routes>
@@ -45,6 +49,10 @@ function App() {
         <Route path="services/qa-outsourcing" element={<QAOutsourcingService />} />
         <Route path="services/consulting" element={<ConsultingService />} />
         <Route path="services/mentoring" element={<Mentoring />} />
+
+        {/* blog posts */}
+        <Route path="/blog/to-automate-or-not-to-automate" element={<ToAutomateOrNotToAutomate />} />
+
 
 
         {/* Catch-all route */}

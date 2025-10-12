@@ -158,11 +158,6 @@ export default function FunctionalTesting({ onBook }) {
                     viewport={{ once: true, amount: 0.25 }}
                     className="mt-16 text-center"
                 >
-                    <p className="text-slate-700 text-base sm:text-lg max-w-2xl mx-auto">
-                        Testing doesn’t slow teams down, it helps them move forward with confidence.
-                        Let’s explore how our QA specialists can support your goals.
-                    </p>
-
                     <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={onBook}

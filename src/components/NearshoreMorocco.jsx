@@ -189,9 +189,9 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
 
             <m.ul variants={group} className="grid gap-3 text-[13px] sm:text-sm">
               {[
-                "Senior QA engineers experienced in Playwright, Cypress, and Selenium.",
-                "CI/CD on GitHub, GitLab, or Azure with dashboards built for leadership visibility.",
-                "Security-first mindset with NDA, VPN/SOC controls, and limited-access credentials.",
+                "We embed with your developers, not just testing, but helping shape quality decisions from the start.",
+                "Our engineers bring structure and rhythm: stable test runs, clear dashboards, and no last-minute release chaos.",
+                "All collaboration happens under NDA, with strict access control and secure pipelines you can trust.",
               ].map((t) => (
                 <m.li
                   key={t}
@@ -203,6 +203,7 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
                 </m.li>
               ))}
             </m.ul>
+
           </m.div>
         </div>
 
