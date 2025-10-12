@@ -11,19 +11,7 @@ const idle = "text-slate-600 hover:text-slate-900";
 export default function Navbar({ onBook }) {
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const mobileRef = useRef(null);
   const navigate = useNavigate();
-
-  // close dropdown on outside click (desktop)
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".services-dropdown")) {
-        setOpenDropdown(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const toggleDropdown = () => {
     setOpenDropdown((cur) => (cur === "services" ? null : "services"));
@@ -34,135 +22,115 @@ export default function Navbar({ onBook }) {
     setMobileOpen(false);
   };
 
-  // close mobile menu on escape
-  useEffect(() => {
-    const onKey = (e) => e.key === "Escape" && setMobileOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, []);
-
   const handleNavigate = (path) => {
-    // ensures navigation before dropdown close (fix for mobile)
     navigate(path);
-    setTimeout(() => {
-      closeAll();
-    }, 120);
+    setTimeout(() => closeAll(), 120);
   };
 
+  useEffect(() => {
+    const handleKey = (e) => e.key === "Escape" && setMobileOpen(false);
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
+
   return (
-    <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-gray-200">
-      <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link to="/" className="flex items-center gap-3" onClick={closeAll}>
-          <img
-            src="/assets/testHive.png"
-            width={40}
-            height={40}
-            alt="TestHive"
-            className="rounded-md"
-          />
-          <span className="text-xl font-bold tracking-tight">
-            test<span className="text-sky-500">Hive</span>
-          </span>
-        </Link>
+    <>
+      <header className="sticky top-0 z-40 bg-white/70 backdrop-blur border-b border-gray-200">
+        <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center gap-3" onClick={closeAll}>
+            <img
+              src="/assets/testHive.png"
+              width={40}
+              height={40}
+              alt="TestHive"
+              className="rounded-md"
+            />
+            <span className="text-xl font-bold tracking-tight">
+              test<span className="text-sky-500">Hive</span>
+            </span>
+          </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
-          <NavLink
-            to="/whytesthive"
-            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-          >
-            Why TestHive?
-          </NavLink>
-
-          {/* Services dropdown */}
-          <div className="relative services-dropdown">
-            <button
-              onClick={toggleDropdown}
-              className={`${base} ${idle} flex items-center gap-1`}
-              aria-haspopup="menu"
-              aria-expanded={openDropdown === "services"}
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex items-center gap-8">
+            <NavLink
+              to="/whytesthive"
+              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
             >
-              Services <ChevronDown className="h-4 w-4" />
-            </button>
+              Why TestHive?
+            </NavLink>
 
-            {openDropdown === "services" && (
-              <div
-                role="menu"
-                className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
+            {/* Services dropdown */}
+            <div className="relative services-dropdown">
+              <button
+                onClick={toggleDropdown}
+                className={`${base} ${idle} flex items-center gap-1`}
+                aria-haspopup="menu"
+                aria-expanded={openDropdown === "services"}
               >
-                <button
-                  onClick={() => handleNavigate("/services/automation")}
-                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
-                >
-                  Test Automation
-                </button>
-                <button
-                  onClick={() => handleNavigate("/services/functional-testing")}
-                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
-                >
-                  Functional Testing
-                </button>
-                <button
-                  onClick={() => handleNavigate("/services/pen-testing")}
-                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
-                >
-                  Pen Testing
-                </button>
-                <button
-                  onClick={() => handleNavigate("/services/mentoring")}
-                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
-                >
-                  Mentoring
-                </button>
-                <button
-                  onClick={() => handleNavigate("/services/qa-outsourcing")}
-                  className="block w-full text-left px-3 py-2 hover:bg-slate-50"
-                >
-                  QA Outsourcing
-                </button>
-              </div>
-            )}
-          </div>
+                Services <ChevronDown className="h-4 w-4" />
+              </button>
 
-          <NavLink
-            to="/blog"
-            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+              {openDropdown === "services" && (
+                <div
+                  role="menu"
+                  className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
+                >
+                  {[
+                    ["Test Automation", "/services/automation"],
+                    ["Functional Testing", "/services/functional-testing"],
+                    ["Pen Testing", "/services/pen-testing"],
+                    ["Mentoring", "/services/mentoring"],
+                    ["QA Outsourcing", "/services/qa-outsourcing"],
+                  ].map(([label, path]) => (
+                    <button
+                      key={path}
+                      onClick={() => handleNavigate(path)}
+                      className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <NavLink
+              to="/blog"
+              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+            >
+              Blog
+            </NavLink>
+
+            <NavLink
+              to="/faq"
+              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+            >
+              FAQ
+            </NavLink>
+
+            <Button
+              onClick={onBook}
+              className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+            >
+              Get in Touch
+            </Button>
+          </nav>
+
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden"
+            onClick={() => setMobileOpen((prev) => !prev)}
+            aria-label="Toggle menu"
           >
-            Blog
-          </NavLink>
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </header>
 
-          <NavLink
-            to="/faq"
-            className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-          >
-            FAQ
-          </NavLink>
-
-          <Button
-            onClick={onBook}
-            className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
-          >
-            Get in Touch
-          </Button>
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          className="md:hidden"
-          onClick={() => setMobileOpen((prev) => !prev)}
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </div>
-
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (outside header to fix visibility issue) */}
       {mobileOpen && (
-        <div
-          ref={mobileRef}
-          className="md:hidden fixed inset-0 bg-white z-50 p-6 overflow-y-auto"
-        >
+        <div className="fixed inset-0 bg-white z-[9999] p-6 overflow-y-auto animate-fade-in">
           <div className="flex justify-between items-center mb-6">
             <Link to="/" onClick={closeAll} className="flex items-center gap-3">
               <img
@@ -189,8 +157,7 @@ export default function Navbar({ onBook }) {
               Why TestHive?
             </NavLink>
 
-            {/* Services dropdown on mobile */}
-            <details className="services-dropdown">
+            <details open className="services-dropdown">
               <summary className="cursor-pointer flex items-center justify-between px-2.5 py-2 rounded-md hover:bg-slate-50">
                 <span>Services</span> <ChevronDown className="h-4 w-4" />
               </summary>
@@ -223,6 +190,6 @@ export default function Navbar({ onBook }) {
           </nav>
         </div>
       )}
-    </header>
+    </>
   );
 }
