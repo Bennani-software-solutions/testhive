@@ -31,16 +31,7 @@ export default function Footer() {
               <li><Link to="/services/consulting" className="hover:text-sky-600">Consulting</Link></li>
             </ul>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 mb-2">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/whytesthive" className="hover:text-sky-600">About</Link></li>
-              <li><Link to="/blog" className="hover:text-sky-600">Blog</Link></li>
-              <li><Link to="/partner" className="hover:text-sky-600">Partner Program</Link></li>
-              <li><Link to="/accelerator" className="hover:text-sky-600">Accelerator</Link></li>
-              <li><Link to="/faq" className="hover:text-sky-600">FAQ</Link></li>
-            </ul>
-          </div>
+ 
         </div>
 
         {/* Contact & Socials */}
