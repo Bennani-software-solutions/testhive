@@ -13,9 +13,9 @@ export default function Home() {
   return (
     <>
       <Hero onBook={onBook} />
-      <Logos />
       <Features />
       <WhyTestHiveSection onBook={onBook} />
+      <Logos />
       {/* <IndustriesSection /> */}
       {/* <Testimonials/> */}
       <QAProcessSection />

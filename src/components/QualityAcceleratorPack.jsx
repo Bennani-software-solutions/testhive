@@ -32,7 +32,7 @@ export default function QualityAcceleratorPack({
             Automate your critical tests, fast
           </m.h2>
           <m.p variants={fadeUp} className="mt-4 text-slate-600">
-            For a single payment of <strong>€4,999</strong>, our senior engineers automate roughly
+            For a single payment of <strong>€4,999</strong>, our test automation engineers automate roughly
             <strong> 10–20 business-critical regression scenarios</strong> and integrate them into your CI/CD pipeline.
             Typical delivery ~<strong>90 days</strong>. Final test count depends on integration complexity and other factors.
           </m.p>
@@ -80,7 +80,7 @@ export default function QualityAcceleratorPack({
                 className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
                 aria-label="Buy the Quality Accelerator Pack"
               >
-                <CreditCard className="h-4 w-4" /> Buy Now
+                <CreditCard className="h-4 w-4" /> Join the program
               </a>
               <button
                 onClick={onBook}

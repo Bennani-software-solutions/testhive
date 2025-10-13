@@ -6,7 +6,7 @@ const testimonials = [
     {
         quote:
             "TestHive brought a real sense of ownership and precision to our QA process. Their structured approach helped us catch critical issues before release, and communication was always transparent.",
-        name: "Anthony Hiebeck",
+        name: "Anthony Heebeeck",
         role: "Engineering Manager at Atlas Systems",
         avatar: "/assets/clients/anthony.jpg",
     },
