@@ -67,15 +67,6 @@ export default function WhyTestHive({ onMeet }) {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="mt-12">
-          <button
-            onClick={onMeet}
-            className="rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-6 py-3 text-white font-semibold shadow-md hover:brightness-110 active:scale-95 transition"
-          >
-            Let’s meet
-          </button>
-        </div>
       </div>
     </section>
   );
