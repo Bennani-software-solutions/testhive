@@ -154,7 +154,7 @@ export default function QualityPartnerProgram({
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="text-xs font-medium text-slate-600">Role</label>
-                  <input name="role" placeholder="e.g. QA Lead, VP Eng" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300" />
+                  <input name="role" placeholder="e.g. QA Lead" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300" />
                 </div>
                 <div>
                   <label className="text-xs font-medium text-slate-600">Team size</label>
@@ -193,13 +193,6 @@ export default function QualityPartnerProgram({
                 </div>
               </div>
 
-              <div className="flex items-start gap-2">
-                <input required type="checkbox" name="custom_engagement" className="mt-1 h-4 w-4 rounded border-gray-300" />
-                <p className="text-xs text-slate-600">
-                  I understand this is a <strong>custom engagement</strong> without predefined deliverables or test counts. A tailored proposal will be provided after an initial assessment.
-                </p>
-              </div>
-
               <div className="mt-2 flex items-center gap-3">
                 <button type="submit" className="rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95">
                   Submit Request
@@ -212,7 +205,7 @@ export default function QualityPartnerProgram({
               </div>
 
               <p className="mt-2 text-[11px] text-slate-400">
-                We reply within 1 business day. We’ll only contact you about this request.
+                We reply within 1-3 business days. We’ll only contact you about this request.
               </p>
             </form>
           </div>

@@ -4,9 +4,13 @@ export default function AcceleratorQualifyModal({ onClose }) {
     const [form, setForm] = useState({
         name: "",
         email: "",
+        phone: "",
         company: "",
-        qaMaturity: "",
-        painPoints: "",
+        whatToAutomate: "",
+        qaContext: "",
+        testerProfile: "",
+        bottlenecks: "",
+        goals: "",
     });
     const [submitting, setSubmitting] = useState(false);
     const [submitted, setSubmitted] = useState(false);
@@ -26,7 +30,7 @@ export default function AcceleratorQualifyModal({ onClose }) {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    _subject: "Accelerator Program Prospect",
+                    _subject: "Accelerator Program Qualification",
                     ...form,
                 }),
             });
@@ -45,10 +49,10 @@ export default function AcceleratorQualifyModal({ onClose }) {
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
                 <div className="bg-white rounded-2xl p-6 max-w-md w-full text-center">
                     <h2 className="text-xl font-semibold text-slate-900">
-                        Thanks for reaching out!
+                        Thanks for sharing your context!
                     </h2>
                     <p className="mt-2 text-slate-600 text-sm">
-                        We’ll review your responses and get back to you within 24h.
+                        We’ll review your answers and get back to you within 1-3 business days.
                     </p>
                     <button
                         onClick={onClose}
@@ -74,14 +78,15 @@ export default function AcceleratorQualifyModal({ onClose }) {
                 </div>
 
                 <p className="mt-3 text-sm text-slate-600">
-                    Tell us a bit about your QA process so we can see if the Accelerator Pack fits your needs.
+                    Help us understand your current QA setup and what you’d like to improve.
                 </p>
 
                 <form onSubmit={onSubmit} className="mt-5 grid gap-3">
+                    {/* Basic Contact Info */}
                     <input
                         type="text"
                         name="name"
-                        placeholder="Your name"
+                        placeholder="Full name"
                         className="w-full rounded-md border p-2 text-sm"
                         value={form.name}
                         onChange={handleChange}
@@ -97,44 +102,100 @@ export default function AcceleratorQualifyModal({ onClose }) {
                         required
                     />
                     <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone number"
+                        className="w-full rounded-md border p-2 text-sm"
+                        value={form.phone}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
                         type="text"
                         name="company"
-                        placeholder="Company"
+                        placeholder="Company name"
                         className="w-full rounded-md border p-2 text-sm"
                         value={form.company}
                         onChange={handleChange}
                     />
 
+                    {/* What to Automate */}
                     <div>
                         <label className="block text-sm font-medium mb-1">
-                            How would you describe your current QA process?
+                            What do you want to automate?
                         </label>
                         <select
-                            name="qaMaturity"
+                            name="whatToAutomate"
                             className="w-full rounded-md border p-2 text-sm"
-                            value={form.qaMaturity}
+                            value={form.whatToAutomate}
                             onChange={handleChange}
                             required
                         >
                             <option value="">Select one</option>
-                            <option value="manual-only">Fully manual</option>
-                            <option value="partial-automation">Some automation</option>
-                            <option value="mature-automation">Mature automation setup</option>
+                            <option value="Regression suite">Regression suite</option>
+                            <option value="Sanity checks">Sanity checks</option>
+                            <option value="APIs">APIs</option>
+                            <option value="Other">Other</option>
                         </select>
+                    </div>
+
+                    {/* Context & Challenges */}
+                    <div>
+                        <label className="block text-sm font-medium mb-1">
+                            Context & Challenges
+                        </label>
+                        <textarea
+                            name="qaContext"
+                            rows={4}
+                            placeholder="Describe your current QA setup, goals, and biggest challenges."
+                            className="w-full rounded-md border p-2 text-sm"
+                            value={form.qaContext}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    {/* Who is currently responsible */}
+                    <div>
+                        <label className="block text-sm font-medium mb-1">
+                            Who is currently responsible for testing?
+                        </label>
+                        <input
+                            type="text"
+                            name="testerProfile"
+                            placeholder="e.g. Manual tester, developer, outsourced QA..."
+                            className="w-full rounded-md border p-2 text-sm"
+                            value={form.testerProfile}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    {/* Additional Insight Questions */}
+                    <div>
+                        <label className="block text-sm font-medium mb-1">
+                            What slows your QA process down the most?
+                        </label>
+                        <textarea
+                            name="bottlenecks"
+                            rows={3}
+                            placeholder="e.g. flaky tests, unclear ownership, lack of coverage..."
+                            className="w-full rounded-md border p-2 text-sm"
+                            value={form.bottlenecks}
+                            onChange={handleChange}
+                        />
                     </div>
 
                     <div>
                         <label className="block text-sm font-medium mb-1">
-                            What are your biggest QA pain points right now?
+                            What would success look like for you in the next 3 months?
                         </label>
                         <textarea
-                            name="painPoints"
-                            rows={4}
+                            name="goals"
+                            rows={3}
+                            placeholder="e.g. fully automated regression suite, CI/CD integration..."
                             className="w-full rounded-md border p-2 text-sm"
-                            placeholder="e.g. flaky tests, slow releases, no regression coverage..."
-                            value={form.painPoints}
+                            value={form.goals}
                             onChange={handleChange}
-                            required
                         />
                     </div>
 
