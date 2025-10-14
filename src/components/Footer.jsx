@@ -31,7 +31,24 @@ export default function Footer() {
               <li><Link to="/services/consulting" className="hover:text-sky-600">Consulting</Link></li>
             </ul>
           </div>
- 
+          {/* Contact info added */}
+        <div className="text-sm font-sm text-slate-900 mb-2">
+            <div>
+              <h3 className="text-sm font-semibold text-slate-900 mb-2">Contact</h3>
+              📞 <a href="tel:+212715931703" className="hover:text-sky-600">
+                +212 715 931 703
+              </a>
+            </div>
+            <div>
+              ✉️ <a href="mailto:support@testhive.ma" className="hover:text-sky-600">
+                support@testhive.ma
+              </a>
+            </div>
+            <div>
+              📍 Qtr Almatar, Nador, Morocco
+            </div>
+          </div>
+
         </div>
 
         {/* Contact & Socials */}

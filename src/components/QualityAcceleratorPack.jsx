@@ -2,7 +2,7 @@
 import { motion as m } from "framer-motion"
 import { useState } from "react"
 import { CheckCircle2, PhoneCall, Zap, GitBranch, ShieldCheck, Clock } from "lucide-react"
-import BankTransferModal from "./BankTransferModal"
+import AcceleratorQualifyModal from "./AcceleratorQualifyModal"
 
 const EASE = [0.22, 1, 0.36, 1]
 const fadeUp = {
@@ -46,7 +46,7 @@ export default function QualityAcceleratorPack({
           <m.p variants={fadeUp} className="mt-4 text-slate-600">
             For a single payment of <strong>€4,999</strong>, our test automation engineers automate roughly
             <strong> 10–20 business-critical regression scenarios</strong> and integrate them into your CI/CD pipeline.
-            Typical delivery ~<strong>90 days</strong>. Final test count depends on integration complexity and other factors.
+            Typical delivery +-<strong>90 days</strong>. Final test count depends on integration complexity and other factors.
           </m.p>
         </m.div>
 
@@ -120,14 +120,7 @@ export default function QualityAcceleratorPack({
 
             {/* 🔹 Modal trigger */}
             {showBankModal && (
-              <BankTransferModal
-                amountCents={499900}
-                currency="EUR"
-                businessName="Bennani Software Solutions"
-                bankName="Attijariwafa Bank"
-                iban="MA64 007 500 00086 75000 000072 16"
-                bic="BCMAMAMC"
-                notifyEndpoint="/api/notify-bank-transfer"
+              <AcceleratorQualifyModal
                 onClose={() => setShowBankModal(false)}
               />
             )}

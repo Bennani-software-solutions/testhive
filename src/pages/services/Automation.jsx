@@ -197,44 +197,77 @@ export default function AutomationService() {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* POC Package */}
-                    <div className="p-6 border rounded-2xl shadow hover:shadow-lg transition bg-white">
-                        <h3 className="text-xl font-semibold mb-3">🤔 The prove it pack</h3>
-                        <ul className="space-y-2 text-slate-600 mb-4">
-                            <li>✔️ Free Proof of Concept using real Scenarios from your app.</li>
-                            <li>✔️ See value without risk and decide with data, not guesswork.</li>
-                            <li>✔️ Clear next steps if you choose to scale up later.</li>
-                        </ul>
-                        <Link to="/pocdetails" className="text-sky-600 font-medium hover:underline">
-                            Start free →
-                        </Link>
+                    <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
+                        <div className="relative mb-4">
+                            <img
+                                src="/assets/whyy.png"
+                                alt="Prove It Pack"
+                                className="w-full h-40 object-cover rounded-t-2xl"
+                            />
+                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
+                                The prove it pack
+                            </h3>
+                        </div>
+                        <div className="p-6 pt-0">
+                            <ul className="space-y-2 text-slate-600 mb-4">
+                                <li>✔️ Free Proof of Concept using real Scenarios from your app.</li>
+                                <li>✔️ See value without risk and decide with data, not guesswork.</li>
+                                <li>✔️ Clear next steps if you choose to scale up later.</li>
+                            </ul>
+                            <Link to="/pocdetails" className="text-sky-600 font-medium hover:underline">
+                                Start free →
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Accelerator Package */}
-                    <div className="p-6 border rounded-2xl shadow hover:shadow-lg transition bg-white">
-                        <h3 className="text-xl font-semibold mb-3">⚡ Accelerator Pack</h3>
-                        <ul className="space-y-2 text-slate-600 mb-4">
-                            <li>✔️ Fixed price engagement. One clear cost and no surprises.</li>
-                            <li>✔️ 10 to 20 critical tests delivered within 90 days.</li>
-                            <li>✔️ Integrated into your CI/CD so it helps every release.</li>
-                            <li>✔️ Hands-on support from TestHive engineers who work with your team.</li>
-                            <li>✔️ Outcome focused and predictable, with care at every step.</li>
-                        </ul>
-                        <Link to="/accelerator" className="text-sky-600 font-medium hover:underline">
-                            See how it works →
-                        </Link>
+                    <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
+                        <div className="relative mb-4">
+                            <img
+                                src="/assets/time.png"
+                                alt="Accelerator Pack"
+                                className="w-full h-40 object-cover rounded-t-2xl"
+                            />
+                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
+                                Accelerator Pack
+                            </h3>
+                        </div>
+                        <div className="p-6 pt-0">
+                            <ul className="space-y-2 text-slate-600 mb-4">
+                                <li>✔️ Fixed price engagement. One clear cost and no surprises.</li>
+                                <li>✔️ 10 to 20 critical tests delivered within 90 days.</li>
+                                <li>✔️ Integrated into your CI/CD so it helps every release.</li>
+                                <li>✔️ Hands-on support from TestHive engineers who work with your team.</li>
+                                <li>✔️ Outcome focused and predictable, with care at every step.</li>
+                            </ul>
+                            <Link to="/accelerator" className="text-sky-600 font-medium hover:underline">
+                                See how it works →
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Quality Partner Program */}
-                    <div className="p-6 border rounded-2xl shadow hover:shadow-lg transition bg-white">
-                        <h3 className="text-xl font-semibold mb-3">🤝 Quality Partner Program</h3>
-                        <ul className="space-y-2 text-slate-600 mb-4">
-                            <li>✔️ A dedicated QA consultant embedded in your team.</li>
-                            <li>✔️ A strategy that fits your stack and your roadmap.</li>
-                            <li>✔️ Continuous improvement across automation, functional testing, and quality gates.</li>
-                        </ul>
-                        <Link to="/partnerprogram" className="text-sky-600 font-medium hover:underline">
-                            Let’s talk →
-                        </Link>
+                    <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
+                        <div className="relative mb-4">
+                            <img
+                                src="/assets/languages.png"
+                                alt="Quality Partner Program"
+                                className="w-full h-40 object-cover rounded-t-2xl"
+                            />
+                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
+                                Quality Partner Program
+                            </h3>
+                        </div>
+                        <div className="p-6 pt-0">
+                            <ul className="space-y-2 text-slate-600 mb-4">
+                                <li>✔️ A dedicated QA consultant embedded in your team.</li>
+                                <li>✔️ A strategy that fits your stack and your roadmap.</li>
+                                <li>✔️ Continuous improvement across automation, functional testing, and quality gates.</li>
+                            </ul>
+                            <Link to="/partnerprogram" className="text-sky-600 font-medium hover:underline">
+                                Let’s talk →
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </section>
