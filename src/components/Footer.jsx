@@ -76,7 +76,7 @@ export default function Footer() {
               WhatsApp
             </a>
           </div>
-          <div className="mt-6">
+          {/* <div className="mt-6">
             <a
               id="btn-footer-book"
               href="https://calendly.com/jointhehive-testhive-phr7/30min"
@@ -86,7 +86,7 @@ export default function Footer() {
             >
               Book a Call
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
