@@ -85,7 +85,7 @@ export default function Hero({ onBook }) {
                 onClick={onBook}
                 className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95"
               >
-                Let's Talk
+                Book a Free Consultation
               </button>
 
               {/* WhatsApp */}

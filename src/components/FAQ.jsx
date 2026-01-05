@@ -91,7 +91,7 @@ export default function FAQ() {
             className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-white px-6 py-3 font-semibold shadow-md hover:brightness-110 active:scale-95"
           >
             <MessageSquare className="h-5 w-5" />
-            Get in touch
+            Book a Free Consultation
           </button>
         </div>
 
@@ -107,7 +107,7 @@ export default function FAQ() {
               </button>
               <div className="p-6">
                 <h3 className="text-lg font-semibold text-slate-900 mb-4">
-                  Get in Touch
+                  Book a Free Consultation
                 </h3>
                 <ContactForm />
               </div>

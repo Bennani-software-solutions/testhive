@@ -10,7 +10,7 @@ export default function CTA({ onBook, calendlyUrl }) {
 
         <div className="mt-8 flex items-center justify-center gap-5">
           <button onClick={onBook} className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95">
-        Let's Talk
+        Book a Free Consultation
       </button>
 
           {/* keep this as an alternate path; if you dislike opening new tabs entirely, you can remove ALink */}

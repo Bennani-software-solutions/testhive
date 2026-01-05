@@ -53,7 +53,7 @@ export default function Footer() {
 
         {/* Contact & Socials */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-900 mb-2">Get in touch</h3>
+          <h3 className="text-sm font-semibold text-slate-900 mb-2">Book a Free Consultation</h3>
           <div className="flex items-center gap-4 mt-3">
             <a
               id="lnk-footer-linkedin"

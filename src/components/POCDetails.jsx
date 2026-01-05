@@ -136,7 +136,7 @@ export default function POCDetails({ onBook }) {
             onClick={onBook}
             className="rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-6 py-3 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
           >
-            <PhoneCall className="inline-block mr-2 h-5 w-5" /> Still have questions? Let's talk
+            <PhoneCall className="inline-block mr-2 h-5 w-5" /> Still have questions? Book a Free Consultation
           </button>
           <button
             onClick={() => setOpenForm(true)}

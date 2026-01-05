@@ -114,7 +114,7 @@ export default function Navbar({ onBook }) {
               onClick={onBook}
               className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
             >
-              Get in Touch
+              Book a Free Consultation
             </Button>
           </nav>
 
@@ -186,7 +186,7 @@ export default function Navbar({ onBook }) {
               }}
               className="mt-4 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 w-full text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
             >
-              Get in Touch
+              Book a Free Consultation
             </Button>
           </nav>
         </div>
