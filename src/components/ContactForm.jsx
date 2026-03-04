@@ -48,6 +48,7 @@ export default function InfoRequestForm({ onSuccess }) {
             className="space-y-3 text-left"
             id="info-request-form"
         >
+            <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
             <input
                 type="text"
                 name="name"

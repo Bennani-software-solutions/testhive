@@ -55,6 +55,13 @@ export default function Navbar({ onBook }) {
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-8">
             <NavLink
+              to="/platform"
+              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+            >
+              Platform
+            </NavLink>
+
+            <NavLink
               to="/whytesthive"
               className={({ isActive }) => `${base} ${isActive ? active : idle}`}
             >
@@ -150,6 +157,14 @@ export default function Navbar({ onBook }) {
           </div>
 
           <nav className="flex flex-col gap-2 text-slate-700">
+            <NavLink
+              to="/platform"
+              onClick={closeAll}
+              className="block rounded-md px-2.5 py-2 hover:bg-slate-50"
+            >
+              Platform
+            </NavLink>
+
             <NavLink
               to="/whytesthive"
               onClick={closeAll}

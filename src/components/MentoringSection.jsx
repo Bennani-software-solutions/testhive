@@ -145,15 +145,6 @@ export default function Mentoring() {
                         </m.li>
                     </m.ul>
 
-                    <m.p
-                        variants={fadeUp}
-                        className="mt-6 text-slate-700 text-sm sm:text-base leading-relaxed"
-                    >
-                        {/* Some conditions apply to make sure your investment delivers real
-                        value. We’ll need access to your test environments and repositories
-                        and may need to be onboarded as external collaborators. Mentoring
-                        works best when collaboration is real. */}
-                    </m.p>
                 </m.div>
 
                 {/* CTA */}

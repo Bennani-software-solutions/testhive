@@ -167,6 +167,7 @@ export default function POCDetails({ onBook }) {
                 </p>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-slate-700">Name</label>

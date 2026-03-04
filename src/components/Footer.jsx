@@ -21,6 +21,10 @@ export default function Footer() {
         {/* Navigation */}
         <div className="grid grid-cols-2 gap-6">
           <div>
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">Product</h3>
+            <ul className="space-y-2 text-sm mb-4">
+              <li><Link to="/platform" className="hover:text-sky-600">TestHive Platform</Link></li>
+            </ul>
             <h3 className="text-sm font-semibold text-slate-900 mb-2">Services</h3>
             <ul className="space-y-2 text-sm">
               <li><Link to="/services/automation" className="hover:text-sky-600">Automation</Link></li>
@@ -76,17 +80,6 @@ export default function Footer() {
               WhatsApp
             </a>
           </div>
-          {/* <div className="mt-6">
-            <a
-              id="btn-footer-book"
-              href="https://calendly.com/jointhehive-testhive-phr7/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center rounded-lg bg-sky-500 hover:bg-sky-600 px-4 py-2 text-sm font-semibold text-white shadow"
-            >
-              Book a Call
-            </a>
-          </div> */}
         </div>
       </div>
 

@@ -1,0 +1,128 @@
+// src/components/PlatformSection.jsx
+import { motion as Motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { Sparkles, FileSearch, Play, Users } from "lucide-react";
+
+const features = [
+  {
+    icon: Sparkles,
+    color: "sky",
+    title: "AI Test Generation",
+    desc: "Write BDD/Gherkin scenarios and let AI generate production-ready Playwright test code in seconds.",
+  },
+  {
+    icon: FileSearch,
+    color: "violet",
+    title: "Document Analysis",
+    desc: "Upload requirements documents — the AI extracts test scenarios and user stories automatically.",
+  },
+  {
+    icon: Play,
+    color: "emerald",
+    title: "One-Click Execution",
+    desc: "Run your tests with a single click and get detailed results, logs, and video recordings.",
+  },
+  {
+    icon: Users,
+    color: "amber",
+    title: "Team Collaboration",
+    desc: "Multi-project workspace with folders, schedules, notifications, and team management built in.",
+  },
+];
+
+const colorMap = {
+  sky: "bg-sky-100 text-sky-600",
+  violet: "bg-violet-100 text-violet-600",
+  emerald: "bg-emerald-100 text-emerald-600",
+  amber: "bg-amber-100 text-amber-600",
+};
+
+export default function PlatformSection() {
+  return (
+    <section className="py-20 bg-gradient-to-b from-white via-sky-50/60 to-white border-t border-slate-100">
+      <div className="mx-auto max-w-6xl px-6">
+        {/* Heading */}
+        <Motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-14"
+        >
+          <span className="inline-block rounded-full bg-sky-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-sky-700 mb-4">
+            Our Platform
+          </span>
+          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+            Meet TestHive <span className="text-sky-500">Platform</span>
+          </h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+            AI-powered test automation that turns your requirements into executable tests.
+            Write scenarios, generate code, run tests — all from one place.
+          </p>
+        </Motion.div>
+
+        {/* Feature grid */}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-14">
+          {features.map((f, i) => (
+            <Motion.div
+              key={f.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.45, delay: i * 0.08 }}
+              className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-lg transition-shadow"
+            >
+              <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${colorMap[f.color]} mb-4`}>
+                <f.icon className="h-5 w-5" />
+              </div>
+              <h3 className="text-base font-semibold text-slate-900 mb-2">{f.title}</h3>
+              <p className="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
+            </Motion.div>
+          ))}
+        </div>
+
+        {/* Mockup / visual */}
+        <Motion.div
+          initial={{ opacity: 0, scale: 0.96 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.5 }}
+          className="relative rounded-2xl border border-slate-200 bg-gradient-to-br from-sky-100 via-violet-100 to-emerald-100 p-1 shadow-soft mb-12"
+        >
+          <div className="rounded-xl bg-white/80 backdrop-blur p-8 md:p-12 text-center">
+            <div className="mx-auto max-w-lg">
+              <img
+                src="/assets/testHive.png"
+                alt="TestHive Platform"
+                className="mx-auto h-16 w-16 rounded-xl shadow-sm mb-6"
+              />
+              <h3 className="text-xl font-bold text-slate-900 mb-3">
+                From requirements to test results in minutes
+              </h3>
+              <p className="text-slate-600 mb-6">
+                No coding experience needed. Write what you want to test in plain language,
+                and let AI handle the rest. See results, fix failures with AI, and ship with confidence.
+              </p>
+              <div className="flex items-center justify-center gap-4 flex-wrap">
+                <a
+                  href="https://aithentic.testhive.ma"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition"
+                >
+                  Try the Platform
+                </a>
+                <Link
+                  to="/platform"
+                  className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-6 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Motion.div>
+      </div>
+    </section>
+  );
+}

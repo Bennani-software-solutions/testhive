@@ -82,7 +82,7 @@ export default function AcceleratorQualifyModal({ onClose }) {
                 </p>
 
                 <form onSubmit={onSubmit} className="mt-5 grid gap-3">
-                    {/* Basic Contact Info */}
+                    <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
                     <input
                         type="text"
                         name="name"
