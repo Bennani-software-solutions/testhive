@@ -23,6 +23,7 @@ import ToAutomateOrNotToAutomate from "./pages/blog/ToAutomateOrNotToAutomate";
 import CaseStudies from "./pages/CaseStudies";
 import Integrations from "./pages/Integrations";
 import KnowledgeBase from "./pages/KnowledgeBase";
+import DocsArticle from "./pages/DocsArticle";
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route path="case-studies" element={<CaseStudies />} />
         <Route path="integrations" element={<Integrations />} />
         <Route path="docs" element={<KnowledgeBase />} />
+        <Route path="docs/:slug" element={<DocsArticle />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

@@ -10,7 +10,7 @@ import CaseStudiesPreview from '../components/CaseStudiesPreview'
 import useDevMode from '../hooks/useDevMode'
 
 export default function Home() {
-  const { onBook, calendlyUrl } = useOutletContext()
+  const { onBook } = useOutletContext()
   const isDev = useDevMode()
 
   return (
@@ -22,7 +22,7 @@ export default function Home() {
       <Logos />
       {isDev && <CaseStudiesPreview />}
       <QAProcessSection />
-      <CTA onBook={onBook} calendlyUrl={calendlyUrl} />
+      <CTA onBook={onBook} />
     </>
   )
 }
