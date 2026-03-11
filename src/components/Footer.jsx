@@ -1,8 +1,16 @@
 // src/components/Footer.jsx
 import { Link } from "react-router-dom";
-import { motion as Motion } from "framer-motion";
 import { Linkedin, MessageCircle } from "lucide-react";
 import useDevMode from "../hooks/useDevMode";
+
+const services = [
+  ["Test Automation", "/services/automation"],
+  ["Functional Testing", "/services/functional-testing"],
+  ["Pen Testing", "/services/pen-testing"],
+  ["Consulting", "/services/consulting"],
+  ["Mentoring", "/services/mentoring"],
+  ["QA Outsourcing", "/services/qa-outsourcing"],
+];
 
 export default function Footer() {
   const isDev = useDevMode();
@@ -11,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-50 border-t border-slate-200 py-12">
-      <div className="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-3">
+      <div className="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-4">
         {/* Brand */}
         <div>
           <img src="/assets/testHive.png" alt="TestHive" className="h-12 mb-3" />
@@ -20,75 +28,109 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Navigation */}
-        <div className="grid grid-cols-2 gap-6">
-          <div>
-            <h3 className="text-sm font-semibold text-slate-900 mb-2">Product</h3>
-            <ul className="space-y-2 text-sm mb-4">
-              <li><Link to="/platform" className="hover:text-indigo-600">TestHive Platform</Link></li>
-            </ul>
-            <h3 className="text-sm font-semibold text-slate-900 mb-2">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li><Link to="/services/automation" className="hover:text-indigo-600">Automation</Link></li>
-              <li><Link to="/services/functional-testing" className="hover:text-indigo-600">Functional Testing</Link></li>
-              <li><Link to="/services/pen-testing" className="hover:text-indigo-600">Pen Testing</Link></li>
-              <li><Link to="/services/mentoring" className="hover:text-indigo-600">Mentoring</Link></li>
-              <li><Link to="/services/qa-outsourcing" className="hover:text-indigo-600">QA Outsourcing</Link></li>
-              <li><Link to="/services/consulting" className="hover:text-indigo-600">Consulting</Link></li>
-            </ul>
+        {/* Product & Services */}
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900 mb-3">Product</h3>
+          <ul className="space-y-2 text-sm mb-5">
+            <li>
+              <Link to="/platform" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                TestHive Platform
+              </Link>
+            </li>
+            <li>
+              <Link to="/pricing" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                Pricing
+              </Link>
+            </li>
+          </ul>
+
+          <h3 className="text-sm font-semibold text-slate-900 mb-3">Services</h3>
+          <ul className="space-y-2 text-sm">
+            {services.map(([label, path]) => (
+              <li key={path}>
+                <Link to={path} className="text-slate-600 hover:text-indigo-600 transition-colors">
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Resources */}
+        <div>
+          <h3 className="text-sm font-semibold text-slate-900 mb-3">Resources</h3>
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link to="/whytesthive" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                Why TestHive?
+              </Link>
+            </li>
+            <li>
+              <Link to="/blog" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link to="/faq" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                FAQ
+              </Link>
+            </li>
             {isDev && (
               <>
-                <h3 className="text-sm font-semibold text-slate-900 mb-2 mt-4">Resources</h3>
-                <ul className="space-y-2 text-sm">
-                  <li><Link to="/case-studies" className="hover:text-indigo-600">Case Studies</Link></li>
-                  <li><Link to="/integrations" className="hover:text-indigo-600">Integrations</Link></li>
-                  <li><Link to="/docs" className="hover:text-indigo-600">Knowledge Base</Link></li>
-                </ul>
+                <li>
+                  <Link to="/case-studies" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                    Case Studies
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/integrations" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                    Integrations
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/docs" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                    Knowledge Base
+                  </Link>
+                </li>
               </>
             )}
-          </div>
-          {/* Contact info added */}
-        <div className="text-sm font-sm text-slate-900 mb-2">
-            <div>
-              <h3 className="text-sm font-semibold text-slate-900 mb-2">Contact</h3>
-              📞 <a href="tel:+212715931703" className="hover:text-indigo-600">
-                +212 715 931 703
-              </a>
-            </div>
-            <div>
-              ✉️ <a href="mailto:support@testhive.ma" className="hover:text-indigo-600">
-                support@testhive.ma
-              </a>
-            </div>
-            <div>
-              📍 Qtr Almatar, Nador, Morocco
-            </div>
-          </div>
-
+          </ul>
         </div>
 
         {/* Contact & Socials */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-900 mb-2">Book a Free Consultation</h3>
-          <div className="flex items-center gap-4 mt-3">
+          <h3 className="text-sm font-semibold text-slate-900 mb-3">Contact</h3>
+          <ul className="space-y-2 text-sm text-slate-600">
+            <li>
+              <a href="tel:+212715931703" className="hover:text-indigo-600 transition-colors">
+                +212 715 931 703
+              </a>
+            </li>
+            <li>
+              <a href="mailto:support@testhive.ma" className="hover:text-indigo-600 transition-colors">
+                support@testhive.ma
+              </a>
+            </li>
+            <li>Qtr Almatar, Nador, Morocco</li>
+          </ul>
+
+          <div className="flex items-center gap-4 mt-5">
             <a
-              id="lnk-footer-linkedin"
               href="https://www.linkedin.com/company/testhive-nador"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-700 hover:text-indigo-600"
+              className="flex items-center gap-2 text-sm text-slate-600 hover:text-indigo-600 transition-colors"
             >
-              <Linkedin className="h-5 w-5" />
+              <Linkedin className="h-4 w-4" />
               LinkedIn
             </a>
             <a
-              id="lnk-footer-whatsapp"
               href={whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-700 hover:text-green-600"
+              className="flex items-center gap-2 text-sm text-slate-600 hover:text-green-600 transition-colors"
             >
-              <MessageCircle className="h-5 w-5" />
+              <MessageCircle className="h-4 w-4" />
               WhatsApp
             </a>
           </div>
@@ -97,7 +139,7 @@ export default function Footer() {
 
       {/* Bottom */}
       <div className="mt-10 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
-        © {new Date().getFullYear()} TestHive. All rights reserved.
+        &copy; {new Date().getFullYear()} TestHive. All rights reserved.
       </div>
     </footer>
   );

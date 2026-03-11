@@ -1,7 +1,7 @@
 
 // src/components/Navbar.jsx
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui";
 import useDevMode from "../hooks/useDevMode";
@@ -10,19 +10,29 @@ const base = "text-sm font-medium transition-colors";
 const active = "text-indigo-600 font-semibold";
 const idle = "text-slate-600 hover:text-slate-900";
 
+const services = [
+  ["Test Automation", "/services/automation"],
+  ["Functional Testing", "/services/functional-testing"],
+  ["Pen Testing", "/services/pen-testing"],
+  ["Consulting", "/services/consulting"],
+  ["Mentoring", "/services/mentoring"],
+  ["QA Outsourcing", "/services/qa-outsourcing"],
+];
+
 export default function Navbar({ onBook }) {
   const isDev = useDevMode();
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
+  const dropdownRef = useRef(null);
 
-  const toggleDropdown = () => {
-    setOpenDropdown((cur) => (cur === "services" ? null : "services"));
-  };
-
-  const closeAll = () => {
+  const closeAll = useCallback(() => {
     setOpenDropdown(null);
     setMobileOpen(false);
+  }, []);
+
+  const toggleDropdown = (name) => {
+    setOpenDropdown((cur) => (cur === name ? null : name));
   };
 
   const handleNavigate = (path) => {
@@ -30,11 +40,47 @@ export default function Navbar({ onBook }) {
     setTimeout(() => closeAll(), 120);
   };
 
+  // Close dropdown on click outside
   useEffect(() => {
-    const handleKey = (e) => e.key === "Escape" && setMobileOpen(false);
+    const handleClick = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setOpenDropdown(null);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
+  // Close on Escape
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        setOpenDropdown(null);
+      }
+    };
     window.addEventListener("keydown", handleKey);
     return () => window.removeEventListener("keydown", handleKey);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
+  const resources = [
+    ["Why TestHive?", "/whytesthive"],
+    ["Blog", "/blog"],
+    ["FAQ", "/faq"],
+    ...(isDev
+      ? [
+          ["Case Studies", "/case-studies"],
+          ["Integrations", "/integrations"],
+          ["Knowledge Base", "/docs"],
+        ]
+      : []),
+  ];
 
   return (
     <>
@@ -55,30 +101,26 @@ export default function Navbar({ onBook }) {
           </Link>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-7" ref={dropdownRef}>
             <NavLink
               to="/platform"
-              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+              className={({ isActive: a }) => `${base} ${a ? active : idle}`}
             >
               Platform
             </NavLink>
 
-            <NavLink
-              to="/whytesthive"
-              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-            >
-              Why TestHive?
-            </NavLink>
-
             {/* Services dropdown */}
-            <div className="relative services-dropdown">
+            <div className="relative">
               <button
-                onClick={toggleDropdown}
+                onClick={() => toggleDropdown("services")}
                 className={`${base} ${idle} flex items-center gap-1`}
                 aria-haspopup="menu"
                 aria-expanded={openDropdown === "services"}
               >
-                Services <ChevronDown className="h-4 w-4" />
+                Services{" "}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${openDropdown === "services" ? "rotate-180" : ""}`}
+                />
               </button>
 
               {openDropdown === "services" && (
@@ -86,17 +128,12 @@ export default function Navbar({ onBook }) {
                   role="menu"
                   className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
                 >
-                  {[
-                    ["Test Automation", "/services/automation"],
-                    ["Functional Testing", "/services/functional-testing"],
-                    ["Pen Testing", "/services/pen-testing"],
-                    ["Mentoring", "/services/mentoring"],
-                    ["QA Outsourcing", "/services/qa-outsourcing"],
-                  ].map(([label, path]) => (
+                  {services.map(([label, path]) => (
                     <button
                       key={path}
+                      role="menuitem"
                       onClick={() => handleNavigate(path)}
-                      className="block w-full text-left px-3 py-2 hover:bg-slate-50"
+                      className="block w-full text-left rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
                     >
                       {label}
                     </button>
@@ -106,41 +143,44 @@ export default function Navbar({ onBook }) {
             </div>
 
             <NavLink
-              to="/blog"
-              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+              to="/pricing"
+              className={({ isActive: a }) => `${base} ${a ? active : idle}`}
             >
-              Blog
+              Pricing
             </NavLink>
 
-            <NavLink
-              to="/faq"
-              className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-            >
-              FAQ
-            </NavLink>
+            {/* Resources dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => toggleDropdown("resources")}
+                className={`${base} ${idle} flex items-center gap-1`}
+                aria-haspopup="menu"
+                aria-expanded={openDropdown === "resources"}
+              >
+                Resources{" "}
+                <ChevronDown
+                  className={`h-4 w-4 transition-transform ${openDropdown === "resources" ? "rotate-180" : ""}`}
+                />
+              </button>
 
-            {isDev && (
-              <>
-                <NavLink
-                  to="/case-studies"
-                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+              {openDropdown === "resources" && (
+                <div
+                  role="menu"
+                  className="absolute left-0 mt-2 w-56 rounded-xl border border-slate-200 bg-white shadow-lg p-2 z-50"
                 >
-                  Case Studies
-                </NavLink>
-                <NavLink
-                  to="/integrations"
-                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-                >
-                  Integrations
-                </NavLink>
-                <NavLink
-                  to="/docs"
-                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
-                >
-                  Docs
-                </NavLink>
-              </>
-            )}
+                  {resources.map(([label, path]) => (
+                    <button
+                      key={path}
+                      role="menuitem"
+                      onClick={() => handleNavigate(path)}
+                      className="block w-full text-left rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-indigo-600 transition-colors"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <Button
               onClick={onBook}
@@ -161,7 +201,7 @@ export default function Navbar({ onBook }) {
         </div>
       </header>
 
-      {/* Mobile Drawer (outside header to fix visibility issue) */}
+      {/* Mobile Drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 bg-white z-[9999] p-6 overflow-y-auto animate-fade-in">
           <div className="flex justify-between items-center mb-6">
@@ -181,57 +221,68 @@ export default function Navbar({ onBook }) {
             </button>
           </div>
 
-          <nav className="flex flex-col gap-2 text-slate-700">
+          <nav className="flex flex-col gap-1 text-slate-700">
             <NavLink
               to="/platform"
               onClick={closeAll}
-              className="block rounded-md px-2.5 py-2 hover:bg-slate-50"
+              className={({ isActive: a }) =>
+                `block rounded-lg px-3 py-2.5 text-sm font-medium ${a ? "bg-indigo-50 text-indigo-600" : "hover:bg-slate-50"}`
+              }
             >
               Platform
             </NavLink>
 
-            <NavLink
-              to="/whytesthive"
-              onClick={closeAll}
-              className="block rounded-md px-2.5 py-2 hover:bg-slate-50"
-            >
-              Why TestHive?
-            </NavLink>
-
-            <details open className="services-dropdown">
-              <summary className="cursor-pointer flex items-center justify-between px-2.5 py-2 rounded-md hover:bg-slate-50">
-                <span>Services</span> <ChevronDown className="h-4 w-4" />
+            <details className="group">
+              <summary className="cursor-pointer flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-50">
+                <span>Services</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
               </summary>
-              <div className="mt-2 pl-3 space-y-1">
-                <NavLink to="/services/automation" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Test Automation</NavLink>
-                <NavLink to="/services/functional-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Functional Testing</NavLink>
-                <NavLink to="/services/pen-testing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Pen Testing</NavLink>
-                <NavLink to="/services/mentoring" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">Mentoring</NavLink>
-                <NavLink to="/services/qa-outsourcing" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">QA Outsourcing</NavLink>
+              <div className="mt-1 ml-3 border-l border-slate-200 pl-3 space-y-0.5">
+                {services.map(([label, path]) => (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    onClick={closeAll}
+                    className={({ isActive: a }) =>
+                      `block rounded-lg px-3 py-2 text-sm ${a ? "bg-indigo-50 text-indigo-600 font-medium" : "text-slate-600 hover:bg-slate-50"}`
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                ))}
               </div>
             </details>
 
-            <NavLink to="/blog" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-              Blog
+            <NavLink
+              to="/pricing"
+              onClick={closeAll}
+              className={({ isActive: a }) =>
+                `block rounded-lg px-3 py-2.5 text-sm font-medium ${a ? "bg-indigo-50 text-indigo-600" : "hover:bg-slate-50"}`
+              }
+            >
+              Pricing
             </NavLink>
 
-            <NavLink to="/faq" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-              FAQ
-            </NavLink>
-
-            {isDev && (
-              <>
-                <NavLink to="/case-studies" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                  Case Studies
-                </NavLink>
-                <NavLink to="/integrations" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                  Integrations
-                </NavLink>
-                <NavLink to="/docs" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
-                  Docs
-                </NavLink>
-              </>
-            )}
+            <details className="group">
+              <summary className="cursor-pointer flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-50">
+                <span>Resources</span>
+                <ChevronDown className="h-4 w-4 transition-transform group-open:rotate-180" />
+              </summary>
+              <div className="mt-1 ml-3 border-l border-slate-200 pl-3 space-y-0.5">
+                {resources.map(([label, path]) => (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    onClick={closeAll}
+                    className={({ isActive: a }) =>
+                      `block rounded-lg px-3 py-2 text-sm ${a ? "bg-indigo-50 text-indigo-600 font-medium" : "text-slate-600 hover:bg-slate-50"}`
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                ))}
+              </div>
+            </details>
 
             <Button
               onClick={() => {
