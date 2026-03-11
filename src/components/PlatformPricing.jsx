@@ -8,7 +8,7 @@ const tiers = [
     price: "€0",
     period: "forever",
     badge: "Get Started",
-    badgeColor: "bg-sky-50 text-sky-700",
+    badgeColor: "bg-cyan-50 text-cyan-700",
     highlight: false,
     features: [
       "Up to 3 projects",
@@ -45,7 +45,7 @@ const tiers = [
     ],
     cta: "Start 14-Day Trial",
     ctaStyle:
-      "bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 text-white shadow-md hover:brightness-110",
+      "bg-gradient-to-r from-cyan-400 to-violet-500 text-white shadow-md hover:brightness-110",
   },
   {
     name: "Enterprise",
@@ -75,7 +75,7 @@ export default function PlatformPricing() {
   return (
     <Section id="platform-pricing" className="bg-slate-50 border-t border-gray-200">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 mb-4">
+        <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-semibold text-cyan-700 mb-4">
           DUMMY DATA — PLACEHOLDER
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">

@@ -7,7 +7,7 @@ import { Button } from "./ui";
 import useDevMode from "../hooks/useDevMode";
 
 const base = "text-sm font-medium transition-colors";
-const active = "text-sky-600 font-semibold";
+const active = "text-cyan-600 font-semibold";
 const idle = "text-slate-600 hover:text-slate-900";
 
 export default function Navbar({ onBook }) {
@@ -50,7 +50,7 @@ export default function Navbar({ onBook }) {
               className="rounded-md"
             />
             <span className="text-xl font-bold tracking-tight">
-              test<span className="text-sky-500">Hive</span>
+              test<span className="text-cyan-500">Hive</span>
             </span>
           </Link>
 
@@ -144,7 +144,7 @@ export default function Navbar({ onBook }) {
 
             <Button
               onClick={onBook}
-              className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+              className="ml-2 bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
             >
               Book a Free Consultation
             </Button>
@@ -173,7 +173,7 @@ export default function Navbar({ onBook }) {
                 alt="TestHive"
               />
               <span className="text-xl font-bold tracking-tight">
-                test<span className="text-sky-500">Hive</span>
+                test<span className="text-cyan-500">Hive</span>
               </span>
             </Link>
             <button onClick={() => setMobileOpen(false)} aria-label="Close menu">
@@ -238,7 +238,7 @@ export default function Navbar({ onBook }) {
                 closeAll();
                 onBook();
               }}
-              className="mt-4 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 w-full text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+              className="mt-4 bg-gradient-to-r from-cyan-400 to-violet-500 w-full text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
             >
               Book a Free Consultation
             </Button>

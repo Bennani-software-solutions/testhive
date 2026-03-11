@@ -16,7 +16,7 @@ export default function Pricing({
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
         {/* 1) FREE POC */}
         <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
-          <div className="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-medium text-sky-700">
+          <div className="inline-flex items-center rounded-full bg-cyan-50 px-3 py-1 text-xs font-medium text-cyan-700">
             No-commitment
           </div>
 
@@ -42,7 +42,7 @@ export default function Pricing({
           <div className="mt-6 grid gap-3">
             <button
               onClick={onBookClick}
-              className="w-full rounded-2xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
+              className="w-full rounded-2xl bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
               aria-label="Book a Free POC Call"
             >
               Book a Free POC Call
@@ -88,7 +88,7 @@ export default function Pricing({
           <div className="mt-6 grid gap-3">
             <a
               href={buyUrl}
-              className="w-full text-center rounded-2xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
+              className="w-full text-center rounded-2xl bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-3 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
               aria-label="Buy the Quality Accelerator Pack"
             >
               Buy Now
@@ -162,7 +162,7 @@ export default function Pricing({
                   <input
                     required
                     name="name"
-                    className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300"
+                    className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300"
                   />
                 </div>
                 <div>
@@ -172,7 +172,7 @@ export default function Pricing({
                     type="email"
                     name="email"
                     inputMode="email"
-                    className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300"
+                    className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300"
                   />
                 </div>
               </div>
@@ -182,7 +182,7 @@ export default function Pricing({
                 <input
                   name="repo"
                   placeholder="e.g. https://github.com/org/app (or staging URL)"
-                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300"
+                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300"
                 />
               </div>
 
@@ -212,7 +212,7 @@ export default function Pricing({
                   name="journey"
                   rows={3}
                   placeholder="Describe the 1–2 test cases you want automated"
-                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-300"
+                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300"
                 />
               </div>
 
@@ -227,7 +227,7 @@ export default function Pricing({
               <div className="mt-2 flex items-center gap-3">
                 <button
                   type="submit"
-                  className="rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
+                  className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
                 >
                   Submit Request
                 </button>
@@ -236,7 +236,7 @@ export default function Pricing({
                     href={calendlyUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="text-sm font-medium text-sky-600 hover:text-sky-700"
+                    className="text-sm font-medium text-cyan-600 hover:text-cyan-700"
                   >
                     Or book a call
                   </a>

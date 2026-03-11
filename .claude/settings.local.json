@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs grep:*)",
+      "Bash(grep:*)",
+      "Bash(npm run:*)",
+      "Bash(xargs:*)",
+      "Bash(npx vite:*)",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"from-sky-400 via-emerald-400 to-violet-500\" src/ | while read f; do sed -i 's/from-sky-400 via-emerald-400 to-violet-500/from-cyan-400 to-violet-500/g' \"$f\"; done && echo \"Done: gradient replacement\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-500\" src/ | while read f; do sed -i 's/text-sky-500/text-cyan-500/g' \"$f\"; done && echo \"Done: text-sky-500 replacement\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-600\" src/ | while read f; do sed -i 's/text-sky-600/text-cyan-600/g' \"$f\"; done && echo \"Done: text-sky-600 replacement\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"bg-sky-100\" src/ | while read f; do sed -i 's/bg-sky-100/bg-cyan-100/g' \"$f\"; done && echo \"Done: bg-sky-100\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-700\" src/ | while read f; do sed -i 's/text-sky-700/text-cyan-700/g' \"$f\"; done && echo \"Done: text-sky-700\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"bg-sky-50\" src/ | while read f; do sed -i 's/bg-sky-50/bg-cyan-50/g' \"$f\"; done && echo \"Done: bg-sky-50\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-300\" src/ | while read f; do sed -i 's/text-sky-300/text-cyan-300/g' \"$f\"; done && echo \"Done: text-sky-300\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"ring-sky-300\" src/ | while read f; do sed -i 's/ring-sky-300/ring-cyan-300/g' \"$f\"; done && echo \"Done: ring-sky-300\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"border-sky-\" src/ | while read f; do sed -i 's/border-sky-/border-cyan-/g' \"$f\"; done && echo \"Done: border-sky\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"focus:ring-sky\" src/ | while read f; do sed -i 's/focus:ring-sky/focus:ring-cyan/g' \"$f\"; done && echo \"Done: focus:ring-sky\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"sky-50/60\" src/ | while read f; do sed -i 's/sky-50\\\\/60/cyan-50\\\\/60/g' \"$f\"; done && grep -rl \"emerald-50/60\" src/ | while read f; do sed -i 's/emerald-50\\\\/60/violet-50\\\\/40/g' \"$f\"; done && echo \"Done: gradient backgrounds\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"bg-sky-500\" src/ | while read f; do sed -i 's/bg-sky-500/bg-cyan-500/g' \"$f\"; done && echo \"Done: bg-sky-500\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"hover:text-sky\" src/ | while read f; do sed -i 's/hover:text-sky-/hover:text-cyan-/g' \"$f\"; done && echo \"Done: hover:text-sky\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"from-sky-50\" src/ | while read f; do sed -i 's/from-sky-50/from-cyan-50/g' \"$f\"; done && echo \"done 1\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"via-sky-50\" src/ | while read f; do sed -i 's/via-sky-50/via-cyan-50/g' \"$f\"; done && echo \"done 2\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"from-sky-100\" src/ | while read f; do sed -i 's/from-sky-100/from-cyan-100/g' \"$f\"; done && echo \"done 3\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"to-emerald-50\" src/ | while read f; do sed -i 's/to-emerald-50/to-violet-50/g' \"$f\"; done && echo \"done 4\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"to-emerald-100\" src/ | while read f; do sed -i 's/to-emerald-100/to-amber-100/g' \"$f\"; done && echo \"done 5\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"from-sky-500\" src/ | while read f; do sed -i 's/from-sky-500/from-cyan-500/g' \"$f\"; done && grep -rl \"to-emerald-500\" src/ | while read f; do sed -i 's/to-emerald-500/to-violet-500/g' \"$f\"; done && echo \"done 6\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"via-emerald-400\" src/ | while read f; do sed -i 's/via-emerald-400 //g' \"$f\"; done && echo \"done 7\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-400\" src/ | while read f; do sed -i 's/text-sky-400/text-cyan-400/g' \"$f\"; done && echo \"done 8\")",
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-100\" src/ | while read f; do sed -i 's/text-sky-100/text-cyan-100/g' \"$f\"; done && grep -rl \"ring-sky-100\" src/ | while read f; do sed -i 's/ring-sky-100/ring-cyan-100/g' \"$f\"; done && echo \"done 9\")"
+    ]
+  }
+}

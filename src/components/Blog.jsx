@@ -46,7 +46,7 @@ export default function Blog() {
               )}
               <div className="p-5">
                 <div className="flex items-center gap-3 text-xs text-gray-500">
-                  <span className="inline-flex items-center rounded-full bg-sky-50 px-2 py-1 font-medium text-sky-700">
+                  <span className="inline-flex items-center rounded-full bg-cyan-50 px-2 py-1 font-medium text-cyan-700">
                     {p.tag}
                   </span>
                   <time dateTime={p.date}>
@@ -59,7 +59,7 @@ export default function Blog() {
                 <p className="mt-2 text-sm text-gray-600">{p.excerpt}</p>
                 <Link
                   to={p.href}
-                  className="mt-4 inline-block text-sm font-medium text-sky-600 hover:text-sky-700"
+                  className="mt-4 inline-block text-sm font-medium text-cyan-600 hover:text-cyan-700"
                 >
                   Read more →
                 </Link>

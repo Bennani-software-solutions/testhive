@@ -25,24 +25,24 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-slate-900 mb-2">Product</h3>
             <ul className="space-y-2 text-sm mb-4">
-              <li><Link to="/platform" className="hover:text-sky-600">TestHive Platform</Link></li>
+              <li><Link to="/platform" className="hover:text-cyan-600">TestHive Platform</Link></li>
             </ul>
             <h3 className="text-sm font-semibold text-slate-900 mb-2">Services</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/services/automation" className="hover:text-sky-600">Automation</Link></li>
-              <li><Link to="/services/functional-testing" className="hover:text-sky-600">Functional Testing</Link></li>
-              <li><Link to="/services/pen-testing" className="hover:text-sky-600">Pen Testing</Link></li>
-              <li><Link to="/services/mentoring" className="hover:text-sky-600">Mentoring</Link></li>
-              <li><Link to="/services/qa-outsourcing" className="hover:text-sky-600">QA Outsourcing</Link></li>
-              <li><Link to="/services/consulting" className="hover:text-sky-600">Consulting</Link></li>
+              <li><Link to="/services/automation" className="hover:text-cyan-600">Automation</Link></li>
+              <li><Link to="/services/functional-testing" className="hover:text-cyan-600">Functional Testing</Link></li>
+              <li><Link to="/services/pen-testing" className="hover:text-cyan-600">Pen Testing</Link></li>
+              <li><Link to="/services/mentoring" className="hover:text-cyan-600">Mentoring</Link></li>
+              <li><Link to="/services/qa-outsourcing" className="hover:text-cyan-600">QA Outsourcing</Link></li>
+              <li><Link to="/services/consulting" className="hover:text-cyan-600">Consulting</Link></li>
             </ul>
             {isDev && (
               <>
                 <h3 className="text-sm font-semibold text-slate-900 mb-2 mt-4">Resources</h3>
                 <ul className="space-y-2 text-sm">
-                  <li><Link to="/case-studies" className="hover:text-sky-600">Case Studies</Link></li>
-                  <li><Link to="/integrations" className="hover:text-sky-600">Integrations</Link></li>
-                  <li><Link to="/docs" className="hover:text-sky-600">Knowledge Base</Link></li>
+                  <li><Link to="/case-studies" className="hover:text-cyan-600">Case Studies</Link></li>
+                  <li><Link to="/integrations" className="hover:text-cyan-600">Integrations</Link></li>
+                  <li><Link to="/docs" className="hover:text-cyan-600">Knowledge Base</Link></li>
                 </ul>
               </>
             )}
@@ -51,12 +51,12 @@ export default function Footer() {
         <div className="text-sm font-sm text-slate-900 mb-2">
             <div>
               <h3 className="text-sm font-semibold text-slate-900 mb-2">Contact</h3>
-              📞 <a href="tel:+212715931703" className="hover:text-sky-600">
+              📞 <a href="tel:+212715931703" className="hover:text-cyan-600">
                 +212 715 931 703
               </a>
             </div>
             <div>
-              ✉️ <a href="mailto:support@testhive.ma" className="hover:text-sky-600">
+              ✉️ <a href="mailto:support@testhive.ma" className="hover:text-cyan-600">
                 support@testhive.ma
               </a>
             </div>
@@ -76,7 +76,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/testhive-nador"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-slate-700 hover:text-sky-600"
+              className="flex items-center gap-2 text-slate-700 hover:text-cyan-600"
             >
               <Linkedin className="h-5 w-5" />
               LinkedIn

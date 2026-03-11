@@ -31,7 +31,7 @@ export default function FAQ() {
   return (
     <section
       id="faq"
-      className="relative py-16 bg-gradient-to-br from-white via-sky-50 to-emerald-50 border-t border-slate-200"
+      className="relative py-16 bg-gradient-to-br from-white via-cyan-50 to-violet-50 border-t border-slate-200"
     >
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         {/* Header */}
@@ -62,7 +62,7 @@ export default function FAQ() {
                 <span className="font-semibold text-slate-900">{item.q}</span>
                 <ArrowRight
                   className={`h-5 w-5 text-slate-600 transition-transform duration-300 ${
-                    open === i ? "rotate-90 text-sky-600" : ""
+                    open === i ? "rotate-90 text-cyan-600" : ""
                   }`}
                 />
               </button>
@@ -88,7 +88,7 @@ export default function FAQ() {
           <p className="text-slate-700 mb-3">Didn’t find your answer?</p>
           <button
             onClick={() => setShowForm(true)}
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-emerald-500 text-white px-6 py-3 font-semibold shadow-md hover:brightness-110 active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 text-white px-6 py-3 font-semibold shadow-md hover:brightness-110 active:scale-95"
           >
             <MessageSquare className="h-5 w-5" />
             Book a Free Consultation
@@ -114,6 +114,7 @@ export default function FAQ() {
             </div>
           </div>
         )}
+
       </div>
     </section>
   );

@@ -39,7 +39,7 @@ export default function Hero({ onBook }) {
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900"
             >
               Automate your most <br className="hidden sm:block" />
-              critical tests in <span className="text-sky-600">90 days</span>
+              critical tests in <span className="text-cyan-500">90 days</span>
             </Motion.h1>
 
             <Motion.p
@@ -74,7 +74,7 @@ export default function Hero({ onBook }) {
                     }, 500);
                   }
                 }}
-                className="inline-flex items-center rounded-xl bg-sky-500 hover:bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
+                className="inline-flex items-center rounded-xl bg-cyan-500 hover:bg-cyan-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
               >
                 Explore Our Packages
               </HashLink>
@@ -83,7 +83,7 @@ export default function Hero({ onBook }) {
               <button
                 id="btn-book-call-hero"
                 onClick={onBook}
-                className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95"
+                className="inline-flex items-center rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95"
               >
                 Book a Free Consultation
               </button>
@@ -104,7 +104,7 @@ export default function Hero({ onBook }) {
 
           {/* RIGHT IMAGE */}
           <Motion.figure initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-gradient-to-br from-sky-100 via-violet-100 to-amber-100 flex items-center justify-center">
+            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-gradient-to-br from-cyan-100 via-violet-100 to-amber-100 flex items-center justify-center">
               {imgOk && (
                 <img src="/assets/HERO.png" alt="TestHive hero illustration" className="h-full w-full object-contain" onError={() => setImgOk(false)} />
               )}

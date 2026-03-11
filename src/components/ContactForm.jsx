@@ -54,27 +54,27 @@ export default function InfoRequestForm({ onSuccess }) {
                 name="name"
                 placeholder="Your name"
                 required
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             />
             <input
                 type="email"
                 name="email"
                 placeholder="Your email"
                 required
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             />
             <textarea
                 name="message"
                 placeholder="Tell us what you’d like to know..."
                 rows="4"
                 required
-                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-sky-400 focus:outline-none"
+                className="w-full rounded-lg border border-slate-200 px-3 py-2 text-sm focus:ring-2 focus:ring-cyan-400 focus:outline-none"
             />
 
             <button
                 type="submit"
                 disabled={status === "sending"}
-                className="w-full rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 active:scale-95 disabled:opacity-70"
+                className="w-full rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:brightness-110 active:scale-95 disabled:opacity-70"
             >
                 {status === "sending" ? "Sending..." : "Send Message"}
             </button>

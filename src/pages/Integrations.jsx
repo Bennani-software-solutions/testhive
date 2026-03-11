@@ -73,7 +73,7 @@ export default function Integrations() {
   return (
     <Section className="bg-white">
       <div className="text-center mb-16">
-        <div className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 mb-4">
+        <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-semibold text-cyan-700 mb-4">
           DUMMY DATA — PLACEHOLDER
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
@@ -121,7 +121,7 @@ export default function Integrations() {
       </div>
 
       {/* Request Integration CTA */}
-      <div className="mt-20 text-center rounded-3xl bg-gradient-to-r from-sky-50 to-emerald-50 p-10 border border-sky-100">
+      <div className="mt-20 text-center rounded-3xl bg-gradient-to-r from-cyan-50 to-violet-50 p-10 border border-cyan-100">
         <h2 className="text-2xl font-bold text-slate-900">
           Don't see your tool?
         </h2>
@@ -129,7 +129,7 @@ export default function Integrations() {
           We're constantly adding new integrations. Let us know what tools
           you'd like to see supported.
         </p>
-        <button className="mt-6 rounded-2xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition">
+        <button className="mt-6 rounded-2xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition">
           Request an Integration
         </button>
       </div>

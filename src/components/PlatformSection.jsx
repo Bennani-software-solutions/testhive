@@ -31,7 +31,7 @@ const features = [
 ];
 
 const colorMap = {
-  sky: "bg-sky-100 text-sky-600",
+  sky: "bg-cyan-100 text-cyan-600",
   violet: "bg-violet-100 text-violet-600",
   emerald: "bg-emerald-100 text-emerald-600",
   amber: "bg-amber-100 text-amber-600",
@@ -39,7 +39,7 @@ const colorMap = {
 
 export default function PlatformSection() {
   return (
-    <section className="py-20 bg-gradient-to-b from-white via-sky-50/60 to-white border-t border-slate-100">
+    <section className="py-20 bg-gradient-to-b from-white via-cyan-50/60 to-white border-t border-slate-100">
       <div className="mx-auto max-w-6xl px-6">
         {/* Heading */}
         <Motion.div
@@ -49,11 +49,11 @@ export default function PlatformSection() {
           transition={{ duration: 0.5 }}
           className="text-center mb-14"
         >
-          <span className="inline-block rounded-full bg-sky-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-sky-700 mb-4">
+          <span className="inline-block rounded-full bg-cyan-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-700 mb-4">
             Our Platform
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-            Meet TestHive <span className="text-sky-500">Platform</span>
+            Meet TestHive <span className="text-cyan-500">Platform</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
             AI-powered test automation that turns your requirements into executable tests.
@@ -87,7 +87,7 @@ export default function PlatformSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.5 }}
-          className="relative rounded-2xl border border-slate-200 bg-gradient-to-br from-sky-100 via-violet-100 to-emerald-100 p-1 shadow-soft mb-12"
+          className="relative rounded-2xl border border-slate-200 bg-gradient-to-br from-cyan-100 via-violet-100 to-amber-100 p-1 shadow-soft mb-12"
         >
           <div className="rounded-xl bg-white/80 backdrop-blur p-8 md:p-12 text-center">
             <div className="mx-auto max-w-lg">
@@ -108,7 +108,7 @@ export default function PlatformSection() {
                   href="https://aithentic.testhive.ma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-xl bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition"
+                  className="inline-flex items-center rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-2.5 text-sm font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition"
                 >
                   Try the Platform
                 </a>

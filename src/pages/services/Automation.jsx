@@ -93,7 +93,7 @@ export default function AutomationService() {
                 {/* Good candidates (evergreen) */}
                 <div className="grid md:grid-cols-3 gap-6 text-slate-700 mb-12">
                     <div className="p-6 rounded-xl border shadow-sm hover:shadow-md transition">
-                        <Zap className="h-8 w-8 text-sky-500 mb-3" />
+                        <Zap className="h-8 w-8 text-cyan-500 mb-3" />
                         <h3 className="font-semibold text-lg">Smoke and Regression</h3>
                         <p>Core flows you run often and rely on. These give fast wins and steady value.</p>
                     </div>
@@ -134,10 +134,10 @@ export default function AutomationService() {
 
                         <div className="p-4 rounded-xl border">
                             <div className="flex items-center gap-2 mb-1">
-                                <Target className="h-5 w-5 text-sky-600" />
+                                <Target className="h-5 w-5 text-cyan-600" />
                                 <span className="font-medium">High impact · Low probability</span>
                             </div>
-                            <p className="text-sm text-sky-700">Consider with care</p>
+                            <p className="text-sm text-cyan-700">Consider with care</p>
                             <p className="mt-2 text-sm text-slate-700">
                                 Stable core flows. Fewer failures, but costly when they happen. Pick the best few.
                             </p>
@@ -214,7 +214,7 @@ export default function AutomationService() {
                                 <li>✔️ See value without risk and decide with data, not guesswork.</li>
                                 <li>✔️ Clear next steps if you choose to scale up later.</li>
                             </ul>
-                            <Link to="/pocdetails" className="text-sky-600 font-medium hover:underline">
+                            <Link to="/pocdetails" className="text-cyan-600 font-medium hover:underline">
                                 Start free →
                             </Link>
                         </div>
@@ -240,7 +240,7 @@ export default function AutomationService() {
                                 <li>✔️ Hands-on support from TestHive engineers who work with your team.</li>
                                 <li>✔️ Outcome focused and predictable, with care at every step.</li>
                             </ul>
-                            <Link to="/accelerator" className="text-sky-600 font-medium hover:underline">
+                            <Link to="/accelerator" className="text-cyan-600 font-medium hover:underline">
                                 See how it works →
                             </Link>
                         </div>
@@ -264,7 +264,7 @@ export default function AutomationService() {
                                 <li>✔️ A strategy that fits your stack and your roadmap.</li>
                                 <li>✔️ Continuous improvement across automation, functional testing, and quality gates.</li>
                             </ul>
-                            <Link to="/partnerprogram" className="text-sky-600 font-medium hover:underline">
+                            <Link to="/partnerprogram" className="text-cyan-600 font-medium hover:underline">
                                 Let’s talk →
                             </Link>
                         </div>

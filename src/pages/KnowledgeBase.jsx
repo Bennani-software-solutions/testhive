@@ -85,7 +85,7 @@ export default function KnowledgeBase() {
   return (
     <Section className="bg-white">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 mb-4">
+        <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-semibold text-cyan-700 mb-4">
           DUMMY DATA — PLACEHOLDER
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
@@ -106,7 +106,7 @@ export default function KnowledgeBase() {
             placeholder="Search documentation..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-2xl border border-gray-200 bg-slate-50 py-4 pl-12 pr-4 text-sm outline-none focus:ring-2 focus:ring-sky-300 focus:border-sky-300 transition"
+            className="w-full rounded-2xl border border-gray-200 bg-slate-50 py-4 pl-12 pr-4 text-sm outline-none focus:ring-2 focus:ring-cyan-300 focus:border-cyan-300 transition"
           />
         </div>
       </div>
@@ -124,8 +124,8 @@ export default function KnowledgeBase() {
               transition={{ duration: 0.4, delay: si * 0.05 }}
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="rounded-xl bg-sky-50 p-2.5">
-                  <Icon className="h-5 w-5 text-sky-600" />
+                <div className="rounded-xl bg-cyan-50 p-2.5">
+                  <Icon className="h-5 w-5 text-cyan-600" />
                 </div>
                 <h2 className="text-xl font-bold text-slate-900">
                   {section.title}
@@ -136,9 +136,9 @@ export default function KnowledgeBase() {
                 {section.articles.map((article) => (
                   <div
                     key={article.title}
-                    className="group rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-sky-200 transition cursor-pointer"
+                    className="group rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md hover:border-cyan-200 transition cursor-pointer"
                   >
-                    <h3 className="font-semibold text-slate-900 group-hover:text-sky-600 transition">
+                    <h3 className="font-semibold text-slate-900 group-hover:text-cyan-600 transition">
                       {article.title}
                     </h3>
                     <p className="mt-1 text-sm text-slate-600">{article.desc}</p>

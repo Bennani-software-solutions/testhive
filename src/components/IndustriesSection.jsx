@@ -20,8 +20,8 @@ const industries = [
     icon: CircleDollarSign,
     title: "Fintech",
     text: "We focus on transaction security and system stability. Our team specializes in penetration testing and stress testing for financial apps.",
-    tint: "from-sky-50 to-cyan-50",
-    iconTint: "bg-sky-50 text-sky-600",
+    tint: "from-cyan-50 to-cyan-50",
+    iconTint: "bg-cyan-50 text-cyan-600",
   },
   {
     icon: Users,

@@ -31,7 +31,7 @@ export default function CaseStudiesPreview() {
   return (
     <Section id="case-studies-preview" className="bg-white border-t border-gray-200">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 mb-4">
+        <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-semibold text-cyan-700 mb-4">
           DUMMY DATA — PLACEHOLDER
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
@@ -53,15 +53,15 @@ export default function CaseStudiesPreview() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
           >
-            <p className="text-xs font-semibold text-sky-600 uppercase tracking-wider">
+            <p className="text-xs font-semibold text-cyan-600 uppercase tracking-wider">
               {p.industry}
             </p>
             <h3 className="mt-1 text-lg font-bold text-slate-900">
               {p.company}
             </h3>
 
-            <div className="mt-4 rounded-xl bg-sky-50 p-4 text-center">
-              <div className="text-3xl font-extrabold text-sky-600">
+            <div className="mt-4 rounded-xl bg-cyan-50 p-4 text-center">
+              <div className="text-3xl font-extrabold text-cyan-600">
                 {p.metric}
               </div>
               <div className="text-sm text-slate-600 mt-1">{p.metricLabel}</div>
@@ -75,7 +75,7 @@ export default function CaseStudiesPreview() {
       <div className="text-center mt-10">
         <Link
           to="/case-studies"
-          className="inline-flex items-center gap-2 text-sky-600 font-semibold hover:text-sky-700 transition"
+          className="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:text-cyan-700 transition"
         >
           View all case studies <ArrowRight className="h-4 w-4" />
         </Link>

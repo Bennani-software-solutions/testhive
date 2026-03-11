@@ -68,7 +68,7 @@ export default function CaseStudies() {
     <>
       <Section className="bg-white">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center rounded-full bg-sky-50 px-4 py-1.5 text-xs font-semibold text-sky-700 mb-4">
+          <div className="inline-flex items-center rounded-full bg-cyan-50 px-4 py-1.5 text-xs font-semibold text-cyan-700 mb-4">
             DUMMY DATA — PLACEHOLDER
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
@@ -91,10 +91,10 @@ export default function CaseStudies() {
               className="rounded-3xl border border-gray-200 bg-white shadow-sm overflow-hidden"
             >
               {/* Header */}
-              <div className="bg-gradient-to-r from-sky-50 to-emerald-50 px-8 py-6 border-b border-gray-100">
+              <div className="bg-gradient-to-r from-cyan-50 to-violet-50 px-8 py-6 border-b border-gray-100">
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div>
-                    <p className="text-xs font-semibold text-sky-600 uppercase tracking-wider">
+                    <p className="text-xs font-semibold text-cyan-600 uppercase tracking-wider">
                       {cs.industry}
                     </p>
                     <h2 className="text-2xl font-bold text-slate-900 mt-1">
@@ -138,7 +138,7 @@ export default function CaseStudies() {
                       key={r.label}
                       className="text-center rounded-2xl bg-slate-50 p-5 border border-slate-100"
                     >
-                      <div className="text-3xl font-extrabold text-sky-600">
+                      <div className="text-3xl font-extrabold text-cyan-600">
                         {r.metric}
                       </div>
                       <div className="text-sm text-slate-600 mt-1">
@@ -149,7 +149,7 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Quote */}
-                <blockquote className="border-l-4 border-sky-400 pl-6 py-2">
+                <blockquote className="border-l-4 border-cyan-400 pl-6 py-2">
                   <p className="text-slate-700 italic">"{cs.quote}"</p>
                   <footer className="mt-3">
                     <span className="font-semibold text-slate-900">

@@ -33,7 +33,7 @@ export default function WhyTestHive({ onMeet }) {
   return (
     <section
       id="why-testhive"
-      className="relative py-20 bg-gradient-to-b from-white via-sky-50/60 to-emerald-50/60 border-t border-slate-200"
+      className="relative py-20 bg-gradient-to-b from-white via-cyan-50/60 to-violet-50/40 border-t border-slate-200"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
         {/* Heading */}
@@ -57,7 +57,7 @@ export default function WhyTestHive({ onMeet }) {
               className="rounded-2xl border border-slate-200 bg-white shadow-sm p-6 text-left hover:shadow-md transition"
             >
               <div className="flex items-center gap-3 mb-3">
-                <div className="h-10 w-10 rounded-xl bg-sky-50 text-sky-600 flex items-center justify-center">
+                <div className="h-10 w-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center">
                   <Icon className="h-5 w-5" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900">{title}</h3>
