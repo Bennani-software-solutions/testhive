@@ -4,12 +4,14 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { Button } from "./ui";
+import useDevMode from "../hooks/useDevMode";
 
 const base = "text-sm font-medium transition-colors";
 const active = "text-sky-600 font-semibold";
 const idle = "text-slate-600 hover:text-slate-900";
 
 export default function Navbar({ onBook }) {
+  const isDev = useDevMode();
   const [openDropdown, setOpenDropdown] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
@@ -117,6 +119,29 @@ export default function Navbar({ onBook }) {
               FAQ
             </NavLink>
 
+            {isDev && (
+              <>
+                <NavLink
+                  to="/case-studies"
+                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+                >
+                  Case Studies
+                </NavLink>
+                <NavLink
+                  to="/integrations"
+                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+                >
+                  Integrations
+                </NavLink>
+                <NavLink
+                  to="/docs"
+                  className={({ isActive }) => `${base} ${isActive ? active : idle}`}
+                >
+                  Docs
+                </NavLink>
+              </>
+            )}
+
             <Button
               onClick={onBook}
               className="ml-2 bg-gradient-to-r from-sky-400 via-emerald-400 to-violet-500 px-5 py-2 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
@@ -193,6 +218,20 @@ export default function Navbar({ onBook }) {
             <NavLink to="/faq" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
               FAQ
             </NavLink>
+
+            {isDev && (
+              <>
+                <NavLink to="/case-studies" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                  Case Studies
+                </NavLink>
+                <NavLink to="/integrations" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                  Integrations
+                </NavLink>
+                <NavLink to="/docs" onClick={closeAll} className="block rounded-md px-2.5 py-2 hover:bg-slate-50">
+                  Docs
+                </NavLink>
+              </>
+            )}
 
             <Button
               onClick={() => {

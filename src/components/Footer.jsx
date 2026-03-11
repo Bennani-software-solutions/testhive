@@ -2,8 +2,10 @@
 import { Link } from "react-router-dom";
 import { motion as Motion } from "framer-motion";
 import { Linkedin, MessageCircle } from "lucide-react";
+import useDevMode from "../hooks/useDevMode";
 
 export default function Footer() {
+  const isDev = useDevMode();
   const whatsappHref =
     "https://wa.me/212715931703?text=Hi%20TestHive%2C%20I%27m%20interested%20in%20your%20QA%20services.";
 
@@ -34,6 +36,16 @@ export default function Footer() {
               <li><Link to="/services/qa-outsourcing" className="hover:text-sky-600">QA Outsourcing</Link></li>
               <li><Link to="/services/consulting" className="hover:text-sky-600">Consulting</Link></li>
             </ul>
+            {isDev && (
+              <>
+                <h3 className="text-sm font-semibold text-slate-900 mb-2 mt-4">Resources</h3>
+                <ul className="space-y-2 text-sm">
+                  <li><Link to="/case-studies" className="hover:text-sky-600">Case Studies</Link></li>
+                  <li><Link to="/integrations" className="hover:text-sky-600">Integrations</Link></li>
+                  <li><Link to="/docs" className="hover:text-sky-600">Knowledge Base</Link></li>
+                </ul>
+              </>
+            )}
           </div>
           {/* Contact info added */}
         <div className="text-sm font-sm text-slate-900 mb-2">

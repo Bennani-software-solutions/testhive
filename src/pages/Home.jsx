@@ -6,9 +6,13 @@ import CTA from '../components/CTA'
 import PlatformSection from '../components/PlatformSection'
 import WhyTestHiveSection from '../components/WhyTestHive'
 import QAProcessSection from '../components/QAProcessSection'
+import CaseStudiesPreview from '../components/CaseStudiesPreview'
+import useDevMode from '../hooks/useDevMode'
 
 export default function Home() {
   const { onBook, calendlyUrl } = useOutletContext()
+  const isDev = useDevMode()
+
   return (
     <>
       <Hero onBook={onBook} />
@@ -16,6 +20,7 @@ export default function Home() {
       <PlatformSection />
       <WhyTestHiveSection onBook={onBook} />
       <Logos />
+      {isDev && <CaseStudiesPreview />}
       <QAProcessSection />
       <CTA onBook={onBook} calendlyUrl={calendlyUrl} />
     </>

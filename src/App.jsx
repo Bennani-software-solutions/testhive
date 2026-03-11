@@ -20,6 +20,10 @@ import Mentoring from "./pages/services/Mentoring";
 
 import ToAutomateOrNotToAutomate from "./pages/blog/ToAutomateOrNotToAutomate";
 
+import CaseStudies from "./pages/CaseStudies";
+import Integrations from "./pages/Integrations";
+import KnowledgeBase from "./pages/KnowledgeBase";
+
 function App() {
   return (
     <Routes>
@@ -45,6 +49,11 @@ function App() {
         <Route path="services/mentoring" element={<Mentoring />} />
 
         <Route path="/blog/to-automate-or-not-to-automate" element={<ToAutomateOrNotToAutomate />} />
+
+        {/* Dev-only pages (routes exist but nav links hidden without ?dev=true) */}
+        <Route path="case-studies" element={<CaseStudies />} />
+        <Route path="integrations" element={<Integrations />} />
+        <Route path="docs" element={<KnowledgeBase />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>
