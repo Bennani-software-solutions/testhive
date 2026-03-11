@@ -1,5 +1,4 @@
 // src/components/Hero.jsx
-import { useState } from "react";
 import { motion as Motion } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
@@ -18,9 +17,64 @@ function WhatsAppIcon({ className = "h-5 w-5" }) {
 }
 
 
-export default function Hero({ onBook }) {
-  const [imgOk, setImgOk] = useState(true);
+function HeroIllustration() {
+  return (
+    <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Test automation dashboard illustration" className="w-full h-auto">
+      {/* Editor window */}
+      <rect x="16" y="16" width="448" height="328" rx="16" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1.5"/>
+      {/* Title bar */}
+      <rect x="16" y="16" width="448" height="40" rx="16" fill="#fff"/>
+      <rect x="16" y="40" width="448" height="16" fill="#fff"/>
+      <circle cx="40" cy="36" r="5" fill="#EF4444"/>
+      <circle cx="58" cy="36" r="5" fill="#FBBF24"/>
+      <circle cx="76" cy="36" r="5" fill="#10B981"/>
+      <text x="200" y="40" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#64748B" textAnchor="middle">scenario.feature</text>
+      {/* Tab bar */}
+      <rect x="16" y="56" width="448" height="28" fill="#F1F5F9"/>
+      <rect x="24" y="60" width="80" height="20" rx="4" fill="#E0E7FF"/>
+      <text x="64" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#4F46E5" textAnchor="middle">Scenarios</text>
+      <rect x="112" y="60" width="64" height="20" rx="4" fill="transparent"/>
+      <text x="144" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="500" fill="#94A3B8" textAnchor="middle">Results</text>
+      <rect x="184" y="60" width="52" height="20" rx="4" fill="transparent"/>
+      <text x="210" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="500" fill="#94A3B8" textAnchor="middle">Logs</text>
+      {/* BDD scenario lines */}
+      <text x="40" y="108" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="700" fill="#4F46E5">Feature:</text>
+      <text x="102" y="108" fontSize="11" fontFamily="ui-monospace,monospace" fill="#334155"> User Login</text>
+      <text x="56" y="128" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="700" fill="#4F46E5">Scenario:</text>
+      <text x="126" y="128" fontSize="11" fontFamily="ui-monospace,monospace" fill="#334155"> Valid credentials</text>
+      <text x="72" y="148" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">Given</text>
+      <text x="110" y="148" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> user is on login page</text>
+      <text x="72" y="166" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">When</text>
+      <text x="105" y="166" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> they enter valid credentials</text>
+      <text x="72" y="184" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">Then</text>
+      <text x="101" y="184" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> they see the dashboard</text>
+      {/* Generate button */}
+      <rect x="40" y="204" width="130" height="32" rx="8" fill="#4F46E5"/>
+      <text x="82" y="224" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#fff">&#9889; Generate Tests</text>
+      {/* Divider */}
+      <line x1="16" y1="252" x2="464" y2="252" stroke="#E2E8F0" strokeWidth="1"/>
+      {/* Results panel */}
+      <text x="40" y="276" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#334155">Test Results</text>
+      <text x="160" y="276" fontSize="10" fontFamily="system-ui,sans-serif" fill="#94A3B8">3 passed  &#183;  1 failed  &#183;  0.8s</text>
+      {/* Pass rows */}
+      <circle cx="48" cy="298" r="6" fill="#10B981"/>
+      <text x="46" y="301" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10003;</text>
+      <text x="62" y="302" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Login with valid credentials</text>
+      <text x="420" y="302" fontSize="9" fontFamily="ui-monospace,monospace" fill="#10B981" textAnchor="end">0.3s</text>
+      <circle cx="48" cy="318" r="6" fill="#10B981"/>
+      <text x="46" y="321" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10003;</text>
+      <text x="62" y="322" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Redirect to dashboard</text>
+      <text x="420" y="322" fontSize="9" fontFamily="ui-monospace,monospace" fill="#10B981" textAnchor="end">0.2s</text>
+      {/* Fail row */}
+      <circle cx="48" cy="338" r="6" fill="#EF4444"/>
+      <text x="46" y="341" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10007;</text>
+      <text x="62" y="342" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Invalid password error msg</text>
+      <text x="420" y="342" fontSize="9" fontFamily="ui-monospace,monospace" fill="#EF4444" textAnchor="end">0.3s</text>
+    </svg>
+  );
+}
 
+export default function Hero({ onBook }) {
   const whatsappHref =
     "https://wa.me/212715931703?text=Hi%20TestHive%2C%20I%27m%20interested%20in%20automating%20our%20critical%20tests%20in%2090%20days.";
 
@@ -65,7 +119,7 @@ export default function Hero({ onBook }) {
                     // The element exists, scroll smoothly
                     el.scrollIntoView({ behavior: "smooth", block: "start" });
                   } else {
-                    // Retry after a short delay if the page hasn't mounted yet
+                    // Retry after a short delay if the page hasn’t mounted yet
                     setTimeout(() => {
                       const element = document.getElementById("automation_packages");
                       if (element) {
@@ -102,14 +156,11 @@ export default function Hero({ onBook }) {
             </Motion.div>
           </Motion.div>
 
-          {/* RIGHT IMAGE */}
+          {/* RIGHT — Inline SVG illustration */}
           <Motion.figure initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative">
-            <div className="aspect-[4/3] w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-slate-100 flex items-center justify-center">
-              {imgOk && (
-                <img src="/assets/HERO.png" alt="TestHive hero illustration" className="h-full w-full object-contain" onError={() => setImgOk(false)} />
-              )}
+            <div className="w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-white">
+              <HeroIllustration />
             </div>
-            <img src="/assets/testHive.png" alt="TestHive mark" className="absolute -bottom-6 -right-6 w-20 h-20 rounded-xl shadow-soft border border-slate-200 bg-white p-2" />
           </Motion.figure>
         </div>
       </div>
