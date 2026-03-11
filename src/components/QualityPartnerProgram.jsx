@@ -29,7 +29,7 @@ export default function QualityPartnerProgram({
         <m.div initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.35 }} className="mx-auto max-w-3xl text-center">
           <m.p
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700 ring-1 ring-cyan-100"
+            className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 ring-1 ring-indigo-100"
           >
             Quality Partner Program • Full-time engagement • Bespoke
           </m.p>
@@ -47,7 +47,7 @@ export default function QualityPartnerProgram({
           <m.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}
             className="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
             <div className="mb-3 inline-flex items-center gap-2">
-              <Users2 className="h-5 w-5 text-cyan-600" />
+              <Users2 className="h-5 w-5 text-indigo-600" />
               <h3 className="text-sm font-semibold text-slate-900">Embedded partnership</h3>
             </div>
             <p className="text-sm text-slate-700">
@@ -104,7 +104,7 @@ export default function QualityPartnerProgram({
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <button
             onClick={() => setOpenForm(true)}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
+            className="rounded-xl bg-indigo-600 hover:bg-indigo-700 px-5 py-2 text-sm font-semibold text-white shadow-md transition active:scale-95"
           >
             Request a Proposal
           </button>
@@ -143,18 +143,18 @@ export default function QualityPartnerProgram({
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="text-xs font-medium text-slate-600">Name</label>
-                  <input required name="name" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300" />
+                  <input required name="name" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300" />
                 </div>
                 <div>
                   <label className="text-xs font-medium text-slate-600">Work email</label>
-                  <input required type="email" name="email" inputMode="email" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300" />
+                  <input required type="email" name="email" inputMode="email" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300" />
                 </div>
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="text-xs font-medium text-slate-600">Role</label>
-                  <input name="role" placeholder="e.g. QA Lead" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300" />
+                  <input name="role" placeholder="e.g. QA Lead" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300" />
                 </div>
                 <div>
                   <label className="text-xs font-medium text-slate-600">Team size</label>
@@ -177,7 +177,7 @@ export default function QualityPartnerProgram({
               <div>
                 <label className="text-xs font-medium text-slate-600">Context & challenges</label>
                 <textarea name="context" rows={3} placeholder="Briefly describe your current QA setup and challenges"
-                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300" />
+                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300" />
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2">
@@ -189,16 +189,16 @@ export default function QualityPartnerProgram({
                 </div>
                 <div>
                   <label className="text-xs font-medium text-slate-600">Timezone</label>
-                  <input name="timezone" placeholder="e.g. CET, UK, EST" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-cyan-300" />
+                  <input name="timezone" placeholder="e.g. CET, UK, EST" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300" />
                 </div>
               </div>
 
               <div className="mt-2 flex items-center gap-3">
-                <button type="submit" className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-5 py-2 text-sm font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95">
+                <button type="submit" className="rounded-xl bg-indigo-600 hover:bg-indigo-700 px-5 py-2 text-sm font-semibold text-white shadow-md transition active:scale-95">
                   Submit Request
                 </button>
                 {calendlyUrl && (
-                  <a href={calendlyUrl} target="_blank" rel="noreferrer" className="text-sm font-medium text-cyan-600 hover:text-cyan-700">
+                  <a href={calendlyUrl} target="_blank" rel="noreferrer" className="text-sm font-medium text-indigo-600 hover:text-indigo-700">
                     Or book a consultation
                   </a>
                 )}

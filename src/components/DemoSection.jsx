@@ -6,7 +6,7 @@ export default function DemoSection() {
   return (
     <Section id="demo" className="bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center rounded-full bg-cyan-500/20 px-4 py-1.5 text-xs font-semibold text-cyan-300 mb-4">
+        <div className="inline-flex items-center rounded-full bg-indigo-500/20 px-4 py-1.5 text-xs font-semibold text-indigo-300 mb-4">
           DUMMY DATA — PLACEHOLDER
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-white">
@@ -44,8 +44,8 @@ export default function DemoSection() {
           {/* Content area with play button */}
           <div className="flex items-center justify-center h-full min-h-[300px] bg-gradient-to-br from-slate-800 to-slate-900">
             <div className="text-center">
-              <button className="group mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-cyan-500/20 border border-cyan-500/30 hover:bg-cyan-500/30 transition">
-                <Play className="h-8 w-8 text-cyan-400 group-hover:text-cyan-300 ml-1" />
+              <button className="group mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-indigo-500/20 border border-indigo-500/30 hover:bg-indigo-500/30 transition">
+                <Play className="h-8 w-8 text-indigo-400 group-hover:text-indigo-300 ml-1" />
               </button>
               <p className="mt-4 text-slate-400 text-sm">
                 Platform walkthrough (3 min)
@@ -82,8 +82,8 @@ export default function DemoSection() {
             transition={{ duration: 0.4, delay: 0.2 + i * 0.1 }}
             className="text-center"
           >
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-500/20">
-              <item.icon className="h-6 w-6 text-cyan-400" />
+            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500/20">
+              <item.icon className="h-6 w-6 text-indigo-400" />
             </div>
             <h3 className="font-semibold text-white">{item.title}</h3>
             <p className="mt-1 text-sm text-slate-400">{item.desc}</p>

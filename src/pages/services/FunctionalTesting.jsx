@@ -138,7 +138,7 @@ export default function FunctionalTesting({ onBook }) {
                                 key={title}
                                 className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm flex gap-3"
                             >
-                                <Icon className="h-6 w-6 text-cyan-600 shrink-0" />
+                                <Icon className="h-6 w-6 text-indigo-600 shrink-0" />
                                 <div>
                                     <h3 className="font-semibold text-slate-900">{title}</h3>
                                     <p className="mt-1 text-sm text-slate-700">{text}</p>
@@ -161,13 +161,13 @@ export default function FunctionalTesting({ onBook }) {
                     <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={onBook}
-                            className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+                            className="rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-white font-semibold shadow-md active:scale-95"
                         >
                             <PhoneCall className="inline-block mr-2 h-5 w-5" /> Talk to a QA Expert
                         </button>
                         <button
                             onClick={() => setOpenForm(true)}
-                            className="rounded-xl border border-cyan-300 bg-white px-6 py-3 text-cyan-700 font-semibold hover:bg-cyan-50 active:scale-95"
+                            className="rounded-xl border border-indigo-300 bg-white px-6 py-3 text-indigo-700 font-semibold hover:bg-indigo-50 active:scale-95"
                         >
                             Request More Information
                         </button>

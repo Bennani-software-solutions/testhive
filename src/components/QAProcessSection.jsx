@@ -51,8 +51,8 @@ export default function SeamlessQAProcess() {
           />
           <defs>
             <linearGradient id="gradient" x1="0" x2="1" y1="0" y2="0">
-              <stop offset="0%" stopColor="#06B6D4" />
-              <stop offset="100%" stopColor="#8B5CF6" />
+              <stop offset="0%" stopColor="#4F46E5" />
+              <stop offset="100%" stopColor="#6366F1" />
             </linearGradient>
           </defs>
         </svg>

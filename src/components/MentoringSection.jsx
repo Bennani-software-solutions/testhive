@@ -23,7 +23,7 @@ export default function Mentoring() {
     return (
         <section
             id="mentoring"
-            className="relative bg-gradient-to-b from-white via-cyan-50 to-violet-50 border-t border-gray-200 py-16 sm:py-20"
+            className="relative bg-gradient-to-b from-white via-slate-50 to-slate-100 border-t border-gray-200 py-16 sm:py-20"
         >
             <div className="mx-auto max-w-6xl px-4 sm:px-6">
                 {/* Header */}
@@ -96,7 +96,7 @@ export default function Mentoring() {
                             variants={fadeUp}
                             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition"
                         >
-                            <item.icon className="h-10 w-10 text-cyan-600 mb-3" />
+                            <item.icon className="h-10 w-10 text-indigo-600 mb-3" />
                             <h3 className="text-lg font-semibold text-slate-900">
                                 {item.title}
                             </h3>
@@ -151,7 +151,7 @@ export default function Mentoring() {
                 <div className="mt-12 text-center">
                     <a
                         href="mailto:jointhehive@testhive.ma"
-                        className="inline-block rounded-xl bg-gradient-to-r from-cyan-500 to-violet-500 px-6 py-3 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+                        className="inline-block rounded-xl bg-gradient-to-r from-slate-500 to-slate-1000 px-6 py-3 text-white font-semibold shadow-md active:scale-95"
                     >
                         Start your mentoring journey
                     </a>

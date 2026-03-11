@@ -94,7 +94,7 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
         >
           <m.p
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700 ring-1 ring-cyan-100"
+            className="inline-flex items-center gap-2 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 ring-1 ring-indigo-100"
           >
             <MapPin className="h-4 w-4" /> Nearshoring Advantage
           </m.p>
@@ -145,14 +145,14 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.45, ease: EASE }}
-            className="relative rounded-3xl border border-gray-200 bg-gradient-to-br from-cyan-50 via-white to-violet-50 p-4 shadow-sm"
+            className="relative rounded-3xl border border-gray-200 bg-slate-50 p-4 shadow-sm"
           >
             <Img
               src={A.map}
               alt="Nearshore coverage between EU/UK and Morocco"
               ratio="aspect-[4/3] sm:aspect-[16/10]"
             />
-            <div className="pointer-events-none absolute left-4 sm:left-6 top-4 sm:top-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-cyan-700 ring-1 ring-cyan-100 backdrop-blur">
+            <div className="pointer-events-none absolute left-4 sm:left-6 top-4 sm:top-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-indigo-700 ring-1 ring-indigo-100 backdrop-blur">
               <Clock className="h-4 w-4" /> 6–8 h CET / UK overlap (seasonal)
             </div>
             <div className="pointer-events-none absolute right-4 sm:right-6 bottom-4 sm:bottom-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-emerald-700 ring-1 ring-emerald-100 backdrop-blur">
@@ -239,7 +239,7 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
                 href="https://www.moroccoworldnews.com/2023/11/358708/morocco-digital-2030-strategy-aims-to-strengthen-it-sector"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-cyan-600 underline hover:text-cyan-800"
+                className="text-indigo-600 underline hover:text-indigo-800"
               >
                 Digital 2030 Strategy
               </a>
@@ -300,7 +300,7 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
                   href={c.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-2 inline-block text-sm font-medium text-cyan-600 hover:text-cyan-800"
+                  className="mt-2 inline-block text-sm font-medium text-indigo-600 hover:text-indigo-800"
                 >
                   Read more →
                 </a>
@@ -313,13 +313,13 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
             onClick={onBook}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-md transition hover:brightness-110 active:scale-95"
+            className="rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm sm:text-base font-semibold text-white shadow-md transition active:scale-95"
           >
             Book a 30-min Nearshore Fit Call
           </button>
           <button
             onClick={() => setShowForm(true)}
-            className="rounded-xl border border-cyan-400 px-6 py-3 text-sm sm:text-base font-semibold text-cyan-700 hover:bg-cyan-50 active:scale-95"
+            className="rounded-xl border border-indigo-400 px-6 py-3 text-sm sm:text-base font-semibold text-indigo-700 hover:bg-indigo-50 active:scale-95"
           >
             Request More Information
           </button>

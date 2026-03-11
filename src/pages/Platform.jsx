@@ -162,7 +162,7 @@ const faqs = [
 ];
 
 const colorMap = {
-  sky: "bg-cyan-100 text-cyan-600",
+  sky: "bg-indigo-100 text-indigo-600",
   violet: "bg-violet-100 text-violet-600",
   emerald: "bg-emerald-100 text-emerald-600",
   amber: "bg-amber-100 text-amber-600",
@@ -173,10 +173,10 @@ function ScreenshotPlaceholder({ src, alt, className = "" }) {
 
   if (failed) {
     return (
-      <div className={`rounded-xl bg-gradient-to-br from-cyan-100 via-violet-100 to-amber-100 flex items-center justify-center ${className}`}>
+      <div className={`rounded-xl bg-slate-100 flex items-center justify-center ${className}`}>
         <div className="text-center p-8">
           <div className="mx-auto mb-3 h-12 w-12 rounded-xl bg-white/80 flex items-center justify-center shadow-sm">
-            <Play className="h-6 w-6 text-cyan-500" />
+            <Play className="h-6 w-6 text-indigo-600" />
           </div>
           <p className="text-sm font-medium text-slate-600">Screenshot coming soon</p>
         </div>
@@ -203,7 +203,7 @@ function FaqItem({ q, a }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left group"
       >
-        <span className="text-base font-semibold text-slate-900 pr-4 group-hover:text-cyan-600 transition-colors">{q}</span>
+        <span className="text-base font-semibold text-slate-900 pr-4 group-hover:text-indigo-600 transition-colors">{q}</span>
         <ChevronDown className={`h-5 w-5 text-slate-400 flex-shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
@@ -235,13 +235,13 @@ export default function Platform() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block rounded-full bg-cyan-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-cyan-700 mb-5">
+            <span className="inline-block rounded-full bg-indigo-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-700 mb-5">
               TestHive Platform
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
               AI-powered test automation
               <br className="hidden sm:block" />
-              <span className="text-cyan-500">for everyone</span>
+              <span className="text-indigo-600">for everyone</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
               Turn requirements into executable tests without writing code.
@@ -253,7 +253,7 @@ export default function Platform() {
                 href={PLATFORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-base font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-semibold text-white shadow-md active:scale-95 transition"
               >
                 Try the Platform Free <ArrowRight className="h-4 w-4" />
               </a>
@@ -294,7 +294,7 @@ export default function Platform() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <p className="text-4xl md:text-5xl font-extrabold text-white">{m.value}</p>
-                <p className="mt-2 text-sm font-semibold text-cyan-300">{m.label}</p>
+                <p className="mt-2 text-sm font-semibold text-indigo-300">{m.label}</p>
                 <p className="text-xs text-slate-400 mt-1">{m.sub}</p>
               </Motion.div>
             ))}
@@ -313,7 +313,7 @@ export default function Platform() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              How it <span className="text-cyan-500">works</span>
+              How it <span className="text-indigo-600">works</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">Four steps from idea to verified test results.</p>
           </Motion.div>
@@ -328,9 +328,9 @@ export default function Platform() {
                 transition={{ duration: 0.45, delay: i * 0.1 }}
                 className="relative rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
               >
-                <span className="text-4xl font-extrabold text-cyan-100">{s.num}</span>
+                <span className="text-4xl font-extrabold text-indigo-100">{s.num}</span>
                 <div className="mt-2 mb-3">
-                  <s.icon className="h-6 w-6 text-cyan-500" />
+                  <s.icon className="h-6 w-6 text-indigo-600" />
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{s.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
@@ -351,7 +351,7 @@ export default function Platform() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Everything you need to <span className="text-cyan-500">test smarter</span>
+              Everything you need to <span className="text-indigo-600">test smarter</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
               See the platform in action.
@@ -369,7 +369,7 @@ export default function Platform() {
                 className={`flex flex-col gap-10 items-center ${i % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
               >
                 <div className="flex-1 min-w-0">
-                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-cyan-100 text-cyan-600 mb-4">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-indigo-100 text-indigo-600 mb-4">
                     <f.icon className="h-5 w-5" />
                   </div>
                   <h3 className="text-2xl font-bold text-slate-900 mb-3">{f.title}</h3>
@@ -407,7 +407,7 @@ export default function Platform() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              And <span className="text-cyan-500">more</span>
+              And <span className="text-indigo-600">more</span>
             </h2>
           </Motion.div>
 
@@ -449,7 +449,7 @@ export default function Platform() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
-              Integrates with your <span className="text-cyan-500">existing stack</span>
+              Integrates with your <span className="text-indigo-600">existing stack</span>
             </h2>
             <p className="text-slate-600 mb-10">
               Push results to your test management tools. Import requirements. Connect your CI/CD.
@@ -492,7 +492,7 @@ export default function Platform() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Built with <span className="text-cyan-500">security</span> in mind
+              Built with <span className="text-indigo-600">security</span> in mind
             </h2>
             <p className="mt-3 text-lg text-slate-600">
               Enterprise-grade security features you can trust.
@@ -521,7 +521,7 @@ export default function Platform() {
       </section>
 
       {/* Who it's for */}
-      <section className="py-20 bg-gradient-to-b from-white via-violet-50/40 to-white border-t border-slate-100">
+      <section className="py-20 bg-white border-t border-slate-100">
         <div className="mx-auto max-w-4xl px-6">
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -531,7 +531,7 @@ export default function Platform() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Built for <span className="text-cyan-500">your team</span>
+              Built for <span className="text-indigo-600">your team</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
               Whether you write code or not — TestHive Platform makes test automation accessible.
@@ -570,7 +570,7 @@ export default function Platform() {
             className="text-center mb-12"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Frequently asked <span className="text-cyan-500">questions</span>
+              Frequently asked <span className="text-indigo-600">questions</span>
             </h2>
           </Motion.div>
 
@@ -589,7 +589,7 @@ export default function Platform() {
       {isDev && <PlatformPricing />}
 
       {/* Bottom CTA */}
-      <section className="py-20 bg-gradient-to-r from-cyan-50 via-white to-violet-50">
+      <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-3xl px-6 text-center">
           <Motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -609,7 +609,7 @@ export default function Platform() {
                 href={PLATFORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-8 py-3 text-base font-semibold text-white shadow-md hover:brightness-110 active:scale-95 transition"
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-8 py-3 text-base font-semibold text-white shadow-md active:scale-95 transition"
               >
                 Get Started Free <ArrowRight className="h-4 w-4" />
               </a>

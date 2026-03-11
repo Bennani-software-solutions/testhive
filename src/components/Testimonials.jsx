@@ -48,7 +48,7 @@ export default function Testimonials() {
                                     className="h-12 w-12 rounded-full object-cover"
                                 />
                             ) : (
-                                <div className="h-12 w-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-semibold">
+                                <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-semibold">
                                     {t.name.charAt(0)}
                                 </div>
                             )}

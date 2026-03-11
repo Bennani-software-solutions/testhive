@@ -27,7 +27,20 @@
       "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"from-sky-500\" src/ | while read f; do sed -i 's/from-sky-500/from-cyan-500/g' \"$f\"; done && grep -rl \"to-emerald-500\" src/ | while read f; do sed -i 's/to-emerald-500/to-violet-500/g' \"$f\"; done && echo \"done 6\")",
       "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"via-emerald-400\" src/ | while read f; do sed -i 's/via-emerald-400 //g' \"$f\"; done && echo \"done 7\")",
       "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-400\" src/ | while read f; do sed -i 's/text-sky-400/text-cyan-400/g' \"$f\"; done && echo \"done 8\")",
-      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-100\" src/ | while read f; do sed -i 's/text-sky-100/text-cyan-100/g' \"$f\"; done && grep -rl \"ring-sky-100\" src/ | while read f; do sed -i 's/ring-sky-100/ring-cyan-100/g' \"$f\"; done && echo \"done 9\")"
+      "Bash(cd C:/Users/AbdelazizB/testhive && grep -rl \"text-sky-100\" src/ | while read f; do sed -i 's/text-sky-100/text-cyan-100/g' \"$f\"; done && grep -rl \"ring-sky-100\" src/ | while read f; do sed -i 's/ring-sky-100/ring-cyan-100/g' \"$f\"; done && echo \"done 9\")",
+      "WebFetch(domain:katalon.com)",
+      "WebFetch(domain:mabl.com)",
+      "WebFetch(domain:testim.io)",
+      "WebFetch(domain:browserstack.com)",
+      "WebFetch(domain:saucelabs.com)",
+      "WebFetch(domain:functionize.com)",
+      "WebFetch(domain:applitools.com)",
+      "WebFetch(domain:testsigma.com)",
+      "WebFetch(domain:reflect.run)",
+      "WebFetch(domain:qawolf.com)",
+      "WebSearch",
+      "WebFetch(domain:www.saasframe.io)",
+      "WebFetch(domain:www.kalungi.com)"
     ]
   }
 }

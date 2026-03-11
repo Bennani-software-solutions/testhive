@@ -9,7 +9,7 @@ const features = [
     desc: "Fast-track your test automation with expert engineers and proven frameworks.",
     link: "/services/automation",
     icon: Zap,
-    color: "bg-cyan-100 text-cyan-600",
+    color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Functional Testing",
@@ -30,7 +30,7 @@ const features = [
     desc: "Work hands-on with experienced QA mentors to build lasting automation skills.",
     link: "/services/mentoring",
     icon: GraduationCap,
-    color: "bg-cyan-100 text-cyan-600",
+    color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "QA Outsourcing",
@@ -69,7 +69,7 @@ export default function Features() {
                 <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${f.color} mb-4`}>
                   <f.icon className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-800 mb-2 group-hover:text-cyan-600 transition-colors">
+                <h3 className="text-xl font-semibold text-slate-800 mb-2 group-hover:text-indigo-600 transition-colors">
                   {f.title}
                 </h3>
                 <p className="text-slate-600">{f.desc}</p>

@@ -5,7 +5,7 @@ export default function ToAutomateOrNotToAutomate() {
     return (
         <section
             id="blog-to-automate"
-            className="relative py-16 bg-gradient-to-b from-white via-cyan-50/60 to-violet-50/40 border-t border-slate-200"
+            className="relative py-16 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200"
         >
             <div className="max-w-4xl mx-auto px-6">
                 {/* Header */}

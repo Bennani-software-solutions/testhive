@@ -8,9 +8,9 @@ lg: 'px-6 py-4 text-lg'
 return (
 <button
 onClick={onClick}
-className={`inline-flex items-center justify-center rounded-2xl bg-cyan-500 hover:bg-cyan-600 active:bg-cyan-700 text-white font-semibold
-shadow-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300/
-70 ${sizes[size]} ${className}`}
+className={`inline-flex items-center justify-center rounded-xl bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white font-semibold
+shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/
+50 ${sizes[size]} ${className}`}
 {...rest}
 >
 {children}

@@ -46,7 +46,7 @@ export default function POCDetails({ onBook }) {
   return (
     <section
       id="poc-details"
-      className="relative py-16 bg-gradient-to-br from-white via-cyan-50 to-violet-50 border-t border-slate-200"
+      className="relative py-16 bg-gradient-to-br from-white via-slate-50 to-slate-100 border-t border-slate-200"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Header */}
@@ -103,7 +103,7 @@ export default function POCDetails({ onBook }) {
             className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"
           >
             <h3 className="text-lg font-semibold text-slate-900 flex items-center gap-2">
-              <ArrowRight className="text-cyan-600" /> How It Works
+              <ArrowRight className="text-indigo-600" /> How It Works
             </h3>
             <ul className="mt-4 space-y-2 text-slate-700">
               <li>✅ We identify one or two meaningful test case with your team.</li>
@@ -134,13 +134,13 @@ export default function POCDetails({ onBook }) {
         <div className="mt-12 flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={onBook}
-            className="rounded-xl bg-gradient-to-r from-cyan-400 to-violet-500 px-6 py-3 text-white font-semibold shadow-md hover:brightness-110 active:scale-95"
+            className="rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-white font-semibold shadow-md active:scale-95"
           >
             <PhoneCall className="inline-block mr-2 h-5 w-5" /> Still have questions? Book a Free Consultation
           </button>
           <button
             onClick={() => setOpenForm(true)}
-            className="rounded-xl border border-cyan-300 bg-white px-6 py-3 text-cyan-700 font-semibold hover:bg-cyan-50 active:scale-95"
+            className="rounded-xl border border-indigo-300 bg-white px-6 py-3 text-indigo-700 font-semibold hover:bg-indigo-50 active:scale-95"
           >
             Don’t let this opportunity pass. Request your free POC now
           </button>
@@ -260,7 +260,7 @@ export default function POCDetails({ onBook }) {
 
                   <button
                     type="submit"
-                    className="w-full rounded-lg bg-gradient-to-r from-cyan-500 to-violet-500 py-2.5 text-white font-semibold hover:brightness-110"
+                    className="w-full rounded-lg bg-gradient-to-r from-slate-500 to-slate-1000 py-2.5 text-white font-semibold"
                   >
                     Submit Request
                   </button>
