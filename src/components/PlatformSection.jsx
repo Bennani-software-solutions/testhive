@@ -1,14 +1,14 @@
 // src/components/PlatformSection.jsx
 import { motion as Motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Sparkles, FileSearch, Play, Users } from "lucide-react";
+import { Sparkles, FileSearch, Play, Users, Globe, Shield } from "lucide-react";
 
 const features = [
   {
     icon: Sparkles,
     color: "sky",
     title: "AI Test Generation",
-    desc: "Write BDD/Gherkin scenarios and let AI generate production-ready Playwright test code in seconds.",
+    desc: "Write BDD/Gherkin scenarios and let AI generate production-ready Playwright tests — E2E and API.",
   },
   {
     icon: FileSearch,
@@ -17,14 +17,26 @@ const features = [
     desc: "Upload requirements documents — the AI extracts test scenarios and user stories automatically.",
   },
   {
+    icon: Globe,
+    color: "sky",
+    title: "E2E & API Testing",
+    desc: "Test web UIs and REST APIs from the same Gherkin scenarios. Auth tokens and keys stay encrypted.",
+  },
+  {
     icon: Play,
     color: "emerald",
     title: "One-Click Execution",
     desc: "Run your tests with a single click and get detailed results, logs, and video recordings.",
   },
   {
-    icon: Users,
+    icon: Shield,
     color: "amber",
+    title: "Bring Your Own AI",
+    desc: "Use your own API keys or self-host with Ollama/vLLM. Your data never leaves your control.",
+  },
+  {
+    icon: Users,
+    color: "emerald",
     title: "Team Collaboration",
     desc: "Multi-project workspace with folders, schedules, notifications, and team management built in.",
   },
@@ -62,7 +74,7 @@ export default function PlatformSection() {
         </Motion.div>
 
         {/* Feature grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-14">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-14">
           {features.map((f, i) => (
             <Motion.div
               key={f.title}
@@ -148,7 +160,7 @@ export default function PlatformSection() {
               </p>
               <div className="flex items-center justify-center gap-4 flex-wrap">
                 <a
-                  href="https://aithentic.testhive.ma"
+                  href="https://platform.testhive.ma"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-2.5 text-sm font-semibold text-white shadow-md active:scale-95 transition"

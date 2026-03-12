@@ -24,7 +24,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const PLATFORM_URL = "https://aithentic.testhive.ma";
+const PLATFORM_URL = "https://platform.testhive.ma";
 
 const metrics = [
   { value: "10x", label: "Faster test creation", sub: "vs manual scripting" },
@@ -109,6 +109,18 @@ const showcaseFeatures = [
     image: "/assets/platform/documents.png",
     imageAlt: "TestHive Platform — Document analysis with extracted test scenarios",
   },
+  {
+    icon: Play,
+    title: "E2E & API Testing",
+    desc: "Test web UIs and REST APIs from the same Gherkin scenarios. The AI auto-detects whether your scenario needs a browser or HTTP requests and generates the right Playwright code.",
+    bullets: [
+      "API testing via Gherkin — define endpoints, methods, and assertions",
+      "Auth tokens and API keys stored as encrypted parameters",
+      "Hybrid tests: combine UI interactions with API calls",
+    ],
+    image: "/assets/platform/api-testing.png",
+    imageAlt: "TestHive Platform — API test scenario with Gherkin steps and response assertions",
+  },
 ];
 
 const integrations = [
@@ -158,6 +170,10 @@ const faqs = [
   {
     q: "Can I integrate with Jira, TestRail, or other tools?",
     a: "Yes. The platform supports Xray (Jira), TestRail, and Confluence integrations out of the box. You can push test results, sync test cases, and import requirements documents from connected tools.",
+  },
+  {
+    q: "Can I test REST APIs with TestHive?",
+    a: "Yes. Write your API test scenarios in Gherkin — describe the endpoint, HTTP method, request body, and expected response. The AI generates Playwright tests using the request fixture. Auth tokens and API keys are stored as encrypted parameters.",
   },
 ];
 

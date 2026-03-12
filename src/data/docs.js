@@ -187,6 +187,34 @@ const docs = [
         ],
       },
       {
+        slug: "api-testing",
+        title: "API Testing with Gherkin",
+        desc: "Test REST APIs using the same BDD/Gherkin workflow — no browser required.",
+        time: "5 min read",
+        content: [
+          {
+            heading: "How it works",
+            text: "Write your API tests as Gherkin scenarios. The AI auto-detects API patterns (endpoints, HTTP methods, status codes) and generates Playwright tests using the request fixture instead of a browser. No configuration change needed — just write your scenario.",
+          },
+          {
+            heading: "Example: GET request",
+            text: "Feature: User API\n  Scenario: Get user by ID\n    Given the API base URL is {{baseUrl}}\n    When I send a GET request to \"/api/users/1\"\n    Then the response status should be 200\n    And the response body should contain \"email\"",
+          },
+          {
+            heading: "Example: POST with authentication",
+            text: "Scenario: Create a new item\n    Given I authenticate with bearer token {{apiKey}}\n    When I send a POST request to \"/api/items\" with body:\n      | name  | Test Item   |\n      | price | 29.99       |\n    Then the response status should be 201\n    And the response body \"id\" should not be empty",
+          },
+          {
+            heading: "Authentication & security",
+            text: "Store API keys, bearer tokens, and auth credentials as encrypted parameters (AES-256-CBC). Reference them in your Gherkin steps with {{paramName}} syntax. Values never appear in generated code — they are substituted at runtime only.",
+          },
+          {
+            heading: "Hybrid tests (UI + API)",
+            text: "You can mix UI interactions and API calls in the same scenario. For example, create test data via API, then verify it appears in the UI. The AI uses both { page, request } fixtures when it detects a hybrid scenario.",
+          },
+        ],
+      },
+      {
         slug: "tags-organization",
         title: "Tags & Organization",
         desc: "Organize scenarios with folders, tags, and bulk operations.",
