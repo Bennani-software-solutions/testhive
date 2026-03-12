@@ -1,4 +1,5 @@
 // src/components/Footer.jsx
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Linkedin, MessageCircle } from "lucide-react";
 import useDevMode from "../hooks/useDevMode";
@@ -14,6 +15,24 @@ const services = [
 
 export default function Footer() {
   const isDev = useDevMode();
+  const [email, setEmail] = useState("");
+  const [subStatus, setSubStatus] = useState("idle"); // idle | sending | done
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setSubStatus("sending");
+    try {
+      await fetch("https://formspree.io/f/mgvnzebp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, _subject: "Newsletter signup" }),
+      });
+      setSubStatus("done");
+      setEmail("");
+    } catch {
+      setSubStatus("idle");
+    }
+  };
   const whatsappHref =
     "https://wa.me/212715931703?text=Hi%20TestHive%2C%20I%27m%20interested%20in%20your%20QA%20services.";
 
@@ -134,12 +153,42 @@ export default function Footer() {
               WhatsApp
             </a>
           </div>
+
+          {/* Newsletter */}
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-slate-900 mb-2">QA insights, weekly</h3>
+            {subStatus === "done" ? (
+              <p className="text-sm text-emerald-600">Subscribed!</p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  className="flex-1 rounded-lg border border-slate-200 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300"
+                />
+                <button
+                  type="submit"
+                  disabled={subStatus === "sending"}
+                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-sm font-semibold text-white transition disabled:opacity-70"
+                >
+                  {subStatus === "sending" ? "..." : "Subscribe"}
+                </button>
+              </form>
+            )}
+          </div>
         </div>
       </div>
 
       {/* Bottom */}
-      <div className="mt-10 border-t border-slate-200 pt-6 text-center text-sm text-slate-500">
-        &copy; {new Date().getFullYear()} TestHive. All rights reserved.
+      <div className="mt-10 border-t border-slate-200 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500 px-6 max-w-7xl mx-auto">
+        <span>&copy; {new Date().getFullYear()} TestHive. All rights reserved.</span>
+        <div className="flex items-center gap-4">
+          <Link to="/privacy" className="hover:text-indigo-600 transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-indigo-600 transition-colors">Terms of Service</Link>
+        </div>
       </div>
     </footer>
   );

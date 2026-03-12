@@ -1,6 +1,9 @@
 import { motion as m } from "framer-motion";
 import Section from "./Section";
-import { Check } from "lucide-react";
+import { Check, Minus } from "lucide-react";
+import { useState } from "react";
+
+const PLATFORM_URL = "https://platform.testhive.ma";
 
 const tiers = [
   {
@@ -20,6 +23,7 @@ const tiers = [
       "7-day data retention",
     ],
     cta: "Start Free",
+    ctaHref: `${PLATFORM_URL}/register`,
     ctaStyle:
       "bg-white border-2 border-slate-200 text-slate-900 hover:bg-slate-50",
   },
@@ -39,11 +43,12 @@ const tiers = [
       "Up to 10 team members",
       "Scheduled execution (cron)",
       "Xray & TestRail integration",
-      "Video recordings",
+      "CSV export",
       "Email & chat support",
       "90-day data retention",
     ],
     cta: "Start 14-Day Trial",
+    ctaHref: `${PLATFORM_URL}/register`,
     ctaStyle:
       "bg-indigo-600 hover:bg-indigo-700 text-white shadow-md",
   },
@@ -65,17 +70,42 @@ const tiers = [
       "Custom integrations",
     ],
     cta: "Contact Sales",
+    ctaHref: null, // uses onBook
     ctaStyle: "bg-slate-900 text-white hover:opacity-90",
   },
 ];
 
-export default function PlatformPricing() {
+const comparisonFeatures = [
+  { name: "Projects", free: "3", pro: "Unlimited", ent: "Unlimited" },
+  { name: "Test runs / month", free: "50", pro: "Unlimited", ent: "Unlimited" },
+  { name: "AI test generation", free: "Limited", pro: true, ent: true },
+  { name: "Self-healing tests", free: false, pro: true, ent: true },
+  { name: "Team members", free: "1", pro: "10", ent: "Unlimited" },
+  { name: "Scheduled runs (cron)", free: false, pro: true, ent: true },
+  { name: "Xray & TestRail", free: false, pro: true, ent: true },
+  { name: "Confluence integration", free: false, pro: false, ent: true },
+  { name: "CSV export", free: false, pro: true, ent: true },
+  { name: "Document analysis (PDF/DOCX)", free: false, pro: true, ent: true },
+  { name: "Bring Your Own AI", free: false, pro: false, ent: true },
+  { name: "Data retention", free: "7 days", pro: "90 days", ent: "Custom" },
+  { name: "On-premise deployment", free: false, pro: false, ent: true },
+  { name: "SLA & priority support", free: false, pro: false, ent: true },
+];
+
+function CellValue({ val }) {
+  if (val === true)
+    return <Check className="h-4 w-4 text-emerald-500 mx-auto" />;
+  if (val === false)
+    return <Minus className="h-4 w-4 text-slate-300 mx-auto" />;
+  return <span className="text-sm text-slate-700">{val}</span>;
+}
+
+export default function PlatformPricing({ onBook }) {
+  const [showComparison, setShowComparison] = useState(false);
+
   return (
     <Section id="platform-pricing" className="bg-slate-50 border-t border-gray-200">
       <div className="text-center mb-12">
-        <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">
-          DUMMY DATA — PLACEHOLDER
-        </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
           Platform Pricing
         </h2>
@@ -128,13 +158,111 @@ export default function PlatformPricing() {
               ))}
             </ul>
 
-            <button
-              className={`mt-8 w-full rounded-2xl px-4 py-3 text-sm font-semibold transition active:scale-95 ${tier.ctaStyle}`}
-            >
-              {tier.cta}
-            </button>
+            {tier.ctaHref ? (
+              <a
+                href={tier.ctaHref}
+                className={`mt-8 block w-full text-center rounded-2xl px-4 py-3 text-sm font-semibold transition active:scale-95 ${tier.ctaStyle}`}
+              >
+                {tier.cta}
+              </a>
+            ) : (
+              <button
+                onClick={onBook}
+                className={`mt-8 w-full rounded-2xl px-4 py-3 text-sm font-semibold transition active:scale-95 ${tier.ctaStyle}`}
+              >
+                {tier.cta}
+              </button>
+            )}
           </m.div>
         ))}
+      </div>
+
+      {/* Feature comparison toggle */}
+      <div className="mt-12 text-center">
+        <button
+          onClick={() => setShowComparison((v) => !v)}
+          className="text-sm font-semibold text-indigo-600 hover:text-indigo-700 transition"
+        >
+          {showComparison ? "Hide" : "View"} full feature comparison
+        </button>
+      </div>
+
+      {showComparison && (
+        <m.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          className="mt-8 overflow-x-auto"
+        >
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="border-b border-slate-200">
+                <th className="text-left py-3 px-4 font-semibold text-slate-900">Feature</th>
+                <th className="text-center py-3 px-4 font-semibold text-slate-900">Free</th>
+                <th className="text-center py-3 px-4 font-semibold text-indigo-600">Pro</th>
+                <th className="text-center py-3 px-4 font-semibold text-slate-900">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              {comparisonFeatures.map((f, i) => (
+                <tr
+                  key={f.name}
+                  className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}
+                >
+                  <td className="py-2.5 px-4 text-slate-700">{f.name}</td>
+                  <td className="py-2.5 px-4 text-center">
+                    <CellValue val={f.free} />
+                  </td>
+                  <td className="py-2.5 px-4 text-center">
+                    <CellValue val={f.pro} />
+                  </td>
+                  <td className="py-2.5 px-4 text-center">
+                    <CellValue val={f.ent} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </m.div>
+      )}
+
+      {/* FAQ */}
+      <div className="mt-16 max-w-2xl mx-auto">
+        <h3 className="text-lg font-bold text-slate-900 text-center mb-6">
+          Pricing FAQ
+        </h3>
+        <div className="space-y-4">
+          {[
+            {
+              q: "Can I switch plans at any time?",
+              a: "Yes. You can upgrade or downgrade at any time. Changes take effect at the start of your next billing cycle.",
+            },
+            {
+              q: "Do I need a credit card for the free plan?",
+              a: "No. The free plan requires only an email address to get started. No credit card needed.",
+            },
+            {
+              q: "What happens when I exceed free plan limits?",
+              a: "You'll be notified when approaching limits. Tests won't be deleted — you simply won't be able to run new ones until the next month or until you upgrade.",
+            },
+            {
+              q: "Is there a discount for annual billing?",
+              a: "Yes. Contact us for annual pricing with up to 20% savings compared to monthly billing.",
+            },
+          ].map((item) => (
+            <details
+              key={item.q}
+              className="group rounded-xl border border-slate-200 bg-white"
+            >
+              <summary className="cursor-pointer px-5 py-3 text-sm font-semibold text-slate-900 flex items-center justify-between">
+                {item.q}
+                <span className="text-slate-400 group-open:rotate-180 transition-transform">
+                  &#9662;
+                </span>
+              </summary>
+              <p className="px-5 pb-4 text-sm text-slate-600">{item.a}</p>
+            </details>
+          ))}
+        </div>
       </div>
     </Section>
   );

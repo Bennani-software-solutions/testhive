@@ -111,33 +111,19 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-7 flex items-center gap-4 flex-wrap"
             >
-              {/* Explore Packages */}
-              <HashLink
-                smooth to="/services/automation#automation_packages"
-                scroll={el => {
-                  if (el) {
-                    // The element exists, scroll smoothly
-                    el.scrollIntoView({ behavior: "smooth", block: "start" });
-                  } else {
-                    // Retry after a short delay if the page hasn’t mounted yet
-                    setTimeout(() => {
-                      const element = document.getElementById("automation_packages");
-                      if (element) {
-                        element.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }
-                    }, 500);
-                  }
-                }}
-                className="inline-flex items-center rounded-xl bg-indigo-500 hover:bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md"
+              {/* Primary: Start Free Trial */}
+              <a
+                href="https://platform.testhive.ma/register"
+                className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
               >
-                Explore Our Packages
-              </HashLink>
+                Start Your Free Trial
+              </a>
 
-              {/* Book Call */}
+              {/* Secondary: Book Call */}
               <button
                 id="btn-book-call-hero"
                 onClick={onBook}
-                className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-5 py-2.5 text-sm font-semibold text-white shadow-md active:scale-95"
+                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
               >
                 Book a Free Consultation
               </button>
@@ -148,11 +134,32 @@ export default function Hero({ onBook }) {
                 href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
               >
                 <WhatsAppIcon className="h-5 w-5 text-green-500" />
                 WhatsApp
               </a>
+            </Motion.div>
+
+            {/* Social proof */}
+            <Motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="mt-8 flex items-center gap-6 flex-wrap text-sm text-slate-500"
+            >
+              <div className="flex items-center gap-1.5">
+                <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                <span>No credit card required</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                <span>Setup in under 5 minutes</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
+                <span>Free plan available</span>
+              </div>
             </Motion.div>
           </Motion.div>
 

@@ -586,7 +586,7 @@ export default function Platform() {
       {isDev && <DemoSection />}
 
       {/* Dev-only: Platform Pricing */}
-      {isDev && <PlatformPricing />}
+      {isDev && <PlatformPricing onBook={onBook} />}
 
       {/* Bottom CTA */}
       <section className="py-20 bg-slate-50">

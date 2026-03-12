@@ -1,5 +1,6 @@
 import { useOutletContext } from 'react-router-dom'
 import Hero from '../components/Hero'
+import SocialProof from '../components/SocialProof'
 import Logos from '../components/Logos'
 import Features from '../components/Features'
 import CTA from '../components/CTA'
@@ -16,6 +17,7 @@ export default function Home() {
   return (
     <>
       <Hero onBook={onBook} />
+      <SocialProof />
       <Features />
       <PlatformSection />
       <WhyTestHiveSection onBook={onBook} />

@@ -24,6 +24,8 @@ import CaseStudies from "./pages/CaseStudies";
 import Integrations from "./pages/Integrations";
 import KnowledgeBase from "./pages/KnowledgeBase";
 import DocsArticle from "./pages/DocsArticle";
+import Privacy from "./pages/Privacy";
+import Terms from "./pages/Terms";
 
 function App() {
   return (
@@ -56,6 +58,9 @@ function App() {
         <Route path="integrations" element={<Integrations />} />
         <Route path="docs" element={<KnowledgeBase />} />
         <Route path="docs/:slug" element={<DocsArticle />} />
+
+        <Route path="privacy" element={<Privacy />} />
+        <Route path="terms" element={<Terms />} />
 
         <Route path="*" element={<NotFound />} />
       </Route>

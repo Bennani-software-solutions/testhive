@@ -2,9 +2,7 @@
 import { useState } from "react"
 
 export default function Pricing({
-  onBookClick = () => {},                 // opens your Calendly modal
-  calendlyUrl = "https://calendly.com/jointhehive-testhive-phr7/30min",
-  buyUrl = "https://buy.stripe.com/your-checkout-link" // <- replace with Stripe Checkout URL
+  onBookClick = () => {},
 }) {
   const [openPOCForm, setOpenPOCForm] = useState(false)
 
@@ -86,13 +84,13 @@ export default function Pricing({
           </ul>
 
           <div className="mt-6 grid gap-3">
-            <a
-              href={buyUrl}
-              className="w-full text-center rounded-2xl bg-indigo-600 hover:bg-indigo-700 px-4 py-3 text-sm font-semibold text-white shadow-md transition active:scale-95"
-              aria-label="Buy the Quality Accelerator Pack"
+            <button
+              onClick={onBookClick}
+              className="w-full rounded-2xl bg-indigo-600 hover:bg-indigo-700 px-4 py-3 text-sm font-semibold text-white shadow-md transition active:scale-95"
+              aria-label="Get the Quality Accelerator Pack"
             >
-              Buy Now
-            </a>
+              Get Started
+            </button>
             <button
               onClick={onBookClick}
               className="w-full rounded-2xl border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-800 hover:bg-gray-50"
@@ -231,16 +229,13 @@ export default function Pricing({
                 >
                   Submit Request
                 </button>
-                {calendlyUrl && (
-                  <a
-                    href={calendlyUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
-                  >
-                    Or book a call
-                  </a>
-                )}
+                <button
+                  onClick={onBookClick}
+                  type="button"
+                  className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                >
+                  Or book a call
+                </button>
               </div>
 
               <p className="mt-2 text-[11px] text-gray-400">
