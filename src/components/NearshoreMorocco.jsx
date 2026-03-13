@@ -147,11 +147,36 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
             transition={{ duration: 0.45, ease: EASE }}
             className="relative rounded-3xl border border-gray-200 bg-slate-50 p-4 shadow-sm"
           >
-            <Img
-              src={A.map}
-              alt="Nearshore coverage between EU/UK and Morocco"
-              ratio="aspect-[4/3] sm:aspect-[16/10]"
-            />
+            {/* EU–Morocco connection illustration */}
+            <div className="aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-emerald-50 flex items-center justify-center">
+              <svg viewBox="0 0 400 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                {/* EU region */}
+                <rect x="40" y="30" width="120" height="80" rx="12" className="fill-white stroke-indigo-200" strokeWidth="1.5"/>
+                <text x="100" y="55" textAnchor="middle" className="fill-indigo-700 text-[11px] font-bold">Europe</text>
+                <text x="100" y="72" textAnchor="middle" className="fill-slate-500 text-[8px]">NL  BE  DE  FR  UK</text>
+                <circle cx="65" cy="90" r="4" className="fill-indigo-400"/>
+                <circle cx="82" cy="85" r="4" className="fill-indigo-400"/>
+                <circle cx="100" cy="88" r="4" className="fill-indigo-300"/>
+                <circle cx="118" cy="86" r="4" className="fill-indigo-400"/>
+                <circle cx="135" cy="90" r="4" className="fill-indigo-300"/>
+                {/* Morocco region */}
+                <rect x="240" y="120" width="120" height="80" rx="12" className="fill-white stroke-emerald-200" strokeWidth="1.5"/>
+                <text x="300" y="148" textAnchor="middle" className="fill-emerald-700 text-[11px] font-bold">Morocco</text>
+                <text x="300" y="165" textAnchor="middle" className="fill-slate-500 text-[8px]">Casablanca  Rabat</text>
+                <circle cx="280" cy="180" r="4" className="fill-emerald-400"/>
+                <circle cx="300" cy="178" r="4" className="fill-emerald-500"/>
+                <circle cx="320" cy="180" r="4" className="fill-emerald-400"/>
+                {/* Connection lines */}
+                <path d="M160 80 C200 80, 200 160, 240 160" className="stroke-indigo-300" strokeWidth="2" strokeDasharray="6 4"/>
+                <path d="M160 70 C210 70, 210 150, 240 150" className="stroke-emerald-300" strokeWidth="2" strokeDasharray="6 4"/>
+                {/* Labels */}
+                <rect x="175" y="105" width="55" height="22" rx="6" className="fill-indigo-600"/>
+                <text x="202" y="119" textAnchor="middle" className="fill-white text-[8px] font-semibold">Same TZ</text>
+                {/* Plane icon */}
+                <text x="195" y="100" textAnchor="middle" className="fill-slate-400 text-[14px]">✈</text>
+                <text x="195" y="145" textAnchor="middle" className="fill-slate-400 text-[7px]">2-3h flight</text>
+              </svg>
+            </div>
             <div className="pointer-events-none absolute left-4 sm:left-6 top-4 sm:top-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-indigo-700 ring-1 ring-indigo-100 backdrop-blur">
               <Clock className="h-4 w-4" /> 6–8 h CET / UK overlap (seasonal)
             </div>

@@ -198,21 +198,25 @@ export default function AutomationService() {
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* POC Package */}
                     <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
-                        <div className="relative mb-4">
-                            <img
-                                src="/assets/whyy.png"
-                                alt="Prove It Pack"
-                                className="w-full h-40 object-cover rounded-t-2xl"
-                            />
-                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
-                                The prove it pack
+                        <div className="h-40 bg-gradient-to-br from-emerald-50 to-emerald-100 flex items-center justify-center rounded-t-2xl relative">
+                            <svg viewBox="0 0 120 100" className="h-24 w-28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="20" width="60" height="45" rx="4" className="fill-white stroke-emerald-400" strokeWidth="2"/>
+                                <rect x="16" y="28" width="20" height="3" rx="1.5" className="fill-emerald-300"/>
+                                <rect x="16" y="35" width="35" height="2" rx="1" className="fill-slate-200"/>
+                                <rect x="16" y="41" width="30" height="2" rx="1" className="fill-slate-200"/>
+                                <rect x="16" y="47" width="25" height="2" rx="1" className="fill-slate-200"/>
+                                <circle cx="85" cy="42" r="22" className="fill-emerald-500" opacity="0.15"/>
+                                <path d="M78 42l5 5 10-10" className="stroke-emerald-600" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <h3 className="absolute bottom-3 left-5 text-lg font-semibold text-slate-800">
+                                The Prove It Pack
                             </h3>
                         </div>
-                        <div className="p-6 pt-0">
-                            <ul className="space-y-2 text-slate-600 mb-4">
-                                <li>✔️ Free Proof of Concept using real Scenarios from your app.</li>
-                                <li>✔️ See value without risk and decide with data, not guesswork.</li>
-                                <li>✔️ Clear next steps if you choose to scale up later.</li>
+                        <div className="p-6 pt-4">
+                            <ul className="space-y-2 text-slate-600 mb-4 text-sm">
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> Free Proof of Concept using real scenarios from your app.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> See value without risk — decide with data, not guesswork.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> Clear next steps if you choose to scale up later.</li>
                             </ul>
                             <Link to="/pocdetails" className="text-indigo-600 font-medium hover:underline">
                                 Start free →
@@ -222,23 +226,26 @@ export default function AutomationService() {
 
                     {/* Accelerator Package */}
                     <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
-                        <div className="relative mb-4">
-                            <img
-                                src="/assets/time.png"
-                                alt="Accelerator Pack"
-                                className="w-full h-40 object-cover rounded-t-2xl"
-                            />
-                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
+                        <div className="h-40 bg-gradient-to-br from-indigo-50 to-indigo-100 flex items-center justify-center rounded-t-2xl relative">
+                            <svg viewBox="0 0 120 100" className="h-24 w-28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="15" y="15" width="55" height="55" rx="6" className="fill-white stroke-indigo-300" strokeWidth="2"/>
+                                <path d="M28 55V35" className="stroke-indigo-400" strokeWidth="6" strokeLinecap="round"/>
+                                <path d="M40 55V30" className="stroke-indigo-500" strokeWidth="6" strokeLinecap="round"/>
+                                <path d="M52 55V25" className="stroke-indigo-600" strokeWidth="6" strokeLinecap="round"/>
+                                <path d="M75 20l15 15-15 15" className="stroke-indigo-500" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"/>
+                                <circle cx="95" cy="35" r="3" className="fill-indigo-500"/>
+                            </svg>
+                            <h3 className="absolute bottom-3 left-5 text-lg font-semibold text-slate-800">
                                 Accelerator Pack
                             </h3>
                         </div>
-                        <div className="p-6 pt-0">
-                            <ul className="space-y-2 text-slate-600 mb-4">
-                                <li>✔️ Fixed price engagement. One clear cost and no surprises.</li>
-                                <li>✔️ 10 to 20 critical tests delivered within 90 days.</li>
-                                <li>✔️ Integrated into your CI/CD so it helps every release.</li>
-                                <li>✔️ Hands-on support from TestHive engineers who work with your team.</li>
-                                <li>✔️ Outcome focused and predictable, with care at every step.</li>
+                        <div className="p-6 pt-4">
+                            <ul className="space-y-2 text-slate-600 mb-4 text-sm">
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" /> Fixed price engagement. One clear cost and no surprises.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" /> 10 to 20 critical tests delivered within 90 days.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" /> Integrated into your CI/CD so it helps every release.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" /> Hands-on support from TestHive engineers.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-indigo-500 mt-0.5 flex-shrink-0" /> Outcome focused and predictable.</li>
                             </ul>
                             <Link to="/accelerator" className="text-indigo-600 font-medium hover:underline">
                                 See how it works →
@@ -248,21 +255,26 @@ export default function AutomationService() {
 
                     {/* Quality Partner Program */}
                     <div className="border rounded-2xl shadow hover:shadow-lg transition bg-white overflow-hidden">
-                        <div className="relative mb-4">
-                            <img
-                                src="/assets/languages.png"
-                                alt="Quality Partner Program"
-                                className="w-full h-40 object-cover rounded-t-2xl"
-                            />
-                            <h3 className="absolute top-5 left-10 text-xl font-semibold text-black drop-shadow-lg">
+                        <div className="h-40 bg-gradient-to-br from-violet-50 to-violet-100 flex items-center justify-center rounded-t-2xl relative">
+                            <svg viewBox="0 0 120 100" className="h-24 w-28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="45" cy="38" r="12" className="fill-violet-200 stroke-violet-400" strokeWidth="2"/>
+                                <circle cx="45" cy="34" r="5" className="fill-violet-400"/>
+                                <path d="M35 48c0-5.5 4.5-10 10-10s10 4.5 10 10" className="stroke-violet-400" strokeWidth="2" fill="none"/>
+                                <circle cx="78" cy="38" r="12" className="fill-violet-200 stroke-violet-400" strokeWidth="2"/>
+                                <circle cx="78" cy="34" r="5" className="fill-violet-400"/>
+                                <path d="M68 48c0-5.5 4.5-10 10-10s10 4.5 10 10" className="stroke-violet-400" strokeWidth="2" fill="none"/>
+                                <path d="M55 55h12" className="stroke-violet-500" strokeWidth="2" strokeLinecap="round" strokeDasharray="4 3"/>
+                                <path d="M58 62l5-5 5 5" className="stroke-violet-500" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg>
+                            <h3 className="absolute bottom-3 left-5 text-lg font-semibold text-slate-800">
                                 Quality Partner Program
                             </h3>
                         </div>
-                        <div className="p-6 pt-0">
-                            <ul className="space-y-2 text-slate-600 mb-4">
-                                <li>✔️ A dedicated QA consultant embedded in your team.</li>
-                                <li>✔️ A strategy that fits your stack and your roadmap.</li>
-                                <li>✔️ Continuous improvement across automation, functional testing, and quality gates.</li>
+                        <div className="p-6 pt-4">
+                            <ul className="space-y-2 text-slate-600 mb-4 text-sm">
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-violet-500 mt-0.5 flex-shrink-0" /> A dedicated QA consultant embedded in your team.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-violet-500 mt-0.5 flex-shrink-0" /> A strategy that fits your stack and your roadmap.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-violet-500 mt-0.5 flex-shrink-0" /> Continuous improvement across automation and quality gates.</li>
                             </ul>
                             <Link to="/partnerprogram" className="text-indigo-600 font-medium hover:underline">
                                 Let’s talk →
