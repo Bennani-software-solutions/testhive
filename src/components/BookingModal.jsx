@@ -9,10 +9,18 @@ function generateRoomId() {
   return `testhive-${seg()}-${seg()}`;
 }
 
+function getMinDateTime() {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(9, 0, 0, 0);
+  return tomorrow.toISOString().slice(0, 16);
+}
+
 export default function BookingModal({ open, onClose }) {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [roomUrl, setRoomUrl] = useState("");
   const [copied, setCopied] = useState(false);
+  const [preferredTime, setPreferredTime] = useState("");
 
   if (!open) return null;
 
@@ -41,7 +49,7 @@ export default function BookingModal({ open, onClose }) {
       if (!res.ok) throw new Error("Submit failed");
 
       // Send confirmation email to customer via platform API
-      const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://platform.testhive.ma';
+      const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://aithentic.testhive.ma';
       await fetch(`${platformApi}/api/public/booking-confirmation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -71,6 +79,7 @@ export default function BookingModal({ open, onClose }) {
     setStatus("idle");
     setRoomUrl("");
     setCopied(false);
+    setPreferredTime("");
     onClose();
   };
 
@@ -104,6 +113,7 @@ export default function BookingModal({ open, onClose }) {
               <div className="mt-5 flex flex-col gap-3">
                 <a
                   href={roomUrl.replace(window.location.origin, '')}
+                  onClick={handleClose}
                   className="flex items-center justify-center gap-2 w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 px-4 py-2.5 text-sm font-semibold text-white transition"
                 >
                   <Video className="h-4 w-4" />
@@ -117,7 +127,7 @@ export default function BookingModal({ open, onClose }) {
                         title: 'TestHive Consultation',
                         description: `Join the meeting at: ${roomUrl}`,
                         location: roomUrl,
-                        startDate: new Date(),
+                        startDate: preferredTime ? new Date(preferredTime) : new Date(),
                         durationMinutes: 30,
                       });
                     }}
@@ -206,6 +216,8 @@ export default function BookingModal({ open, onClose }) {
                     type="datetime-local"
                     name="preferredTime"
                     required
+                    min={getMinDateTime()}
+                    onChange={(e) => setPreferredTime(e.target.value)}
                     className="w-full rounded-xl border border-slate-200 px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 transition"
                   />
                 </div>
