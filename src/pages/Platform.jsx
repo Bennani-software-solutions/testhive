@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion as Motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { useOutletContext } from "react-router-dom";
 import useDevMode from "../hooks/useDevMode";
 import DemoSection from "../components/DemoSection";
@@ -37,7 +37,7 @@ const steps = [
   {
     num: "01",
     title: "Write Scenarios",
-    desc: "Describe what you want to test using BDD/Gherkin syntax — plain language anyone can understand.",
+    desc: "Describe what you want to test using BDD/Gherkin syntax, plain language anyone can understand.",
     icon: PenTool,
   },
   {
@@ -49,7 +49,7 @@ const steps = [
   {
     num: "03",
     title: "Execute Tests",
-    desc: "Run your tests with one click — headed or headless, single or batch. See results in real time.",
+    desc: "Run your tests with one click, headed or headless, single or batch. See results in real time.",
     icon: Play,
   },
   {
@@ -64,14 +64,14 @@ const showcaseFeatures = [
   {
     icon: Sparkles,
     title: "AI-Powered Test Generation",
-    desc: "Write your test scenarios in Gherkin and let AI generate production-ready Playwright code. The AI uses your project context — base URLs, selectors, API endpoints — to produce accurate, ready-to-run tests.",
+    desc: "Write your test scenarios in Gherkin and let AI generate production-ready Playwright code. The AI uses your project context (base URLs, selectors, API endpoints) to produce accurate, ready-to-run tests.",
     bullets: [
       "BDD/Gherkin to Playwright TypeScript in seconds",
       "Project-aware code generation with custom selectors",
       "Parameter substitution for dynamic test data",
     ],
     image: "/assets/platform/editor.png",
-    imageAlt: "TestHive Platform — BDD scenario editor with generated Playwright code",
+    imageAlt: "TestHive Platform: BDD scenario editor with generated Playwright code",
   },
   {
     icon: BarChart3,
@@ -83,43 +83,43 @@ const showcaseFeatures = [
       "Slowest tests identification for optimization",
     ],
     image: "/assets/platform/dashboard.png",
-    imageAlt: "TestHive Platform — Analytics dashboard with pass rate trends and metrics",
+    imageAlt: "TestHive Platform: Analytics dashboard with pass rate trends and metrics",
   },
   {
     icon: RefreshCw,
     title: "Self-Healing Tests",
-    desc: "When a test fails, AI analyzes the error logs and your test code, then proposes a minimal fix. Review the suggestion, accept it, and your test is back to green — no manual debugging.",
+    desc: "When a test fails, AI analyzes the error logs and your test code, then proposes a minimal fix. Review the suggestion, accept it, and your test is back to green. No manual debugging.",
     bullets: [
       "AI-powered root cause analysis",
       "Minimal code changes proposed automatically",
       "One-click accept or manual review",
     ],
     image: "/assets/platform/self-heal.png",
-    imageAlt: "TestHive Platform — Self-healing modal with AI-suggested fix",
+    imageAlt: "TestHive Platform: Self-healing modal with AI-suggested fix",
   },
   {
     icon: FileSearch,
     title: "Document-Driven Testing",
-    desc: "Upload your requirements documents — PDF, Word, or Markdown — and let AI extract test scenarios and user stories. Go from specification to test coverage in minutes.",
+    desc: "Upload your requirements documents (PDF, Word, or Markdown) and let AI extract test scenarios and user stories. Go from specification to test coverage in minutes.",
     bullets: [
       "Supports PDF, Word, TXT, and Markdown",
       "Auto-generates BDD scenarios from requirements",
       "Full traceability from document to test result",
     ],
     image: "/assets/platform/documents.png",
-    imageAlt: "TestHive Platform — Document analysis with extracted test scenarios",
+    imageAlt: "TestHive Platform: Document analysis with extracted test scenarios",
   },
   {
     icon: Play,
     title: "E2E & API Testing",
     desc: "Test web UIs and REST APIs from the same Gherkin scenarios. The AI auto-detects whether your scenario needs a browser or HTTP requests and generates the right Playwright code.",
     bullets: [
-      "API testing via Gherkin — define endpoints, methods, and assertions",
+      "API testing via Gherkin: define endpoints, methods, and assertions",
       "Auth tokens and API keys stored as encrypted parameters",
       "Hybrid tests: combine UI interactions with API calls",
     ],
     image: "/assets/platform/api-testing.png",
-    imageAlt: "TestHive Platform — API test scenario with Gherkin steps and response assertions",
+    imageAlt: "TestHive Platform: API test scenario with Gherkin steps and response assertions",
   },
 ];
 
@@ -141,7 +141,7 @@ const trustPoints = [
 
 const audiences = [
   { label: "QA Engineers", desc: "Accelerate test creation and reduce maintenance overhead." },
-  { label: "Business Analysts", desc: "Write test scenarios in plain language — no coding required." },
+  { label: "Business Analysts", desc: "Write test scenarios in plain language, no coding required." },
   { label: "Product Owners", desc: "Ensure acceptance criteria are automatically verified." },
   { label: "Development Teams", desc: "Integrate AI-generated tests into your CI/CD pipeline." },
 ];
@@ -149,15 +149,15 @@ const audiences = [
 const faqs = [
   {
     q: "Do I need coding experience to use TestHive Platform?",
-    a: "No. You write test scenarios in BDD/Gherkin — plain English structured as Given/When/Then steps. The AI generates all the Playwright code for you. If you can describe what your app should do, you can create tests.",
+    a: "No. You write test scenarios in BDD/Gherkin, plain English structured as Given/When/Then steps. The AI generates all the Playwright code for you. If you can describe what your app should do, you can create tests.",
   },
   {
     q: "What AI model does the platform use?",
-    a: "By default, the platform uses OpenAI GPT-4o-mini for code generation and test analysis. You can also configure your own AI provider — OpenAI, Azure OpenAI, Ollama, or a custom endpoint — per project.",
+    a: "By default, the platform uses OpenAI API for code generation and test analysis. You can also configure your own AI provider (OpenAI, Azure OpenAI, Ollama, or a custom endpoint) per project.",
   },
   {
     q: "Can I run tests on a schedule?",
-    a: "Yes. You can set up cron-based schedules to run specific test suites automatically — hourly, nightly, or on any custom schedule. Results are stored and accessible in the dashboard.",
+    a: "Yes. You can set up cron-based schedules to run specific test suites automatically, hourly, nightly, or on any custom schedule. Results are stored and accessible in the dashboard.",
   },
   {
     q: "How does self-healing work?",
@@ -173,7 +173,7 @@ const faqs = [
   },
   {
     q: "Can I test REST APIs with TestHive?",
-    a: "Yes. Write your API test scenarios in Gherkin — describe the endpoint, HTTP method, request body, and expected response. The AI generates Playwright tests using the request fixture. Auth tokens and API keys are stored as encrypted parameters.",
+    a: "Yes. Write your API test scenarios in Gherkin: describe the endpoint, HTTP method, request body, and expected response. The AI generates Playwright tests using the request fixture. Auth tokens and API keys are stored as encrypted parameters.",
   },
 ];
 
@@ -223,14 +223,14 @@ function FaqItem({ q, a }) {
         <ChevronDown className={`h-5 w-5 text-slate-400 flex-shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
       {open && (
-        <Motion.div
+        <m.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
           transition={{ duration: 0.25 }}
           className="pb-5"
         >
           <p className="text-sm text-slate-600 leading-relaxed">{a}</p>
-        </Motion.div>
+        </m.div>
       )}
     </div>
   );
@@ -246,7 +246,7 @@ export default function Platform() {
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="hero-glow-light -z-10" aria-hidden />
         <div className="mx-auto max-w-6xl px-6 text-center">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -262,7 +262,7 @@ export default function Platform() {
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
               Turn requirements into executable tests without writing code.
               Write what you want to test, let AI generate the code, execute with one click,
-              and get results — all in one platform.
+              and get results, all in one platform.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
               <a
@@ -280,9 +280,9 @@ export default function Platform() {
                 Request a Demo
               </button>
             </div>
-          </Motion.div>
+          </m.div>
 
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -290,10 +290,10 @@ export default function Platform() {
           >
             <ScreenshotPlaceholder
               src="/assets/platform/hero.png"
-              alt="TestHive Platform overview — test editor, execution, and analytics"
+              alt="TestHive Platform overview: test editor, execution, and analytics"
               className="w-full max-w-5xl mx-auto min-h-[280px] md:min-h-[420px]"
             />
-          </Motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -302,7 +302,7 @@ export default function Platform() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
             {metrics.map((m, i) => (
-              <Motion.div
+              <m.div
                 key={m.label}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -312,7 +312,7 @@ export default function Platform() {
                 <p className="text-4xl md:text-5xl font-extrabold text-white">{m.value}</p>
                 <p className="mt-2 text-sm font-semibold text-indigo-300">{m.label}</p>
                 <p className="text-xs text-slate-400 mt-1">{m.sub}</p>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -321,7 +321,7 @@ export default function Platform() {
       {/* How it works */}
       <section className="py-20 bg-slate-50 border-y border-slate-100">
         <div className="mx-auto max-w-6xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -332,11 +332,11 @@ export default function Platform() {
               How it <span className="text-indigo-600">works</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">Four steps from idea to verified test results.</p>
-          </Motion.div>
+          </m.div>
 
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {steps.map((s, i) => (
-              <Motion.div
+              <m.div
                 key={s.num}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -350,7 +350,7 @@ export default function Platform() {
                 </div>
                 <h3 className="text-lg font-semibold text-slate-900 mb-2">{s.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -359,7 +359,7 @@ export default function Platform() {
       {/* Feature showcase with screenshots */}
       <section className="py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -372,11 +372,11 @@ export default function Platform() {
             <p className="mt-3 text-lg text-slate-600">
               See the platform in action.
             </p>
-          </Motion.div>
+          </m.div>
 
           <div className="space-y-24">
             {showcaseFeatures.map((f, i) => (
-              <Motion.div
+              <m.div
                 key={f.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -406,7 +406,7 @@ export default function Platform() {
                     className="w-full min-h-[220px] md:min-h-[300px]"
                   />
                 </div>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -415,7 +415,7 @@ export default function Platform() {
       {/* More features grid */}
       <section className="py-20 bg-slate-50 border-y border-slate-100">
         <div className="mx-auto max-w-6xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -425,18 +425,18 @@ export default function Platform() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
               And <span className="text-indigo-600">more</span>
             </h2>
-          </Motion.div>
+          </m.div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {[
-              { icon: Calendar, title: "Scheduled Test Runs", desc: "Set up cron-based schedules to run tests automatically — hourly, nightly, or on any custom interval.", color: "sky" },
+              { icon: Calendar, title: "Scheduled Test Runs", desc: "Set up cron-based schedules to run tests automatically, hourly, nightly, or on any custom interval.", color: "sky" },
               { icon: Users, title: "Team Collaboration", desc: "Multi-project workspaces, team management, folders, and role-based access. Everyone works in the same environment.", color: "violet" },
               { icon: Link2, title: "Integrations", desc: "Connect with Xray, TestRail, and Confluence. Push results, sync test cases, and import requirements.", color: "emerald" },
               { icon: Zap, title: "Parameterization", desc: "Use {{parameters}} in your tests for dynamic data. Encrypted storage, project-scoped, substituted at runtime.", color: "amber" },
               { icon: Shield, title: "Bring Your Own AI", desc: "Configure OpenAI, Azure OpenAI, Ollama, or custom LLM endpoints per project. Your API keys stay encrypted.", color: "sky" },
               { icon: Play, title: "Video Recordings", desc: "Capture video of every test run. Replay failures visually to understand exactly what went wrong.", color: "violet" },
             ].map((f, i) => (
-              <Motion.div
+              <m.div
                 key={f.title}
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -449,7 +449,7 @@ export default function Platform() {
                 </div>
                 <h3 className="text-base font-semibold text-slate-900 mb-2">{f.title}</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">{f.desc}</p>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -458,7 +458,7 @@ export default function Platform() {
       {/* Integrations */}
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-6 text-center">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -470,11 +470,28 @@ export default function Platform() {
             <p className="text-slate-600 mb-10">
               Push results to your test management tools. Import requirements. Connect your CI/CD.
             </p>
-          </Motion.div>
+          </m.div>
+
+          <m.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-10"
+          >
+            <div className="rounded-2xl bg-slate-900 p-6">
+              <img
+                src="/assets/infographics/integrations.png"
+                alt="TestHive integration ecosystem: Playwright, Xray, TestRail, Confluence, GitHub, GitLab, CI/CD, OpenAI, Ollama"
+                loading="lazy"
+                className="w-full max-w-4xl h-auto rounded-xl"
+              />
+            </div>
+          </m.div>
 
           <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
             {integrations.map((int, i) => (
-              <Motion.div
+              <m.div
                 key={int.name}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -491,7 +508,7 @@ export default function Platform() {
                   />
                 </div>
                 <span className="text-xs font-medium text-slate-600">{int.name}</span>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -500,7 +517,7 @@ export default function Platform() {
       {/* Security & trust */}
       <section className="py-20 bg-gradient-to-b from-slate-50 to-white border-t border-slate-100">
         <div className="mx-auto max-w-6xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -513,11 +530,28 @@ export default function Platform() {
             <p className="mt-3 text-lg text-slate-600">
               Enterprise-grade security features you can trust.
             </p>
-          </Motion.div>
+          </m.div>
+
+          <m.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.5 }}
+            className="flex justify-center mb-12"
+          >
+            <div className="rounded-2xl bg-slate-900 p-6">
+              <img
+                src="/assets/infographics/security.png"
+                alt="TestHive enterprise security: AES-256 encryption, BYOAI, SSRF protection, JWT HTTP-only cookies, bcrypt passwords, role-based access"
+                loading="lazy"
+                className="w-full max-w-4xl h-auto rounded-xl"
+              />
+            </div>
+          </m.div>
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {trustPoints.map((t, i) => (
-              <Motion.div
+              <m.div
                 key={t.title}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -530,7 +564,7 @@ export default function Platform() {
                 </div>
                 <h3 className="text-sm font-semibold text-slate-900 mb-1">{t.title}</h3>
                 <p className="text-xs text-slate-600">{t.desc}</p>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -539,7 +573,7 @@ export default function Platform() {
       {/* Who it's for */}
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="mx-auto max-w-4xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -550,13 +584,13 @@ export default function Platform() {
               Built for <span className="text-indigo-600">your team</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
-              Whether you write code or not — TestHive Platform makes test automation accessible.
+              Whether you write code or not, TestHive Platform makes test automation accessible.
             </p>
-          </Motion.div>
+          </m.div>
 
           <div className="grid gap-4 sm:grid-cols-2">
             {audiences.map((a, i) => (
-              <Motion.div
+              <m.div
                 key={a.label}
                 initial={{ opacity: 0, x: -16 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -569,7 +603,7 @@ export default function Platform() {
                   <h3 className="font-semibold text-slate-900">{a.label}</h3>
                   <p className="text-sm text-slate-600 mt-1">{a.desc}</p>
                 </div>
-              </Motion.div>
+              </m.div>
             ))}
           </div>
         </div>
@@ -578,7 +612,7 @@ export default function Platform() {
       {/* FAQ */}
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="mx-auto max-w-3xl px-6">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -588,7 +622,7 @@ export default function Platform() {
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
               Frequently asked <span className="text-indigo-600">questions</span>
             </h2>
-          </Motion.div>
+          </m.div>
 
           <div className="divide-y divide-slate-200 rounded-xl border border-slate-200 bg-white px-6">
             {faqs.map((faq) => (
@@ -607,7 +641,7 @@ export default function Platform() {
       {/* Bottom CTA */}
       <section className="py-20 bg-slate-50">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <Motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -636,7 +670,7 @@ export default function Platform() {
                 Book a Demo
               </button>
             </div>
-          </Motion.div>
+          </m.div>
         </div>
       </section>
     </>

@@ -74,7 +74,7 @@ export default function Integrations() {
     <Section className="bg-white">
       <div className="text-center mb-16">
         <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">
-          DUMMY DATA — PLACEHOLDER
+          DUMMY DATA / PLACEHOLDER
         </div>
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
           Integrations

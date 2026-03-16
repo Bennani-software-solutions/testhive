@@ -1,5 +1,6 @@
 // src/pages/services/FunctionalTesting.jsx
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import { motion as m, useReducedMotion } from "framer-motion";
 import { Users, ClipboardCheck, FileText, ArrowRight, PhoneCall } from "lucide-react";
 import ContactForm from "../../components/ContactForm";
@@ -17,7 +18,8 @@ function useFadeUp() {
     );
 }
 
-export default function FunctionalTesting({ onBook }) {
+export default function FunctionalTesting() {
+    const { onBook } = useOutletContext();
     const fadeUp = useFadeUp();
     const [openForm, setOpenForm] = useState(false);
 
@@ -177,7 +179,7 @@ export default function FunctionalTesting({ onBook }) {
 
             {/* Contact Form Modal */}
             {openForm && (
-                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+                <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4" role="dialog" aria-modal="true">
                     <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6 relative">
                         <button
                             onClick={() => setOpenForm(false)}

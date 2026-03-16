@@ -32,7 +32,7 @@ const docs = [
           },
           {
             heading: "4. Generate Playwright code",
-            text: "Click \"Generate\" and the AI transforms your scenario into production-ready Playwright TypeScript code. The AI uses your project context — base URL, description, and testing knowledge — to produce accurate, ready-to-run tests with proper selectors and assertions.",
+            text: "Click \"Generate\" and the AI transforms your scenario into production-ready Playwright TypeScript code. The AI uses your project context (base URL, description, and testing knowledge) to produce accurate, ready-to-run tests with proper selectors and assertions.",
           },
           {
             heading: "5. Execute and review",
@@ -48,7 +48,7 @@ const docs = [
         content: [
           {
             heading: "Plain language vs. Gherkin",
-            text: "You can describe tests in plain language — the AI understands natural instructions. However, we strongly recommend using Gherkin syntax (Given/When/Then) as a scripting language. Gherkin removes ambiguity: each step maps to a single action, making the AI agent's output more predictable and maintainable.",
+            text: "You can describe tests in plain language, and the AI understands natural instructions. However, we strongly recommend using Gherkin syntax (Given/When/Then) as a scripting language. Gherkin removes ambiguity: each step maps to a single action, making the AI agent's output more predictable and maintainable.",
           },
           {
             heading: "Writing effective scenarios",
@@ -84,7 +84,7 @@ const docs = [
           },
           {
             heading: "Slowest tests & recent failures",
-            text: "Identify bottlenecks with the slowest tests panel — these are candidates for optimization. Recent failures show error snippets so you can quickly diagnose issues without opening individual test runs.",
+            text: "Identify bottlenecks with the slowest tests panel. These are candidates for optimization. Recent failures show error snippets so you can quickly diagnose issues without opening individual test runs.",
           },
         ],
       },
@@ -96,7 +96,7 @@ const docs = [
         content: [
           {
             heading: "Creating a team",
-            text: "Navigate to Teams and create a new team with a name and slug. Teams are the collaboration unit — all projects owned by a team are accessible to all team members.",
+            text: "Navigate to Teams and create a new team with a name and slug. Teams are the collaboration unit, and all projects owned by a team are accessible to all team members.",
           },
           {
             heading: "Inviting members",
@@ -189,12 +189,12 @@ const docs = [
       {
         slug: "api-testing",
         title: "API Testing with Gherkin",
-        desc: "Test REST APIs using the same BDD/Gherkin workflow — no browser required.",
+        desc: "Test REST APIs using the same BDD/Gherkin workflow, no browser required.",
         time: "5 min read",
         content: [
           {
             heading: "How it works",
-            text: "Write your API tests as Gherkin scenarios. The AI auto-detects API patterns (endpoints, HTTP methods, status codes) and generates Playwright tests using the request fixture instead of a browser. No configuration change needed — just write your scenario.",
+            text: "Write your API tests as Gherkin scenarios. The AI auto-detects API patterns (endpoints, HTTP methods, status codes) and generates Playwright tests using the request fixture instead of a browser. No configuration change needed, just write your scenario.",
           },
           {
             heading: "Example: GET request",
@@ -206,7 +206,7 @@ const docs = [
           },
           {
             heading: "Authentication & security",
-            text: "Store API keys, bearer tokens, and auth credentials as encrypted parameters (AES-256-CBC). Reference them in your Gherkin steps with {{paramName}} syntax. Values never appear in generated code — they are substituted at runtime only.",
+            text: "Store API keys, bearer tokens, and auth credentials as encrypted parameters (AES-256-CBC). Reference them in your Gherkin steps with {{paramName}} syntax. Values never appear in generated code and are substituted at runtime only.",
           },
           {
             heading: "Hybrid tests (UI + API)",
@@ -222,7 +222,7 @@ const docs = [
         content: [
           {
             heading: "Folder hierarchy",
-            text: "Create nested folders to organize scenarios by feature, module, or sprint. Folders are self-referential — each folder can contain subfolders. When you delete a folder, child scenarios are moved to the parent.",
+            text: "Create nested folders to organize scenarios by feature, module, or sprint. Folders are self-referential, and each folder can contain subfolders. When you delete a folder, child scenarios are moved to the parent.",
           },
           {
             heading: "Tags with custom colors",
@@ -256,7 +256,7 @@ const docs = [
           },
           {
             heading: "Real-time monitoring",
-            text: "During execution, results stream in via Server-Sent Events (SSE). You see each test's status as it completes — no need to wait for the entire run to finish. Video recordings are captured for each test.",
+            text: "During execution, results stream in via Server-Sent Events (SSE). You see each test's status as it completes, no need to wait for the entire run to finish. Video recordings are captured for each test.",
           },
           {
             heading: "Retention policy",
@@ -304,7 +304,7 @@ const docs = [
           },
           {
             heading: "Cron expressions",
-            text: "Standard 5-field cron format:\n\n- \"0 2 * * *\" — every day at 2:00 AM\n- \"0 */4 * * *\" — every 4 hours\n- \"0 9 * * 1-5\" — weekdays at 9:00 AM\n- \"*/30 * * * *\" — every 30 minutes\n\nThe system validates your expression and calculates the next run time.",
+            text: "Standard 5-field cron format:\n\n- \"0 2 * * *\": every day at 2:00 AM\n- \"0 */4 * * *\": every 4 hours\n- \"0 9 * * 1-5\": weekdays at 9:00 AM\n- \"*/30 * * * *\": every 30 minutes\n\nThe system validates your expression and calculates the next run time.",
           },
           {
             heading: "Manual trigger",
@@ -320,7 +320,7 @@ const docs = [
         content: [
           {
             heading: "Creating a key",
-            text: "Navigate to Settings > API Keys and click \"Create Key\". Provide a name and optional expiration in days. The raw key (ftk_<32-byte-hex>) is shown only once — copy it immediately.",
+            text: "Navigate to Settings > API Keys and click \"Create Key\". Provide a name and optional expiration in days. The raw key (ftk_<32-byte-hex>) is shown only once, so copy it immediately.",
           },
           {
             heading: "Security model",
@@ -354,7 +354,7 @@ const docs = [
           },
           {
             heading: "What the AI fixes",
-            text: "Most failures are caused by selector changes — a button moved, a class name changed, an element was restructured. The AI identifies the broken selector and proposes the minimal code change needed. It preserves all {{parameter}} placeholders exactly.",
+            text: "Most failures are caused by selector changes: a button moved, a class name changed, or an element was restructured. The AI identifies the broken selector and proposes the minimal code change needed. It preserves all {{parameter}} placeholders exactly.",
           },
           {
             heading: "Review and accept",
@@ -374,7 +374,7 @@ const docs = [
           },
           {
             heading: "Safety guardrails",
-            text: "The AI is instructed to only output raw TypeScript — no markdown, no explanations. Dangerous patterns are automatically blocked: eval(), child_process, fs module access, Function constructor, and execSync are all forbidden in generated code.",
+            text: "The AI is instructed to only output raw TypeScript, no markdown, no explanations. Dangerous patterns are automatically blocked: eval(), child_process, fs module access, Function constructor, and execSync are all forbidden in generated code.",
           },
           {
             heading: "Best practices enforced",
@@ -500,7 +500,7 @@ const docs = [
           },
           {
             heading: "Webhook trigger",
-            text: "POST /api/webhook/trigger\n\nBody: { projectSlug, scenarioIds?, tags?, folderId?, title?, version?, environment?, headless?, browser?, callbackUrl?, retries? }\n\nReturns: { runId } — use this to poll or long-poll for results.",
+            text: "POST /api/webhook/trigger\n\nBody: { projectSlug, scenarioIds?, tags?, folderId?, title?, version?, environment?, headless?, browser?, callbackUrl?, retries? }\n\nReturns: { runId }. Use this to poll or long-poll for results.",
           },
           {
             heading: "SSRF protection",
@@ -530,7 +530,7 @@ const docs = [
           },
           {
             heading: "Auto-refresh",
-            text: "When an access token expires, the frontend automatically calls POST /auth/refresh. The old refresh token is invalidated (JTI rotation) and a new token pair is issued. This happens transparently — you stay logged in.",
+            text: "When an access token expires, the frontend automatically calls POST /auth/refresh. The old refresh token is invalidated (JTI rotation) and a new token pair is issued. This happens transparently, and you stay logged in.",
           },
           {
             heading: "Rate limiting",
@@ -550,11 +550,11 @@ const docs = [
         content: [
           {
             heading: "Team roles",
-            text: "Teams have two roles:\n- Member: Can access team projects, create and run tests\n- Admin: Can manage team settings, invite/remove members, and manage projects\n\nProject ownership is separate — the owner can modify project settings regardless of team role.",
+            text: "Teams have two roles:\n- Member: Can access team projects, create and run tests\n- Admin: Can manage team settings, invite/remove members, and manage projects\n\nProject ownership is separate. The owner can modify project settings regardless of team role.",
           },
           {
             heading: "API key isolation",
-            text: "API keys are scoped per user. Each team member creates their own keys. This provides audit trail capability — you can see which user triggered which test run via their API key.",
+            text: "API keys are scoped per user. Each team member creates their own keys. This provides audit trail capability, so you can see which user triggered which test run via their API key.",
           },
         ],
       },

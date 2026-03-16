@@ -242,7 +242,7 @@ export default function PlatformPricing({ onBook }) {
             },
             {
               q: "What happens when I exceed free plan limits?",
-              a: "You'll be notified when approaching limits. Tests won't be deleted — you simply won't be able to run new ones until the next month or until you upgrade.",
+              a: "You'll be notified when approaching limits. Tests won't be deleted. You simply won't be able to run new ones until the next month or until you upgrade.",
             },
             {
               q: "Is there a discount for annual billing?",

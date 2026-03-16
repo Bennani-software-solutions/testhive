@@ -1,4 +1,3 @@
-import React from "react";
 import { motion as m } from "framer-motion";
 import { Users, Compass, Handshake, Eye } from "lucide-react";
 
@@ -7,25 +6,25 @@ const FEATURES = [
     icon: Users,
     title: "Multidisciplinary team",
     body:
-      "Our QA engineers, automation specialists, and strategists work together across disciplines. That mix helps us understand both the technical and human sides of quality.",
+      "QA engineers who code, automation specialists who understand business, and strategists who have shipped quality at scale. Not just testers.",
   },
   {
     icon: Compass,
     title: "Independent advice",
     body:
-      "We’re not tied to any tool or vendor. Our only goal is to help you choose what fits your stack, and your people best.",
+      "We recommend what works for your stack, not what earns us a commission. If open-source Playwright is the right fit, we will tell you.",
   },
   {
     icon: Handshake,
     title: "Embedded collaboration",
     body:
-      "We adapt to your tools, meetings, and rhythm. Agile, waterfall, or hybrid. You’ll feel like we’re part of your own team, not an external supplier.",
+      "Same Slack channels, same standups, same deadlines. We work inside your team, not alongside it.",
   },
   {
     icon: Eye,
     title: "Transparency & trust",
     body:
-      "No surprises, no hidden metrics. You always know what’s done, what’s next, and what’s improving, backed by clear and honest communication.",
+      "Weekly progress reports, shared dashboards, and honest conversations about what is working and what is not.",
   },
 ];
 
@@ -45,6 +44,15 @@ export default function WhyTestHive({ onMeet }) {
         >
           Why TestHive?
         </m.h2>
+
+        <m.p
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed"
+        >
+          We started TestHive because we saw the same pattern everywhere: teams investing in test automation, only to drown in maintenance six months later. We believe quality engineering should accelerate your team, not slow it down.
+        </m.p>
 
         {/* Features */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

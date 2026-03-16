@@ -19,13 +19,9 @@ export default function Pricing({
           </div>
 
           <h3 className="mt-3 text-lg font-semibold text-gray-900">Free POC</h3>
-          <p
-            className="mt-2 text-sm text-gray-600"
-            dangerouslySetInnerHTML={{
-              __html:
-                "Try automation risk-free: <strong>1–2 test cases</strong>, minimal CI hookup, and a demo report.",
-            }}
-          />
+          <p className="mt-2 text-sm text-gray-600">
+            Try automation risk-free: <strong>1–2 test cases</strong>, minimal CI hookup, and a demo report.
+          </p>
 
           <div className="mt-6 text-3xl font-bold">Free</div>
 

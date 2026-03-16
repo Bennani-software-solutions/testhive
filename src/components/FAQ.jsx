@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion as m } from "framer-motion";
 import { ArrowRight, MessageSquare } from "lucide-react";
 import ContactForm from "./ContactForm"; // ✅ make sure path is correct
@@ -88,7 +88,7 @@ export default function FAQ() {
           <p className="text-slate-700 mb-3">Didn’t find your answer?</p>
           <button
             onClick={() => setShowForm(true)}
-            className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-slate-500 to-slate-1000 text-white px-6 py-3 font-semibold shadow-md active:scale-95"
+            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 font-semibold shadow-md active:scale-95"
           >
             <MessageSquare className="h-5 w-5" />
             Book a Free Consultation
@@ -97,7 +97,7 @@ export default function FAQ() {
 
         {/* Contact Form Modal */}
         {showForm && (
-          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true">
             <div className="bg-white rounded-2xl shadow-xl w-full max-w-lg relative overflow-y-auto max-h-[90vh]">
               <button
                 onClick={() => setShowForm(false)}

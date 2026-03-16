@@ -7,7 +7,9 @@ import CTA from '../components/CTA'
 import PlatformSection from '../components/PlatformSection'
 import WhyTestHiveSection from '../components/WhyTestHive'
 import QAProcessSection from '../components/QAProcessSection'
+import ComparisonSection from '../components/ComparisonSection'
 import CaseStudiesPreview from '../components/CaseStudiesPreview'
+import Testimonials from '../components/Testimonials'
 import useDevMode from '../hooks/useDevMode'
 
 export default function Home() {
@@ -21,9 +23,11 @@ export default function Home() {
       <Features />
       <PlatformSection />
       <WhyTestHiveSection onBook={onBook} />
+      <ComparisonSection />
       <Logos />
       {isDev && <CaseStudiesPreview />}
       <QAProcessSection />
+      <Testimonials />
       <CTA onBook={onBook} />
     </>
   )

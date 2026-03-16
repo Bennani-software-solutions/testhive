@@ -16,21 +16,22 @@ const services = [
 export default function Footer() {
   const isDev = useDevMode();
   const [email, setEmail] = useState("");
-  const [subStatus, setSubStatus] = useState("idle"); // idle | sending | done
+  const [subStatus, setSubStatus] = useState("idle"); // idle | sending | done | error
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
     setSubStatus("sending");
     try {
-      await fetch("https://formspree.io/f/mgvnzebp", {
+      const res = await fetch("https://formspree.io/f/mgvnzebp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, _subject: "Newsletter signup" }),
       });
+      if (!res.ok) throw new Error("Request failed");
       setSubStatus("done");
       setEmail("");
     } catch {
-      setSubStatus("idle");
+      setSubStatus("error");
     }
   };
   const whatsappHref =
@@ -159,6 +160,16 @@ export default function Footer() {
             <h3 className="text-sm font-semibold text-slate-900 mb-2">QA insights, weekly</h3>
             {subStatus === "done" ? (
               <p className="text-sm text-emerald-600">Subscribed!</p>
+            ) : subStatus === "error" ? (
+              <div>
+                <p className="text-sm text-red-600 mb-2">Something went wrong. Please try again.</p>
+                <button
+                  onClick={() => setSubStatus("idle")}
+                  className="text-sm font-medium text-indigo-600 hover:text-indigo-700"
+                >
+                  Try again
+                </button>
+              </div>
             ) : (
               <form onSubmit={handleSubscribe} className="flex gap-2">
                 <input

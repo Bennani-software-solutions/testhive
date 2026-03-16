@@ -37,7 +37,7 @@ const caseStudies = [
       { metric: "€120K", label: "Estimated annual savings" },
     ],
     quote:
-      "Having TestHive embedded in our team felt like having senior QA expertise on tap. They didn't just test — they mentored our developers to think about quality.",
+      "Having TestHive embedded in our team felt like having senior QA expertise on tap. They didn't just test, they mentored our developers to think about quality.",
     quotePerson: "Sarah Jansen",
     quoteRole: "CTO, MediTrack",
     tags: ["Cypress", "Azure DevOps", "Healthcare"],
@@ -69,7 +69,7 @@ export default function CaseStudies() {
       <Section className="bg-white">
         <div className="text-center mb-16">
           <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">
-            DUMMY DATA — PLACEHOLDER
+            DUMMY DATA / PLACEHOLDER
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
             Case Studies
@@ -155,7 +155,7 @@ export default function CaseStudies() {
                     <span className="font-semibold text-slate-900">
                       {cs.quotePerson}
                     </span>
-                    <span className="text-slate-500"> — {cs.quoteRole}</span>
+                    <span className="text-slate-500">, {cs.quoteRole}</span>
                   </footer>
                 </blockquote>
               </div>

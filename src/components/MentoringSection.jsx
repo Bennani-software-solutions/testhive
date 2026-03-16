@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { motion as m, useReducedMotion } from "framer-motion";
 import { Users, BookOpen, Lightbulb, Clock, CheckCircle2 } from "lucide-react";
 
@@ -151,7 +151,7 @@ export default function Mentoring() {
                 <div className="mt-12 text-center">
                     <a
                         href="mailto:jointhehive@testhive.ma"
-                        className="inline-block rounded-xl bg-gradient-to-r from-slate-500 to-slate-1000 px-6 py-3 text-white font-semibold shadow-md active:scale-95"
+                        className="inline-block rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-white font-semibold shadow-md active:scale-95"
                     >
                         Start your mentoring journey
                     </a>

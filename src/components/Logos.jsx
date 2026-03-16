@@ -1,5 +1,5 @@
 // src/components/Assets.jsx
-import { motion as Motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 
  const items = [
     { name: "AWS", src: "/assets/aws.png" },
@@ -21,7 +21,7 @@ export default function Assets() {
           Trusted tooling & platforms
         </h3>
 
-        <Motion.ul
+        <m.ul
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -29,7 +29,7 @@ export default function Assets() {
           className="mt-8 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-6"
         >
           {items.map(({ name, src }) => (
-            <Motion.li key={name} variants={fadeUp} whileHover={{ y: -2, scale: 1.03 }}>
+            <m.li key={name} variants={fadeUp} whileHover={{ y: -2, scale: 1.03 }}>
               <div className="group w-full rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-sm transition">
                 <img
                   src={src}
@@ -38,9 +38,9 @@ export default function Assets() {
                   className="mx-auto h-8 w-auto opacity-95 transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
-            </Motion.li>
+            </m.li>
           ))}
-        </Motion.ul>
+        </m.ul>
       </div>
     </section>
   );

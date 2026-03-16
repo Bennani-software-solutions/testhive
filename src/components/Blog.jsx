@@ -1,4 +1,4 @@
-import { motion as Motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const posts = [
@@ -24,9 +24,9 @@ export default function Blog() {
 
         </div>
 
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className={`mt-10 grid gap-6 ${posts.length === 1 ? 'lg:grid-cols-1 max-w-2xl mx-auto' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
           {posts.map((p) => (
-            <Motion.li
+            <m.li
               key={p.title}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function Blog() {
                   Read more →
                 </Link>
               </div>
-            </Motion.li>
+            </m.li>
           ))}
         </ul>
       </div>

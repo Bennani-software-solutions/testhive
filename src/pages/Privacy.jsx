@@ -119,7 +119,7 @@ export default function Privacy() {
               .
             </p>
             <p className="mt-1">
-              TestHive — Qtr Almatar, Nador, Morocco
+              TestHive, Qtr Almatar, Nador, Morocco
             </p>
           </div>
         </div>

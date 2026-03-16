@@ -215,7 +215,7 @@ export default function AutomationService() {
                         <div className="p-6 pt-4">
                             <ul className="space-y-2 text-slate-600 mb-4 text-sm">
                                 <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> Free Proof of Concept using real scenarios from your app.</li>
-                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> See value without risk — decide with data, not guesswork.</li>
+                                <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> See value without risk. Decide with data, not guesswork.</li>
                                 <li className="flex gap-2"><CheckCircle className="h-4 w-4 text-emerald-500 mt-0.5 flex-shrink-0" /> Clear next steps if you choose to scale up later.</li>
                             </ul>
                             <Link to="/pocdetails" className="text-indigo-600 font-medium hover:underline">

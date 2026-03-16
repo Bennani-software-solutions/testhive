@@ -1,5 +1,5 @@
 // src/components/Hero.jsx
-import { motion as Motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { HashLink } from "react-router-hash-link";
 
 function WhatsAppIcon({ className = "h-5 w-5" }) {
@@ -18,58 +18,72 @@ function WhatsAppIcon({ className = "h-5 w-5" }) {
 
 
 function HeroIllustration() {
+  /* Milestone positions on the timeline (x coords) */
+  const m1x = 80;
+  const m2x = 175;
+  const m3x = 320;
+  const m4x = 450;
+  const lineY = 150;
+
   return (
-    <svg viewBox="0 0 480 360" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Test automation dashboard illustration" className="w-full h-auto">
-      {/* Editor window */}
-      <rect x="16" y="16" width="448" height="328" rx="16" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1.5"/>
+    <svg viewBox="0 0 520 260" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="90-day quality accelerator timeline" className="w-full h-auto">
+      {/* Background */}
+      <rect x="8" y="8" width="504" height="244" rx="16" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1.5"/>
+
       {/* Title bar */}
-      <rect x="16" y="16" width="448" height="40" rx="16" fill="#fff"/>
-      <rect x="16" y="40" width="448" height="16" fill="#fff"/>
-      <circle cx="40" cy="36" r="5" fill="#EF4444"/>
-      <circle cx="58" cy="36" r="5" fill="#FBBF24"/>
-      <circle cx="76" cy="36" r="5" fill="#10B981"/>
-      <text x="200" y="40" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#64748B" textAnchor="middle">scenario.feature</text>
-      {/* Tab bar */}
-      <rect x="16" y="56" width="448" height="28" fill="#F1F5F9"/>
-      <rect x="24" y="60" width="80" height="20" rx="4" fill="#E0E7FF"/>
-      <text x="64" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#4F46E5" textAnchor="middle">Scenarios</text>
-      <rect x="112" y="60" width="64" height="20" rx="4" fill="transparent"/>
-      <text x="144" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="500" fill="#94A3B8" textAnchor="middle">Results</text>
-      <rect x="184" y="60" width="52" height="20" rx="4" fill="transparent"/>
-      <text x="210" y="74" fontSize="9" fontFamily="system-ui,sans-serif" fontWeight="500" fill="#94A3B8" textAnchor="middle">Logs</text>
-      {/* BDD scenario lines */}
-      <text x="40" y="108" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="700" fill="#4F46E5">Feature:</text>
-      <text x="102" y="108" fontSize="11" fontFamily="ui-monospace,monospace" fill="#334155"> User Login</text>
-      <text x="56" y="128" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="700" fill="#4F46E5">Scenario:</text>
-      <text x="126" y="128" fontSize="11" fontFamily="ui-monospace,monospace" fill="#334155"> Valid credentials</text>
-      <text x="72" y="148" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">Given</text>
-      <text x="110" y="148" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> user is on login page</text>
-      <text x="72" y="166" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">When</text>
-      <text x="105" y="166" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> they enter valid credentials</text>
-      <text x="72" y="184" fontSize="11" fontFamily="ui-monospace,monospace" fontWeight="600" fill="#7C3AED">Then</text>
-      <text x="101" y="184" fontSize="11" fontFamily="ui-monospace,monospace" fill="#64748B"> they see the dashboard</text>
-      {/* Generate button */}
-      <rect x="40" y="204" width="130" height="32" rx="8" fill="#4F46E5"/>
-      <text x="82" y="224" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#fff">&#9889; Generate Tests</text>
-      {/* Divider */}
-      <line x1="16" y1="252" x2="464" y2="252" stroke="#E2E8F0" strokeWidth="1"/>
-      {/* Results panel */}
-      <text x="40" y="276" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#334155">Test Results</text>
-      <text x="160" y="276" fontSize="10" fontFamily="system-ui,sans-serif" fill="#94A3B8">3 passed  &#183;  1 failed  &#183;  0.8s</text>
-      {/* Pass rows */}
-      <circle cx="48" cy="298" r="6" fill="#10B981"/>
-      <text x="46" y="301" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10003;</text>
-      <text x="62" y="302" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Login with valid credentials</text>
-      <text x="420" y="302" fontSize="9" fontFamily="ui-monospace,monospace" fill="#10B981" textAnchor="end">0.3s</text>
-      <circle cx="48" cy="318" r="6" fill="#10B981"/>
-      <text x="46" y="321" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10003;</text>
-      <text x="62" y="322" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Redirect to dashboard</text>
-      <text x="420" y="322" fontSize="9" fontFamily="ui-monospace,monospace" fill="#10B981" textAnchor="end">0.2s</text>
-      {/* Fail row */}
-      <circle cx="48" cy="338" r="6" fill="#EF4444"/>
-      <text x="46" y="341" fontSize="8" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#fff" textAnchor="middle">&#10007;</text>
-      <text x="62" y="342" fontSize="10" fontFamily="ui-monospace,monospace" fill="#334155">Invalid password error msg</text>
-      <text x="420" y="342" fontSize="9" fontFamily="ui-monospace,monospace" fill="#EF4444" textAnchor="end">0.3s</text>
+      <rect x="8" y="8" width="504" height="40" rx="16" fill="#fff"/>
+      <rect x="8" y="32" width="504" height="16" fill="#fff"/>
+      <circle cx="32" cy="28" r="5" fill="#EF4444"/>
+      <circle cx="50" cy="28" r="5" fill="#FBBF24"/>
+      <circle cx="68" cy="28" r="5" fill="#10B981"/>
+      <text x="260" y="32" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#64748B" textAnchor="middle">Quality Accelerator: 90 Days</text>
+
+      {/* Divider below title bar */}
+      <line x1="8" y1="48" x2="512" y2="48" stroke="#E2E8F0" strokeWidth="1"/>
+
+      {/* Section label */}
+      <text x="260" y="80" fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#334155" textAnchor="middle">Your Roadmap to Automated Testing</text>
+
+      {/* Timeline connector line */}
+      <line x1={m1x} y1={lineY} x2={m4x} y2={lineY} stroke="#CBD5E1" strokeWidth="2" strokeDasharray="6 4"/>
+
+      {/* Wider segment highlight for Build & Automate (week 5-10) */}
+      <rect x={m2x + 15} y={lineY - 4} width={m3x - m2x - 30} height="8" rx="4" fill="#D1FAE5" opacity="0.6"/>
+
+      {/* ─── Milestone 1: Audit & Quick Scan ─── */}
+      <circle cx={m1x} cy={lineY} r="18" fill="#EEF2FF" stroke="#4F46E5" strokeWidth="1.5"/>
+      {/* Magnifying glass icon */}
+      <circle cx={m1x - 2} cy={lineY - 2} r="6" fill="none" stroke="#4F46E5" strokeWidth="1.5"/>
+      <line x1={m1x + 2} y1={lineY + 2} x2={m1x + 6} y2={lineY + 6} stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+      <text x={m1x} y={lineY - 28} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#4F46E5" textAnchor="middle">Week 1-2</text>
+      <text x={m1x} y={lineY + 40} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Audit &amp; Quick Scan</text>
+      <text x={m1x} y={lineY + 54} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Current state analysis</text>
+
+      {/* ─── Milestone 2: Strategy & Setup ─── */}
+      <circle cx={m2x} cy={lineY} r="18" fill="#F5F3FF" stroke="#7C3AED" strokeWidth="1.5"/>
+      {/* Target / compass icon */}
+      <circle cx={m2x} cy={lineY} r="7" fill="none" stroke="#7C3AED" strokeWidth="1.2"/>
+      <circle cx={m2x} cy={lineY} r="3" fill="#7C3AED"/>
+      <text x={m2x} y={lineY - 28} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#7C3AED" textAnchor="middle">Week 3-4</text>
+      <text x={m2x} y={lineY + 40} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Strategy &amp; Setup</text>
+      <text x={m2x} y={lineY + 54} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Framework &amp; tooling</text>
+
+      {/* ─── Milestone 3: Build & Automate ─── */}
+      <circle cx={m3x} cy={lineY} r="22" fill="#ECFDF5" stroke="#10B981" strokeWidth="1.5"/>
+      {/* Lightning bolt icon */}
+      <path d={`M${m3x - 4},${lineY - 8} L${m3x - 1},${lineY - 1} L${m3x + 3},${lineY - 1} L${m3x},${lineY + 8} L${m3x + 3},${lineY + 1} L${m3x - 1},${lineY + 1} Z`} fill="#10B981"/>
+      <text x={m3x} y={lineY - 32} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#10B981" textAnchor="middle">Week 5-10</text>
+      <text x={m3x} y={lineY + 44} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Build &amp; Automate</text>
+      <text x={m3x} y={lineY + 58} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Test automation sprint</text>
+
+      {/* ─── Milestone 4: Handover & Scale ─── */}
+      <circle cx={m4x} cy={lineY} r="18" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="1.5"/>
+      {/* Rocket / checkmark icon */}
+      <path d={`M${m4x - 5},${lineY + 2} L${m4x - 1},${lineY + 6} L${m4x + 6},${lineY - 5}`} fill="none" stroke="#F59E0B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      <text x={m4x} y={lineY - 28} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#F59E0B" textAnchor="middle">Week 11-12</text>
+      <text x={m4x} y={lineY + 40} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Handover &amp; Scale</text>
+      <text x={m4x} y={lineY + 54} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Team enablement</text>
+
     </svg>
   );
 }
@@ -85,8 +99,8 @@ export default function Hero({ onBook }) {
       <div className="mx-auto max-w-7xl px-7">
         <div className="grid min-h-[70vh] items-center gap-12 py-1 md:grid-cols-2">
           {/* LEFT COPY */}
-          <Motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="z-10">
-            <Motion.h1
+          <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="z-10">
+            <m.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
@@ -94,18 +108,18 @@ export default function Hero({ onBook }) {
             >
               Automate your most <br className="hidden sm:block" />
               critical tests in <span className="text-indigo-600">90 days</span>
-            </Motion.h1>
+            </m.h1>
 
-            <Motion.p
+            <m.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              with our one of a kind accelerator pack we plug into your workflow and take repetitive regression testing off your team’s plate,
-              so developers and business can focus on what really moves the product forward.           </Motion.p>
+              Start with our AI-powered platform to generate tests from plain language, or let our team handle it with the Quality Accelerator Pack. Either way, your regression testing is covered.
+            </m.p>
 
-            <Motion.div
+            <m.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
@@ -139,10 +153,10 @@ export default function Hero({ onBook }) {
                 <WhatsAppIcon className="h-5 w-5 text-green-500" />
                 WhatsApp
               </a>
-            </Motion.div>
+            </m.div>
 
             {/* Social proof */}
-            <Motion.div
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.35 }}
@@ -160,15 +174,15 @@ export default function Hero({ onBook }) {
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
                 <span>Free plan available</span>
               </div>
-            </Motion.div>
-          </Motion.div>
+            </m.div>
+          </m.div>
 
           {/* RIGHT — Inline SVG illustration */}
-          <Motion.figure initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative">
+          <m.figure initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative">
             <div className="w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-white">
               <HeroIllustration />
             </div>
-          </Motion.figure>
+          </m.figure>
         </div>
       </div>
     </section>

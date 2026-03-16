@@ -1,8 +1,8 @@
 import { motion as m } from "framer-motion";
 
 const stats = [
-  { value: "10x", label: "Faster test creation with AI" },
-  { value: "80%", label: "Less maintenance effort" },
+  { value: "10x", label: "Faster vs manual test scripting" },
+  { value: "80%", label: "Less maintenance with AI self-healing" },
   { value: "5 min", label: "Setup to first test" },
   { value: "24/7", label: "Scheduled test execution" },
 ];
@@ -48,7 +48,7 @@ export default function SocialProof() {
           className="mt-10 pt-8 border-t border-slate-800 text-center"
         >
           <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">
-            Trusted by teams in
+            Built for teams in
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {industries.map((ind) => (

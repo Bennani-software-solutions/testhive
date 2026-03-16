@@ -1,5 +1,5 @@
 // src/components/NearshoreMorocco.jsx
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion as m, useReducedMotion } from "framer-motion";
 import {
   HandCoins,
@@ -354,6 +354,8 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
         {showForm && (
           <div
             className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
             onClick={() => setShowForm(false)}
           >
             <div

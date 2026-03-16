@@ -7,13 +7,13 @@ export default function DemoSection() {
     <Section id="demo" className="bg-gradient-to-b from-slate-900 to-slate-800">
       <div className="text-center mb-12">
         <div className="inline-flex items-center rounded-full bg-indigo-500/20 px-4 py-1.5 text-xs font-semibold text-indigo-300 mb-4">
-          DUMMY DATA — PLACEHOLDER
+          DUMMY DATA / PLACEHOLDER
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-white">
           See TestHive in Action
         </h2>
         <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
-          Watch how teams create automated tests in minutes — no coding
+          Watch how teams create automated tests in minutes, no coding
           required.
         </p>
       </div>

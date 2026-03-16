@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { X, Video, Calendar, Clock, Copy, Check } from "lucide-react";
+import { generateICS } from "../utils/calendar";
 
 function generateRoomId() {
   const chars = "abcdefghijklmnopqrstuvwxyz";
@@ -22,9 +23,11 @@ export default function BookingModal({ open, onClose }) {
     const fd = new FormData(e.target);
     const data = Object.fromEntries(fd.entries());
     const room = generateRoomId();
+    const internalUrl = `${window.location.origin}/meeting/${room}`;
     const jitsiUrl = `https://meet.jit.si/${room}`;
 
     try {
+      // Send notification to TestHive (Formspree)
       const res = await fetch("https://formspree.io/f/mgvnzebp", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -35,12 +38,24 @@ export default function BookingModal({ open, onClose }) {
         }),
       });
 
-      if (res.ok) {
-        setRoomUrl(jitsiUrl);
-        setStatus("success");
-      } else {
-        throw new Error("Submit failed");
-      }
+      if (!res.ok) throw new Error("Submit failed");
+
+      // Send confirmation email to customer via platform API
+      const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://platform.testhive.ma';
+      await fetch(`${platformApi}/api/public/booking-confirmation`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          preferredTime: data.preferredTime,
+          meetingLink: internalUrl,
+          message: data.message || '',
+        }),
+      }).catch(() => {});
+
+      setRoomUrl(internalUrl);
+      setStatus("success");
     } catch {
       setStatus("error");
     }
@@ -86,32 +101,49 @@ export default function BookingModal({ open, onClose }) {
                 We've received your request and will confirm the time via email. Use the link below to join the call.
               </p>
 
-              <div className="mt-5 flex items-center gap-2 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3">
-                <Video className="h-4 w-4 text-indigo-600 shrink-0" />
+              <div className="mt-5 flex flex-col gap-3">
                 <a
-                  href={roomUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm text-indigo-600 hover:underline truncate flex-1 text-left"
+                  href={roomUrl.replace(window.location.origin, '')}
+                  className="flex items-center justify-center gap-2 w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 px-4 py-2.5 text-sm font-semibold text-white transition"
                 >
-                  {roomUrl}
+                  <Video className="h-4 w-4" />
+                  Join Meeting
                 </a>
-                <button
-                  onClick={handleCopy}
-                  className="shrink-0 rounded-lg p-1.5 hover:bg-slate-200 transition"
-                  aria-label="Copy link"
-                >
-                  {copied ? (
-                    <Check className="h-4 w-4 text-emerald-500" />
-                  ) : (
-                    <Copy className="h-4 w-4 text-slate-400" />
-                  )}
-                </button>
+
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => {
+                      generateICS({
+                        title: 'TestHive Consultation',
+                        description: `Join the meeting at: ${roomUrl}`,
+                        location: roomUrl,
+                        startDate: new Date(),
+                        durationMinutes: 30,
+                      });
+                    }}
+                    className="flex-1 flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
+                  >
+                    <Calendar className="h-4 w-4" />
+                    Add to Calendar
+                  </button>
+                  <button
+                    onClick={handleCopy}
+                    className="flex items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
+                    aria-label="Copy link"
+                  >
+                    {copied ? (
+                      <Check className="h-4 w-4 text-emerald-500" />
+                    ) : (
+                      <Copy className="h-4 w-4 text-slate-400" />
+                    )}
+                    {copied ? 'Copied' : 'Copy'}
+                  </button>
+                </div>
               </div>
 
               <button
                 onClick={handleClose}
-                className="mt-6 w-full rounded-xl bg-indigo-600 hover:bg-indigo-700 px-4 py-2.5 text-sm font-semibold text-white transition"
+                className="mt-4 w-full rounded-xl border border-slate-200 bg-white px-4 py-2.5 text-sm font-medium text-slate-700 hover:bg-slate-50 transition"
               >
                 Done
               </button>
@@ -128,7 +160,7 @@ export default function BookingModal({ open, onClose }) {
                       Book a Free Consultation
                     </h3>
                     <p className="text-xs text-slate-500 flex items-center gap-1">
-                      <Clock className="h-3 w-3" /> 30 minutes via Jitsi Meet
+                      <Clock className="h-3 w-3" /> 30-minute video call
                     </p>
                   </div>
                 </div>

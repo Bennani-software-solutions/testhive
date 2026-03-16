@@ -73,7 +73,7 @@ export default function QualityPartnerProgram({
               <h3 className="text-sm font-semibold text-slate-900">Outcome-driven</h3>
             </div>
             <p className="text-sm text-slate-700">
-              Strategy, frameworks, coaching, CI quality signals—whatever drives your objectives and governance needs.
+              Strategy, frameworks, coaching, CI quality signals, whatever drives your objectives and governance needs.
             </p>
           </m.div>
         </div>
@@ -84,7 +84,7 @@ export default function QualityPartnerProgram({
             className="rounded-2xl border border-gray-200 bg-gray-50 p-5">
             <h4 className="text-sm font-semibold text-slate-900">Who it’s for</h4>
             <p className="mt-1 text-sm text-slate-700">
-              Teams that need an <strong>embedded QA expert</strong> to develop or enhance test strategy and automation—<em>not</em> a predefined package.
+              Teams that need an <strong>embedded QA expert</strong> to develop or enhance test strategy and automation, <em>not</em> a predefined package.
             </p>
           </m.div>
 
