@@ -23,7 +23,7 @@ export default function BookingModal({ open, onClose }) {
     const fd = new FormData(e.target);
     const data = Object.fromEntries(fd.entries());
     const room = generateRoomId();
-    const internalUrl = `${window.location.origin}/meeting/${room}`;
+    const internalUrl = `${window.location.origin}/#/meeting/${room}`;
     const jitsiUrl = `https://meet.jit.si/${room}`;
 
     try {
