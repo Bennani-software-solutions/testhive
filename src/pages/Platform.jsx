@@ -24,7 +24,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const PLATFORM_URL = "https://platform.testhive.ma";
+const PLATFORM_URL = "https://aithentic.testhive.ma";
 
 const metrics = [
   { value: "10x", label: "Faster test creation", sub: "vs manual scripting" },
@@ -301,17 +301,17 @@ export default function Platform() {
       <section className="py-14 bg-slate-900">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 text-center">
-            {metrics.map((m, i) => (
+            {metrics.map((metric, i) => (
               <m.div
-                key={m.label}
+                key={metric.label}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
-                <p className="text-4xl md:text-5xl font-extrabold text-white">{m.value}</p>
-                <p className="mt-2 text-sm font-semibold text-indigo-300">{m.label}</p>
-                <p className="text-xs text-slate-400 mt-1">{m.sub}</p>
+                <p className="text-4xl md:text-5xl font-extrabold text-white">{metric.value}</p>
+                <p className="mt-2 text-sm font-semibold text-indigo-300">{metric.label}</p>
+                <p className="text-xs text-slate-400 mt-1">{metric.sub}</p>
               </m.div>
             ))}
           </div>
