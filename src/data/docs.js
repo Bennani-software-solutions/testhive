@@ -20,7 +20,7 @@ const docs = [
         content: [
           {
             heading: "1. Create your account",
-            text: "Go to platform.testhive.ma and register with your email and a password (minimum 8 characters). You'll be logged in immediately with a JWT session stored in a secure HTTP-only cookie.",
+            text: "Go to app.testhive.ma and register with your email and a password (minimum 8 characters). You'll be logged in immediately with a JWT session stored in a secure HTTP-only cookie.",
           },
           {
             heading: "2. Create a project",
@@ -272,7 +272,7 @@ const docs = [
         content: [
           {
             heading: "Webhook trigger",
-            text: "Send a POST request to /api/webhook/trigger with your API key:\n\ncurl -X POST https://platform.testhive.ma/api/webhook/trigger \\\n  -H \"Authorization: Bearer ftk_your_key_here\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"projectSlug\": \"my-app\",\n    \"scenarioIds\": [\"cuid1\", \"cuid2\"],\n    \"headless\": true,\n    \"browser\": \"chromium\"\n  }'",
+            text: "Send a POST request to /api/webhook/trigger with your API key:\n\ncurl -X POST https://app.testhive.ma/api/webhook/trigger \\\n  -H \"Authorization: Bearer ftk_your_key_here\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"projectSlug\": \"my-app\",\n    \"scenarioIds\": [\"cuid1\", \"cuid2\"],\n    \"headless\": true,\n    \"browser\": \"chromium\"\n  }'",
           },
           {
             heading: "Filtering scenarios",

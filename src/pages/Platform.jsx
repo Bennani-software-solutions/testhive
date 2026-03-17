@@ -257,12 +257,11 @@ export default function Platform() {
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
               AI-powered test automation
               <br className="hidden sm:block" />
-              <span className="text-indigo-600">for everyone</span>
+              <span className="text-indigo-600">where it fits</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
-              Turn requirements into executable tests without writing code.
-              Write what you want to test, let AI generate the code, execute with one click,
-              and get results, all in one platform.
+              Not every test should be automated — but the ones that should, don't need to take days to write.
+              Describe what you want to test, let AI generate the code, and run it in seconds.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
               <a
@@ -367,10 +366,10 @@ export default function Platform() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
-              Everything you need to <span className="text-indigo-600">test smarter</span>
+              What the platform <span className="text-indigo-600">does best</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
-              See the platform in action.
+              Automates the repeatable tests so your team can focus on what matters.
             </p>
           </m.div>
 
@@ -584,7 +583,7 @@ export default function Platform() {
               Built for <span className="text-indigo-600">your team</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
-              Whether you write code or not, TestHive Platform makes test automation accessible.
+              The platform handles regression and repetitive tests so your team can focus on what requires human judgement — exploratory testing, edge cases, and user experience.
             </p>
           </m.div>
 
@@ -648,11 +647,11 @@ export default function Platform() {
             transition={{ duration: 0.5 }}
           >
             <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 mb-4">
-              Start testing smarter today
+              See if it fits your workflow
             </h2>
             <p className="text-lg text-slate-600 mb-8">
-              Create your free account and generate your first AI-powered test in minutes.
-              No credit card required.
+              Try the platform free and generate your first test in minutes.
+              Not sure if automation is right for your case? Book a call and we'll help you decide.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <a

@@ -68,8 +68,8 @@ export default function PlatformSection() {
             Meet TestHive <span className="text-indigo-600">Platform</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
-            AI-powered test automation that turns your requirements into executable tests.
-            Write scenarios, generate code, and run tests, all from one place.
+            AI-powered test automation for the tests that benefit most from it — regression, smoke tests, and repeatable API checks.
+            For everything else, our team is right there with you.
           </p>
         </m.div>
 
@@ -114,12 +114,12 @@ export default function PlatformSection() {
                 From requirements to test results in minutes
               </h3>
               <p className="text-slate-300 mb-6 max-w-lg mx-auto">
-                No coding experience needed. Write what you want to test in plain language,
-                and let AI handle the rest. See results, fix failures with AI, and ship with confidence.
+                Write what you want to test in plain language and let AI generate the code.
+                Ideal for regression suites, smoke tests, and API validation — the repetitive work that slows teams down.
               </p>
               <div className="flex items-center justify-center gap-4 flex-wrap">
                 <a
-                  href="https://platform.testhive.ma"
+                  href="https://app.testhive.ma"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-2.5 text-sm font-semibold text-white shadow-md active:scale-95 transition"

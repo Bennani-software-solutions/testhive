@@ -127,7 +127,7 @@ export default function Hero({ onBook }) {
             >
               {/* Primary: Start Free Trial */}
               <a
-                href="https://platform.testhive.ma/register"
+                href="https://app.testhive.ma/register"
                 className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
               >
                 Start Your Free Trial

@@ -3,7 +3,7 @@ import Section from "./Section";
 import { Check, Minus } from "lucide-react";
 import { useState } from "react";
 
-const PLATFORM_URL = "https://platform.testhive.ma";
+const PLATFORM_URL = "https://app.testhive.ma";
 
 const tiers = [
   {
