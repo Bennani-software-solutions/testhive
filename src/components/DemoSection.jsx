@@ -36,7 +36,7 @@ export default function DemoSection() {
             </div>
             <div className="flex-1 ml-4">
               <div className="mx-auto max-w-md rounded-lg bg-slate-800 px-4 py-1.5 text-xs text-slate-400 text-center">
-                aithentic.testhive.ma
+                app.testhive.ma
               </div>
             </div>
           </div>

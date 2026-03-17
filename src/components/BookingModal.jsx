@@ -35,7 +35,7 @@ export default function BookingModal({ open, onClose }) {
 
     try {
       // Send confirmation email to customer + notify consultant via platform API
-      const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://aithentic.testhive.ma';
+      const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://app.testhive.ma';
       const res = await fetch(`${platformApi}/api/public/booking-confirmation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },

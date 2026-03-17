@@ -24,7 +24,7 @@ import {
   RefreshCw,
 } from "lucide-react";
 
-const PLATFORM_URL = "https://aithentic.testhive.ma";
+const PLATFORM_URL = "https://app.testhive.ma";
 
 const metrics = [
   { value: "10x", label: "Faster test creation", sub: "vs manual scripting" },
