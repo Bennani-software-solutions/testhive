@@ -116,7 +116,7 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Whether you need hands-on testing, a tailored automation strategy, or AI-powered tooling — we help you invest in quality where it matters most. No silver bullets, just the right approach for your context.
+              Whether you need hands-on testing, a tailored automation strategy, or AI-powered tooling, we help you invest in quality where it matters most. No silver bullets, just the right approach for your context.
             </m.p>
 
             <m.div

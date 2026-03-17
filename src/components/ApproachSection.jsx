@@ -6,7 +6,7 @@ const pillars = [
   {
     icon: Search,
     title: "Assess",
-    desc: "We start by understanding your product, team, and risk areas. Not every test should be automated — we help you identify which ones should.",
+    desc: "We start by understanding your product, team, and risk areas. Not every test should be automated. We help you identify which ones should.",
   },
   {
     icon: Target,
@@ -44,7 +44,7 @@ export default function ApproachSection() {
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
             Every project has different risk profiles, team structures, and quality goals.
-            We don't sell a single solution — we help you build the right testing strategy for your context.
+            We don't sell a single solution. We help you build the right testing strategy for your context.
           </p>
         </m.div>
 

@@ -68,7 +68,7 @@ export default function PlatformSection() {
             Meet TestHive <span className="text-indigo-600">Platform</span>
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
-            AI-powered test automation for the tests that benefit most from it — regression, smoke tests, and repeatable API checks.
+            AI-powered test automation for the tests that benefit most from it: regression, smoke tests, and repeatable API checks.
             For everything else, our team is right there with you.
           </p>
         </m.div>
@@ -115,7 +115,7 @@ export default function PlatformSection() {
               </h3>
               <p className="text-slate-300 mb-6 max-w-lg mx-auto">
                 Write what you want to test in plain language and let AI generate the code.
-                Ideal for regression suites, smoke tests, and API validation — the repetitive work that slows teams down.
+                Ideal for regression suites, smoke tests, and API validation. The repetitive work that slows teams down.
               </p>
               <div className="flex items-center justify-center gap-4 flex-wrap">
                 <a

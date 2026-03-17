@@ -19,7 +19,7 @@ export default function ComparisonSection() {
             Ad-hoc testing <span className="text-indigo-400">vs</span> structured quality engineering
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-            The difference isn't just tools — it's having the right strategy, the right mix of testing disciplines, and the discipline to invest where it matters.
+            The difference isn't just tools. It's having the right strategy, the right mix of testing disciplines, and the discipline to invest where it matters.
           </p>
         </m.div>
 

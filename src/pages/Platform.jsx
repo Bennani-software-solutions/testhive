@@ -177,7 +177,7 @@ const faqs = [
   },
   {
     q: "Is the platform the right fit for every testing need?",
-    a: "No — and we'll tell you when it's not. The platform excels at regression, smoke tests, and API validation. For exploratory testing, security audits, usability, and complex edge cases, you need human judgement. That's why we offer both: tooling where it helps, and expert consultants where it doesn't.",
+    a: "No, and we'll tell you when it's not. The platform excels at regression, smoke tests, and API validation. For exploratory testing, security audits, usability, and complex edge cases, you need human judgement. That's why we offer both: tooling where it helps, and expert consultants where it doesn't.",
   },
 ];
 
@@ -264,7 +264,7 @@ export default function Platform() {
               <span className="text-indigo-600">where it fits</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
-              Not every test should be automated — but the ones that should, don't need to take days to write.
+              Not every test should be automated, but the ones that should don't need to take days to write.
               Describe what you want to test, let AI generate the code, and run it in seconds.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
@@ -587,7 +587,7 @@ export default function Platform() {
               Built for <span className="text-indigo-600">your team</span>
             </h2>
             <p className="mt-3 text-lg text-slate-600">
-              The platform handles regression and repetitive tests so your team can focus on what requires human judgement — exploratory testing, edge cases, and user experience.
+              The platform handles regression and repetitive tests so your team can focus on what requires human judgement: exploratory testing, edge cases, and user experience.
             </p>
           </m.div>
 

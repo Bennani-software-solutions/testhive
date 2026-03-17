@@ -20,14 +20,14 @@ const features = [
   },
   {
     title: "Automation",
-    desc: "Accelerate regression and repeatable tests with proven frameworks — where automation adds real value.",
+    desc: "Accelerate regression and repeatable tests with proven frameworks, where automation adds real value.",
     link: "/services/automation",
     icon: Zap,
     color: "bg-amber-100 text-amber-600",
   },
   {
     title: "Mentoring",
-    desc: "Build lasting quality engineering skills — from test strategy and design to automation and beyond.",
+    desc: "Build lasting quality engineering skills, from test strategy and design to automation and beyond.",
     link: "/services/mentoring",
     icon: GraduationCap,
     color: "bg-indigo-100 text-indigo-600",
