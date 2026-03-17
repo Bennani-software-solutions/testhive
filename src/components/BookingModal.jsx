@@ -32,25 +32,11 @@ export default function BookingModal({ open, onClose }) {
     const data = Object.fromEntries(fd.entries());
     const room = generateRoomId();
     const internalUrl = `${window.location.origin}/#/meeting/${room}`;
-    const jitsiUrl = `https://meet.jit.si/${room}`;
 
     try {
-      // Send notification to TestHive (Formspree)
-      const res = await fetch("https://formspree.io/f/mgvnzebp", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          ...data,
-          _subject: `New consultation booking from ${data.name}`,
-          meetingLink: jitsiUrl,
-        }),
-      });
-
-      if (!res.ok) throw new Error("Submit failed");
-
-      // Send confirmation email to customer via platform API
+      // Send confirmation email to customer + notify consultant via platform API
       const platformApi = import.meta.env.VITE_PLATFORM_API_URL || 'https://aithentic.testhive.ma';
-      await fetch(`${platformApi}/api/public/booking-confirmation`, {
+      const res = await fetch(`${platformApi}/api/public/booking-confirmation`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -60,7 +46,9 @@ export default function BookingModal({ open, onClose }) {
           meetingLink: internalUrl,
           message: data.message || '',
         }),
-      }).catch(() => {});
+      });
+
+      if (!res.ok) throw new Error("Submit failed");
 
       setRoomUrl(internalUrl);
       setStatus("success");
@@ -177,14 +165,7 @@ export default function BookingModal({ open, onClose }) {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-3">
-                <input
-                  type="text"
-                  name="_gotcha"
-                  className="hidden"
-                  tabIndex={-1}
-                  autoComplete="off"
-                />
-                <div>
+<div>
                   <label className="block text-xs font-medium text-slate-700 mb-1">
                     Name
                   </label>
