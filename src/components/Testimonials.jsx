@@ -8,14 +8,12 @@ const testimonials = [
             "TestHive brought a real sense of ownership and precision to our QA process. Their structured approach helped us catch critical issues before release, and communication was always transparent.",
         name: "Anthony Heebeeck",
         role: "Engineering Manager at Atlas Systems",
-        avatar: "/assets/clients/anthony.jpg",
     },
     {
         quote:
             "Working with TestHive felt like having an in-house QA team. They adapt fast, understand context, and care deeply about quality. Our automation coverage and confidence improved dramatically.",
         name: "Nathalie Leys",
         role: "Product Owner at NovaTech",
-        avatar: "/assets/clients/nathalie.jpg",
     },
 ];
 

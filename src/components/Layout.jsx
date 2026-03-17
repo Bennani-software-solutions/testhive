@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import BookingModal from './BookingModal'
+import CookieConsent from './CookieConsent'
 import ScrollToTop from './ScrollToTop'
 
 export default function Layout() {
@@ -20,6 +21,7 @@ export default function Layout() {
 
       <Footer />
       <BookingModal open={open} onClose={closeBooking} />
+      <CookieConsent />
     </div>
   )
 }
