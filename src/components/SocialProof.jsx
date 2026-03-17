@@ -1,10 +1,10 @@
 import { motion as m } from "framer-motion";
 
 const stats = [
-  { value: "10x", label: "Faster vs manual test scripting" },
-  { value: "80%", label: "Less maintenance with AI self-healing" },
-  { value: "5 min", label: "Setup to first test" },
-  { value: "24/7", label: "Scheduled test execution" },
+  { value: "90 days", label: "From chaos to structured coverage" },
+  { value: "6+", label: "QA disciplines under one roof" },
+  { value: "0", label: "Vendor lock-in" },
+  { value: "100%", label: "Tailored to your context" },
 ];
 
 const industries = [

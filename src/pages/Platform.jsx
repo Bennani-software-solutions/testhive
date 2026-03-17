@@ -175,6 +175,10 @@ const faqs = [
     q: "Can I test REST APIs with TestHive?",
     a: "Yes. Write your API test scenarios in Gherkin: describe the endpoint, HTTP method, request body, and expected response. The AI generates Playwright tests using the request fixture. Auth tokens and API keys are stored as encrypted parameters.",
   },
+  {
+    q: "Is the platform the right fit for every testing need?",
+    a: "No — and we'll tell you when it's not. The platform excels at regression, smoke tests, and API validation. For exploratory testing, security audits, usability, and complex edge cases, you need human judgement. That's why we offer both: tooling where it helps, and expert consultants where it doesn't.",
+  },
 ];
 
 const colorMap = {

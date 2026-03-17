@@ -16,10 +16,10 @@ export default function ComparisonSection() {
             The difference
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-            Traditional testing <span className="text-indigo-400">vs</span> TestHive AI
+            Ad-hoc testing <span className="text-indigo-400">vs</span> structured quality engineering
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-            See why teams switch from manual test scripting to AI-powered automation.
+            The difference isn't just tools — it's having the right strategy, the right mix of testing disciplines, and the discipline to invest where it matters.
           </p>
         </m.div>
 

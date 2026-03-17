@@ -36,13 +36,13 @@ function HeroIllustration() {
       <circle cx="32" cy="28" r="5" fill="#EF4444"/>
       <circle cx="50" cy="28" r="5" fill="#FBBF24"/>
       <circle cx="68" cy="28" r="5" fill="#10B981"/>
-      <text x="260" y="32" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#64748B" textAnchor="middle">Quality Accelerator: 90 Days</text>
+      <text x="260" y="32" fontSize="11" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#64748B" textAnchor="middle">Quality Engineering: 90 Days</text>
 
       {/* Divider below title bar */}
       <line x1="8" y1="48" x2="512" y2="48" stroke="#E2E8F0" strokeWidth="1"/>
 
       {/* Section label */}
-      <text x="260" y="80" fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#334155" textAnchor="middle">Your Roadmap to Automated Testing</text>
+      <text x="260" y="80" fontSize="13" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#334155" textAnchor="middle">Your Roadmap to Quality at Scale</text>
 
       {/* Timeline connector line */}
       <line x1={m1x} y1={lineY} x2={m4x} y2={lineY} stroke="#CBD5E1" strokeWidth="2" strokeDasharray="6 4"/>
@@ -73,8 +73,8 @@ function HeroIllustration() {
       {/* Lightning bolt icon */}
       <path d={`M${m3x - 4},${lineY - 8} L${m3x - 1},${lineY - 1} L${m3x + 3},${lineY - 1} L${m3x},${lineY + 8} L${m3x + 3},${lineY + 1} L${m3x - 1},${lineY + 1} Z`} fill="#10B981"/>
       <text x={m3x} y={lineY - 32} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="700" fill="#10B981" textAnchor="middle">Week 5-10</text>
-      <text x={m3x} y={lineY + 44} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Build &amp; Automate</text>
-      <text x={m3x} y={lineY + 58} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Test automation sprint</text>
+      <text x={m3x} y={lineY + 44} fontSize="10" fontFamily="system-ui,sans-serif" fontWeight="600" fill="#334155" textAnchor="middle">Build &amp; Validate</text>
+      <text x={m3x} y={lineY + 58} fontSize="9" fontFamily="system-ui,sans-serif" fill="#94A3B8" textAnchor="middle">Testing &amp; automation</text>
 
       {/* ─── Milestone 4: Handover & Scale ─── */}
       <circle cx={m4x} cy={lineY} r="18" fill="#FFFBEB" stroke="#F59E0B" strokeWidth="1.5"/>
@@ -106,8 +106,8 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900"
             >
-              Automate your most <br className="hidden sm:block" />
-              critical tests in <span className="text-indigo-600">90 days</span>
+              Build the QA strategy <br className="hidden sm:block" />
+              your team <span className="text-indigo-600">actually needs</span>
             </m.h1>
 
             <m.p
@@ -116,7 +116,7 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Start with our AI-powered platform to generate tests from plain language, or let our team handle it with the Quality Accelerator Pack. Either way, your regression testing is covered.
+              Whether you need hands-on testing, a tailored automation strategy, or AI-powered tooling — we help you invest in quality where it matters most. No silver bullets, just the right approach for your context.
             </m.p>
 
             <m.div
@@ -125,22 +125,24 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mt-7 flex items-center gap-4 flex-wrap"
             >
-              {/* Primary: Start Free Trial */}
-              <a
-                href="https://app.testhive.ma/register"
-                className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
-              >
-                Start Your Free Trial
-              </a>
-
-              {/* Secondary: Book Call */}
+              {/* Primary: Book Call */}
               <button
                 id="btn-book-call-hero"
                 onClick={onBook}
-                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
+                className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
               >
                 Book a Free Consultation
               </button>
+
+              {/* Secondary: Platform */}
+              <a
+                href="https://app.testhive.ma"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
+              >
+                Explore the Platform
+              </a>
 
               {/* WhatsApp */}
               <a
@@ -164,15 +166,15 @@ export default function Hero({ onBook }) {
             >
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>No credit card required</span>
+                <span>Assessment-first approach</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>Setup in under 5 minutes</span>
+                <span>6+ QA disciplines</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>Free plan available</span>
+                <span>Platform + human expertise</span>
               </div>
             </m.div>
           </m.div>

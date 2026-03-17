@@ -5,45 +5,45 @@ import { Zap, CheckCircle, Shield, GraduationCap, Users, Compass } from "lucide-
 
 const features = [
   {
-    title: "Automation",
-    desc: "Fast-track your test automation with expert engineers and proven frameworks.",
-    link: "/services/automation",
-    icon: Zap,
+    title: "Consulting",
+    desc: "Get expert guidance tailored to your stack, team, and goals. Strategy first, tools second.",
+    link: "/services/consulting",
+    icon: Compass,
     color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Functional Testing",
-    desc: "Ensure critical workflows perform flawlessly with dedicated testers.",
+    desc: "Ensure critical workflows perform flawlessly with dedicated testers who understand your product.",
     link: "/services/functional-testing",
     icon: CheckCircle,
     color: "bg-violet-100 text-violet-600",
+  },
+  {
+    title: "Automation",
+    desc: "Accelerate regression and repeatable tests with proven frameworks — where automation adds real value.",
+    link: "/services/automation",
+    icon: Zap,
+    color: "bg-amber-100 text-amber-600",
+  },
+  {
+    title: "Mentoring",
+    desc: "Build lasting quality engineering skills — from test strategy and design to automation and beyond.",
+    link: "/services/mentoring",
+    icon: GraduationCap,
+    color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Pen Testing",
     desc: "Protect your systems with simulated attacks and vulnerability assessments.",
     link: "/services/pen-testing",
     icon: Shield,
-    color: "bg-amber-100 text-amber-600",
-  },
-  {
-    title: "Mentoring",
-    desc: "Work hands-on with experienced QA mentors to build lasting automation skills.",
-    link: "/services/mentoring",
-    icon: GraduationCap,
-    color: "bg-indigo-100 text-indigo-600",
+    color: "bg-violet-100 text-violet-600",
   },
   {
     title: "QA Outsourcing",
     desc: "Scale your QA team flexibly with temporary or dedicated capacity.",
     link: "/services/qa-outsourcing",
     icon: Users,
-    color: "bg-violet-100 text-violet-600",
-  },
-  {
-    title: "Consulting",
-    desc: "Get expert guidance tailored to your stack, team, and goals.",
-    link: "/services/consulting",
-    icon: Compass,
     color: "bg-amber-100 text-amber-600",
   }
 ];
