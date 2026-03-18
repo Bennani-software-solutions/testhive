@@ -1,4 +1,5 @@
 import { motion as m } from "framer-motion";
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -66,6 +67,11 @@ const caseStudies = [
 export default function CaseStudies() {
   return (
     <>
+      <SEO
+        title="Case Studies"
+        description="Real results from real teams. See how companies across industries transformed their QA processes with TestHive automation."
+        path="case-studies"
+      />
       <Section className="bg-white">
         <div className="text-center mb-16">
           <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">

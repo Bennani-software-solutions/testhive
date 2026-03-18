@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion as m } from "framer-motion";
 import { useOutletContext } from "react-router-dom";
+import SEO from "../components/SEO";
 import useDevMode from "../hooks/useDevMode";
 import DemoSection from "../components/DemoSection";
 import PlatformPricing from "../components/PlatformPricing";
@@ -634,6 +635,11 @@ export default function Platform() {
 
   return (
     <>
+      <SEO
+        title="Platform Features"
+        description="AI-powered code generation, self-healing tests, CI/CD integration, and real-time dashboards. Explore the TestHive Platform capabilities."
+        path="platform"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="hero-glow-light -z-10" aria-hidden />

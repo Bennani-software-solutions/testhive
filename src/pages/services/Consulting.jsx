@@ -1,5 +1,6 @@
 // src/pages/services/Consulting.jsx
 import { useOutletContext } from "react-router-dom";
+import SEO from "../../components/SEO";
 import {
   Target,
   Wrench,
@@ -36,6 +37,12 @@ export default function ConsultingService() {
   const { onBook } = useOutletContext();
 
   return (
+    <>
+    <SEO
+      title="QA Consulting"
+      description="Expert QA consulting to build the right test strategy, select the best tools, and level up your team. Practical advice rooted in real projects."
+      path="services/consulting"
+    />
     <div className="max-w-6xl mx-auto px-6 py-12 space-y-20">
       {/* Hero */}
       <section>
@@ -109,5 +116,6 @@ export default function ConsultingService() {
         </button>
       </section>
     </div>
+    </>
   );
 }

@@ -1,5 +1,6 @@
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 import { Search } from "lucide-react";
 import { useState } from "react";
@@ -21,6 +22,12 @@ export default function KnowledgeBase() {
     .filter((s) => s.articles.length > 0);
 
   return (
+    <>
+    <SEO
+      title="Documentation"
+      description="API reference, integration guides, and tutorials for the TestHive Platform. Everything you need to set up and master AI test automation."
+      path="docs"
+    />
     <Section className="bg-white">
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900">
@@ -99,5 +106,6 @@ export default function KnowledgeBase() {
         </button>
       </div>
     </Section>
+    </>
   );
 }

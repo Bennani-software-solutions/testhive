@@ -1,7 +1,14 @@
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 
 export default function Privacy() {
   return (
+    <>
+    <SEO
+      title="Privacy Policy"
+      description="How TestHive collects, uses, and protects your data. Read our privacy policy covering platform usage, cookies, and your rights."
+      path="privacy"
+    />
     <Section className="bg-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
@@ -125,5 +132,6 @@ export default function Privacy() {
         </div>
       </div>
     </Section>
+    </>
   );
 }

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import SEO from "../../components/SEO";
 
 
 export default function AutomationService() {
@@ -31,6 +32,12 @@ export default function AutomationService() {
     }, [location]);
 
     return (
+        <>
+        <SEO
+          title="Test Automation Services"
+          description="Practical, maintainable test automation with Playwright and CI/CD integration. Built for real business outcomes, not just speed."
+          path="services/automation"
+        />
         <div className="max-w-6xl mx-auto px-6 py-12 space-y-20">
             {/* Hero / Intro */}
             <section>
@@ -284,5 +291,6 @@ export default function AutomationService() {
                 </div>
             </section>
         </div>
+        </>
     );
 }

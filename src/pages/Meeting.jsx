@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import { Video, Calendar, ArrowLeft, Copy, Check } from 'lucide-react';
 import { generateICS } from '../utils/calendar';
 
@@ -82,10 +83,18 @@ export default function Meeting() {
     });
   };
 
+  const seo = (
+    <SEO
+      title="Meeting"
+      description="Join your TestHive consultation meeting. Free video call with our QA experts to discuss your testing challenges."
+      path={`meeting/${room}`}
+    />
+  );
+
   // Lobby
   if (phase === 'lobby') {
     return (
-      <div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4">
+      <>{seo}<div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4">
         <div className="w-full max-w-md text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-indigo-50">
             <Video className="h-8 w-8 text-indigo-600" />
@@ -139,14 +148,14 @@ export default function Meeting() {
             Back to Home
           </Link>
         </div>
-      </div>
+      </div></>
     );
   }
 
   // Meeting ended
   if (phase === 'ended') {
     return (
-      <div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4">
+      <>{seo}<div className="min-h-[calc(100vh-80px)] flex items-center justify-center px-4">
         <div className="w-full max-w-md text-center">
           <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-emerald-50">
             <Check className="h-8 w-8 text-emerald-600" />
@@ -165,19 +174,19 @@ export default function Meeting() {
             Back to Home
           </Link>
         </div>
-      </div>
+      </div></>
     );
   }
 
   // Active meeting
   return (
-    <div className="flex flex-col" style={{ height: 'calc(100vh - 80px)' }}>
+    <>{seo}<div className="flex flex-col" style={{ height: 'calc(100vh - 80px)' }}>
       <div className="flex items-center gap-3 px-4 py-2 bg-slate-900 border-b border-slate-800">
         <Video className="h-4 w-4 text-indigo-400" />
         <span className="text-sm font-medium text-white">TestHive Consultation</span>
         <span className="text-xs text-slate-400 font-mono ml-auto">{room}</span>
       </div>
       <div ref={jitsiContainer} className="flex-1" />
-    </div>
+    </div></>
   );
 }

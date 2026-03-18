@@ -1,7 +1,14 @@
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 
 export default function Terms() {
   return (
+    <>
+    <SEO
+      title="Terms of Service"
+      description="Terms and conditions for using TestHive services, including the AI test automation platform and QA consulting."
+      path="terms"
+    />
     <Section className="bg-white">
       <div className="max-w-3xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-extrabold text-slate-900">
@@ -140,5 +147,6 @@ export default function Terms() {
         </div>
       </div>
     </Section>
+    </>
   );
 }

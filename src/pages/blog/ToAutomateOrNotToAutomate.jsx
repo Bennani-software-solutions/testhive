@@ -1,7 +1,14 @@
 import { motion as m } from "framer-motion";
+import SEO from "../../components/SEO";
 
 export default function ToAutomateOrNotToAutomate() {
     return (
+        <>
+        <SEO
+          title="To Automate or Not to Automate"
+          description="When does test automation truly add value? Lessons from the field on choosing the right tests to automate and avoiding common pitfalls."
+          path="blog/to-automate-or-not-to-automate"
+        />
         <section
             id="blog-to-automate"
             className="relative py-16 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200"
@@ -94,5 +101,6 @@ export default function ToAutomateOrNotToAutomate() {
                 </article>
             </div>
         </section>
+        </>
     );
 }

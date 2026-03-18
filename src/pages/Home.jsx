@@ -1,4 +1,5 @@
 import { useOutletContext } from 'react-router-dom'
+import SEO from '../components/SEO'
 import Hero from '../components/Hero'
 import SocialProof from '../components/SocialProof'
 import Logos from '../components/Logos'
@@ -19,6 +20,9 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        description="Write Gherkin scenarios, generate Playwright test code with AI, and run self-healing tests. The modern QA platform for teams that ship fast."
+      />
       <Hero onBook={onBook} />
       <SocialProof />
       <ApproachSection />

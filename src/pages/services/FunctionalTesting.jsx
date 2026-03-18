@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { useOutletContext } from "react-router-dom";
 import { motion as m, useReducedMotion } from "framer-motion";
 import { Users, ClipboardCheck, FileText, ArrowRight, PhoneCall } from "lucide-react";
+import SEO from "../../components/SEO";
 import ContactForm from "../../components/ContactForm";
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -24,6 +25,12 @@ export default function FunctionalTesting() {
     const [openForm, setOpenForm] = useState(false);
 
     return (
+        <>
+        <SEO
+          title="Functional Testing Services"
+          description="Thorough functional testing by experienced QA engineers. We validate your application works correctly across all user flows and edge cases."
+          path="services/functional-testing"
+        />
         <section id="functional-testing" className="bg-white text-slate-800">
             <div className="mx-auto max-w-5xl px-4 sm:px-6 py-14">
                 {/* Hero Section */}
@@ -200,5 +207,6 @@ export default function FunctionalTesting() {
                 </div>
             )}
         </section>
+        </>
     );
 }

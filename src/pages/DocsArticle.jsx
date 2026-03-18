@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion as m } from "framer-motion";
 import { ArrowLeft, Clock } from "lucide-react";
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 import docs from "../data/docs";
 
@@ -46,6 +47,12 @@ export default function DocsArticle() {
   const Icon = section.icon;
 
   return (
+    <>
+    <SEO
+      title={article.title}
+      description={article.desc}
+      path={`docs/${slug}`}
+    />
     <Section className="bg-white">
       <div className="max-w-3xl mx-auto">
         {/* Breadcrumb */}
@@ -175,5 +182,6 @@ export default function DocsArticle() {
         </div>
       </div>
     </Section>
+    </>
   );
 }

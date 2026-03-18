@@ -1,4 +1,5 @@
 import { motion as m } from "framer-motion";
+import SEO from "../components/SEO";
 import Section from "../components/Section";
 
 const categories = [
@@ -71,6 +72,12 @@ const statusLabel = {
 
 export default function Integrations() {
   return (
+    <>
+    <SEO
+      title="Integrations"
+      description="Connect TestHive with GitHub Actions, GitLab CI, Jira Xray, TestRail, Confluence, and more. Seamless integration with your existing workflow."
+      path="integrations"
+    />
     <Section className="bg-white">
       <div className="text-center mb-16">
         <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">
@@ -134,5 +141,6 @@ export default function Integrations() {
         </button>
       </div>
     </Section>
+    </>
   );
 }
