@@ -1,5 +1,6 @@
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
+import { X, CheckCircle } from "lucide-react";
 
 export default function ComparisonSection() {
   return (
@@ -30,12 +31,42 @@ export default function ComparisonSection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex justify-center"
         >
-          <img
-            src="/assets/infographics/comparison.png"
-            alt="Traditional test automation vs TestHive AI: maintenance reduction, faster test creation, zero flaky tests, open-source Playwright"
-            loading="lazy"
-            className="w-full max-w-4xl h-auto rounded-2xl shadow-2xl"
-          />
+          <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Left: Ad-hoc */}
+            <div className="rounded-2xl border border-red-500/20 bg-red-500/5 p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
+                  <X className="h-4 w-4 text-red-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white">Ad-hoc Testing</h3>
+              </div>
+              <ul className="space-y-3">
+                {["Slow test creation", "High maintenance overhead", "Flaky, unreliable tests", "Vendor lock-in"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
+                    <X className="h-4 w-4 text-red-400 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* Right: TestHive */}
+            <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/5 p-6">
+              <div className="flex items-center gap-2 mb-5">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
+                  <CheckCircle className="h-4 w-4 text-emerald-400" />
+                </div>
+                <h3 className="text-lg font-bold text-white">TestHive Approach</h3>
+              </div>
+              <ul className="space-y-3">
+                {["AI-powered test generation", "Self-healing tests", "Open-source Playwright", "Full traceability"].map((item) => (
+                  <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
+                    <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </m.div>
 
         <m.div

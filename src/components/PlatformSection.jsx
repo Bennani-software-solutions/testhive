@@ -1,7 +1,7 @@
 // src/components/PlatformSection.jsx
 import { motion as m } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Sparkles, FileSearch, Play, Users, Globe, Shield } from "lucide-react";
+import { Sparkles, FileSearch, Play, Users, Globe, Shield, PenTool, BarChart3, ArrowRight as ArrowRightIcon } from "lucide-react";
 
 const features = [
   {
@@ -102,12 +102,59 @@ export default function PlatformSection() {
           className="relative rounded-2xl border border-slate-200 bg-slate-900 p-1 shadow-soft mb-12"
         >
           <div className="rounded-xl bg-slate-900 p-8 md:p-12">
-            <img
-              src="/assets/infographics/workflow.png"
-              alt="How TestHive works: Write Gherkin, AI generates Playwright code, execute tests, self-healing results"
-              loading="lazy"
-              className="w-full max-w-4xl mx-auto h-auto mb-8 rounded-lg"
-            />
+            {/* Inline workflow diagram */}
+            <div className="w-full max-w-4xl mx-auto mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-7 gap-4 md:gap-0 items-center">
+                {/* Step 1 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center mb-3">
+                    <PenTool className="h-6 w-6 text-indigo-400" />
+                  </div>
+                  <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">01</span>
+                  <span className="text-sm font-semibold text-white">Write</span>
+                  <span className="text-xs text-slate-400 mt-0.5">Gherkin scenarios</span>
+                </div>
+                {/* Arrow */}
+                <div className="hidden md:flex items-center justify-center">
+                  <ArrowRightIcon className="h-5 w-5 text-slate-500" />
+                </div>
+                {/* Step 2 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center mb-3">
+                    <Sparkles className="h-6 w-6 text-indigo-400" />
+                  </div>
+                  <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">02</span>
+                  <span className="text-sm font-semibold text-white">Generate</span>
+                  <span className="text-xs text-slate-400 mt-0.5">AI writes Playwright</span>
+                </div>
+                {/* Arrow */}
+                <div className="hidden md:flex items-center justify-center">
+                  <ArrowRightIcon className="h-5 w-5 text-slate-500" />
+                </div>
+                {/* Step 3 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center mb-3">
+                    <Play className="h-6 w-6 text-emerald-400" />
+                  </div>
+                  <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-1">03</span>
+                  <span className="text-sm font-semibold text-white">Execute</span>
+                  <span className="text-xs text-slate-400 mt-0.5">One-click run</span>
+                </div>
+                {/* Arrow */}
+                <div className="hidden md:flex items-center justify-center">
+                  <ArrowRightIcon className="h-5 w-5 text-slate-500" />
+                </div>
+                {/* Step 4 */}
+                <div className="flex flex-col items-center text-center">
+                  <div className="w-14 h-14 rounded-2xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center mb-3">
+                    <BarChart3 className="h-6 w-6 text-amber-400" />
+                  </div>
+                  <span className="text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">04</span>
+                  <span className="text-sm font-semibold text-white">Analyze</span>
+                  <span className="text-xs text-slate-400 mt-0.5">Results & self-heal</span>
+                </div>
+              </div>
+            </div>
 
             <div className="text-center">
               <h3 className="text-xl font-bold text-white mb-3">
