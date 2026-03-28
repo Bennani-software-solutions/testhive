@@ -18,7 +18,7 @@ export default function Home() {
   return (
     <>
       <SEO
-        description="European QA expertise at nearshore rates. Senior test automation engineers embedded in your team — same timezone, no language barrier, up to 60% cost savings."
+        description="European QA expertise at nearshore rates. Senior test automation engineers embedded in your team. Same timezone, no language barrier, up to 60% cost savings."
       />
       <Hero onBook={onBook} />
       <SocialProof />

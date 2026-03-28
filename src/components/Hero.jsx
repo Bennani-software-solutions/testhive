@@ -116,7 +116,7 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              European QA expertise at nearshore rates. We embed senior test automation engineers in your team — same timezone, no language barrier, a fraction of the cost. From strategy to hands-on Playwright automation.
+              European QA expertise at nearshore rates. We embed senior test automation engineers in your team. Same timezone, no language barrier, a fraction of the cost.
             </m.p>
 
             <m.div
@@ -179,7 +179,7 @@ export default function Hero({ onBook }) {
             </m.div>
           </m.div>
 
-          {/* RIGHT — Inline SVG illustration */}
+          {/* RIGHT - Inline SVG illustration */}
           <m.figure initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.15 }} className="relative">
             <div className="w-full overflow-hidden rounded-3xl border border-slate-200 shadow-soft bg-white">
               <HeroIllustration />
