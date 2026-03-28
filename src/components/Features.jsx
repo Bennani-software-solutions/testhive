@@ -41,7 +41,7 @@ const features = [
   },
   {
     title: "QA Outsourcing",
-    desc: "Scale your QA team flexibly with temporary or dedicated capacity.",
+    desc: "Scale your QA capacity with senior nearshore engineers. Same timezone, embedded in your team, at a fraction of EU rates.",
     link: "/services/qa-outsourcing",
     icon: Users,
     color: "bg-amber-100 text-amber-600",

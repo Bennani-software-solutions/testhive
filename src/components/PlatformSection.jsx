@@ -8,7 +8,7 @@ const features = [
     icon: Sparkles,
     color: "sky",
     title: "AI Test Generation",
-    desc: "Write BDD/Gherkin scenarios and let AI generate production-ready Playwright tests, both E2E and API.",
+    desc: "Write BDD/Gherkin scenarios and let AI generate production-ready test code, both E2E and API.",
   },
   {
     icon: FileSearch,
@@ -125,7 +125,7 @@ export default function PlatformSection() {
                   </div>
                   <span className="text-xs font-bold text-indigo-400 uppercase tracking-wider mb-1">02</span>
                   <span className="text-sm font-semibold text-white">Generate</span>
-                  <span className="text-xs text-slate-400 mt-0.5">AI writes Playwright</span>
+                  <span className="text-xs text-slate-400 mt-0.5">AI writes test code</span>
                 </div>
                 {/* Arrow */}
                 <div className="hidden md:flex items-center justify-center">

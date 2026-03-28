@@ -17,10 +17,10 @@ export default function ComparisonSection() {
             The difference
           </span>
           <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight text-white">
-            Ad-hoc testing <span className="text-indigo-400">vs</span> structured quality engineering
+            Hiring locally <span className="text-indigo-400">vs</span> working with TestHive
           </h2>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-slate-400">
-            The difference isn't just tools. It's having the right strategy, the right mix of testing disciplines, and the discipline to invest where it matters.
+            Finding and retaining senior QA talent in Europe is expensive and slow. We give you the same expertise, embedded in your team, without the overhead.
           </p>
         </m.div>
 
@@ -38,10 +38,10 @@ export default function ComparisonSection() {
                 <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
                   <X className="h-4 w-4 text-red-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white">Ad-hoc Testing</h3>
+                <h3 className="text-lg font-bold text-white">Hiring In-House</h3>
               </div>
               <ul className="space-y-3">
-                {["Slow test creation", "High maintenance overhead", "Flaky, unreliable tests", "Vendor lock-in"].map((item) => (
+                {["3-6 months to find senior QA talent", "€70-120K+ annual cost per engineer", "Onboarding, training, and retention risk", "Limited to one person's skill set"].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
                     <X className="h-4 w-4 text-red-400 flex-shrink-0" />
                     {item}
@@ -55,10 +55,10 @@ export default function ComparisonSection() {
                 <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center">
                   <CheckCircle className="h-4 w-4 text-emerald-400" />
                 </div>
-                <h3 className="text-lg font-bold text-white">TestHive Approach</h3>
+                <h3 className="text-lg font-bold text-white">TestHive Nearshore</h3>
               </div>
               <ul className="space-y-3">
-                {["AI-powered test generation", "Self-healing tests", "Open-source Playwright", "Full traceability"].map((item) => (
+                {["Start within 2 weeks", "40-60% lower cost, same quality", "Embedded in your team, same timezone", "Access to a full QA team, not just one hire"].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-slate-300">
                     <CheckCircle className="h-4 w-4 text-emerald-400 flex-shrink-0" />
                     {item}
@@ -77,10 +77,10 @@ export default function ComparisonSection() {
           className="mt-10 text-center"
         >
           <Link
-            to="/platform"
+            to="/pricing"
             className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
           >
-            See how it works
+            See our pricing
           </Link>
         </m.div>
       </div>
