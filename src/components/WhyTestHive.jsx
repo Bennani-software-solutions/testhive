@@ -87,6 +87,73 @@ export default function WhyTestHive({ onMeet }) {
           ))}
         </div>
 
+        {/* Rate comparison table */}
+        <m.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-20"
+        >
+          <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900 mb-3">
+            The numbers speak for themselves
+          </h3>
+          <p className="text-slate-600 mb-10 max-w-xl mx-auto">
+            Typical hourly rates for QA and test automation engineers. Same skills, same timezone, different price tag.
+          </p>
+
+          <div className="overflow-x-auto">
+            <table className="w-full max-w-3xl mx-auto text-left border-collapse">
+              <thead>
+                <tr className="border-b-2 border-slate-200">
+                  <th className="py-3 px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">Role</th>
+                  <th className="py-3 px-4 text-sm font-semibold text-slate-500 uppercase tracking-wider">EU Freelance</th>
+                  <th className="py-3 px-4 text-sm font-semibold text-indigo-600 uppercase tracking-wider">TestHive</th>
+                  <th className="py-3 px-4 text-sm font-semibold text-emerald-600 uppercase tracking-wider">You save</th>
+                </tr>
+              </thead>
+              <tbody className="text-slate-700">
+                <tr className="border-b border-slate-100">
+                  <td className="py-4 px-4 font-medium">Junior QA Engineer</td>
+                  <td className="py-4 px-4">€40 - €55/hr</td>
+                  <td className="py-4 px-4 font-semibold text-indigo-600">€20 - €30/hr</td>
+                  <td className="py-4 px-4">
+                    <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">~50%</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-slate-100 bg-slate-50/50">
+                  <td className="py-4 px-4 font-medium">Mid-level Test Automation</td>
+                  <td className="py-4 px-4">€55 - €80/hr</td>
+                  <td className="py-4 px-4 font-semibold text-indigo-600">€30 - €45/hr</td>
+                  <td className="py-4 px-4">
+                    <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">~45%</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-slate-100">
+                  <td className="py-4 px-4 font-medium">Senior QA / SDET</td>
+                  <td className="py-4 px-4">€75 - €110/hr</td>
+                  <td className="py-4 px-4 font-semibold text-indigo-600">€45 - €70/hr</td>
+                  <td className="py-4 px-4">
+                    <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">~40%</span>
+                  </td>
+                </tr>
+                <tr className="bg-slate-50/50">
+                  <td className="py-4 px-4 font-medium">QA Lead / Consultant</td>
+                  <td className="py-4 px-4">€90 - €150/hr</td>
+                  <td className="py-4 px-4 font-semibold text-indigo-600">€55 - €85/hr</td>
+                  <td className="py-4 px-4">
+                    <span className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700">~45%</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p className="mt-6 text-sm text-slate-400">
+            EU rates based on average freelance market data for NL, BE, FR, and DE. TestHive rates are indicative and depend on scope and engagement model.
+          </p>
+        </m.div>
+
       </div>
     </section>
   );
