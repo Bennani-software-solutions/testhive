@@ -9,7 +9,7 @@ export default function Pricing({
   return (
     <section id="pricing" className="mx-auto w-full max-w-6xl px-6 py-16">
       <h2 className="text-2xl font-bold tracking-tight">Pricing</h2>
-      <p className="mt-2 max-w-2xl text-gray-600">Pick the path that fits where you are today.</p>
+      <p className="mt-2 max-w-2xl text-gray-600">Pick the path that fits where you are today. Every engagement starts with a conversation, not a contract.</p>
 
       <div className="mt-8 grid gap-6 lg:grid-cols-3">
         {/* 1) FREE POC */}
@@ -26,10 +26,10 @@ export default function Pricing({
           <div className="mt-6 text-3xl font-bold">Free</div>
 
           <ul className="mt-6 space-y-2 text-sm text-gray-600">
-            <li>• 1–2 automated test cases (Playwright/Cypress)</li>
-            <li>• Minimal CI wiring (GitHub/GitLab/Azure)</li>
-            <li>• Readme &amp; commands to run locally/CI</li>
-            <li>• Demo run + short report</li>
+            <li>• 1-2 automated test cases for your critical flows</li>
+            <li>• Wired into your existing CI pipeline</li>
+            <li>• Full documentation so your team can run it</li>
+            <li>• Short report with findings and recommendations</li>
             <li>• No cost, no commitment</li>
           </ul>
 
@@ -64,19 +64,19 @@ export default function Pricing({
 
           <h3 className="mt-3 text-lg font-semibold text-gray-900">Quality Accelerator Pack</h3>
           <p className="mt-2 text-sm text-gray-600">
-            For a single payment of <strong>€4,999</strong>, our senior engineers automate roughly{" "}
-            <strong>10–20 business-critical tests</strong> and integrate them into your CI/CD pipeline.
-            Typical delivery ~<strong>90 days</strong>.
+            One of our senior engineers spends 90 days automating your{" "}
+            <strong>10-20 most important regression tests</strong> and wiring them into your pipeline.
+            You keep the code. No subscriptions, no lock-in.
           </p>
 
           <div className="mt-6 text-3xl font-bold">€4,999</div>
           <div className="text-xs text-gray-500">one-time</div>
 
           <ul className="mt-6 space-y-2 text-sm text-gray-600">
-            <li>• ~10–20 automated regression scenarios</li>
-            <li>• Full CI/CD wiring & dashboards</li>
-            <li>• Executable docs & commands (local + CI)</li>
-            <li>• Demo report & next-coverage plan</li>
+            <li>• 10-20 automated regression scenarios</li>
+            <li>• Integrated in your CI/CD pipeline</li>
+            <li>• Full documentation and team handover</li>
+            <li>• Report with coverage plan for next steps</li>
           </ul>
 
           <div className="mt-6 grid gap-3">
@@ -105,24 +105,26 @@ export default function Pricing({
           </p>
         </div>
 
-        {/* 3) ENTERPRISE */}
+        {/* 3) QUALITY PARTNER */}
         <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm">
-          <h3 className="text-lg font-semibold text-gray-900">Enterprise</h3>
-          <p className="mt-2 text-sm text-gray-600">Tailored QA program for complex stacks and governance needs.</p>
+          <h3 className="text-lg font-semibold text-gray-900">Quality Partner</h3>
+          <p className="mt-2 text-sm text-gray-600">A dedicated QA engineer embedded in your team on a monthly basis. Scales up or down as you need.</p>
 
           <div className="mt-6 text-3xl font-bold">Custom</div>
+          <div className="text-xs text-gray-500">monthly retainer</div>
 
           <ul className="mt-6 space-y-2 text-sm text-gray-600">
-            <li>• Dedicated team & SLAs</li>
-            <li>• Security & compliance support</li>
-            <li>• 24/5 coverage options</li>
+            <li>• Dedicated senior QA engineer in your team</li>
+            <li>• Automation, manual testing, and consulting</li>
+            <li>• Same timezone, same standups, same tools</li>
+            <li>• Flexible scope, scale up with more engineers</li>
           </ul>
 
           <button
             onClick={onBookClick}
             className="mt-6 w-full rounded-2xl bg-gray-900 px-4 py-3 text-sm font-semibold text-white hover:opacity-90"
           >
-            Talk to Sales
+            Let's Talk
           </button>
         </div>
       </div>
@@ -180,24 +182,13 @@ export default function Pricing({
                 />
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="text-xs font-medium text-gray-600">Preferred tool</label>
-                  <select name="tool" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm">
-                    <option>Playwright</option>
-                    <option>Cypress</option>
-                    <option>Undecided / advise me</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="text-xs font-medium text-gray-600">CI platform</label>
-                  <select name="ci" className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm">
-                    <option>GitHub Actions</option>
-                    <option>GitLab CI</option>
-                    <option>Azure DevOps</option>
-                    <option>Other</option>
-                  </select>
-                </div>
+              <div>
+                <label className="text-xs font-medium text-gray-600">Your tech stack (optional)</label>
+                <input
+                  name="stack"
+                  placeholder="e.g. React, Node.js, GitHub Actions, Azure DevOps..."
+                  className="mt-1 w-full rounded-xl border border-gray-300 px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-indigo-300"
+                />
               </div>
 
               <div>

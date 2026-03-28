@@ -28,9 +28,9 @@ import {
 const PLATFORM_URL = "https://app.testhive.ma";
 
 const metrics = [
-  { value: "10x", label: "Faster test creation", sub: "vs manual scripting" },
-  { value: "80%", label: "Less code to write", sub: "AI handles the rest" },
-  { value: "< 5 min", label: "First test generated", sub: "from sign-up" },
+  { value: "Faster", label: "Regression test setup", sub: "less manual scripting" },
+  { value: "Open", label: "Standard test code output", sub: "no vendor lock-in" },
+  { value: "Simple", label: "Plain language input", sub: "no coding required" },
   { value: "24/7", label: "Scheduled execution", sub: "unattended runs" },
 ];
 
@@ -636,8 +636,8 @@ export default function Platform() {
   return (
     <>
       <SEO
-        title="Platform Features"
-        description="AI-powered code generation, self-healing tests, CI/CD integration, and real-time dashboards. Explore the TestHive Platform capabilities."
+        title="Our Tooling"
+        description="Internal tooling we use to deliver faster results for our clients. Describe what you want to test, generate test code, run it, and review results in one place."
         path="platform"
       />
       {/* Hero */}
@@ -649,33 +649,32 @@ export default function Platform() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-block rounded-full bg-indigo-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-700 mb-5">
-              TestHive Platform
+            <span className="inline-block rounded-full bg-slate-100 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-600 mb-5">
+              Our Tooling
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
-              AI-powered test automation
+              The workbench behind
               <br className="hidden sm:block" />
-              <span className="text-indigo-600">where it fits</span>
+              <span className="text-indigo-600">our delivery</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
-              Not every test should be automated, but the ones that should don't need to take days to write.
-              Describe what you want to test, let AI generate the code, and run it in seconds.
+              We built internal tooling to speed up the repetitive parts of test automation. It helps us deliver faster results for our clients. It is not a magic solution. It is a practical instrument that works best in the hands of experienced engineers.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
+              <button
+                onClick={onBook}
+                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-semibold text-white shadow-md active:scale-95 transition"
+              >
+                Book a Consultation
+              </button>
               <a
                 href={PLATFORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-semibold text-white shadow-md active:scale-95 transition"
-              >
-                Try the Platform Free <ArrowRight className="h-4 w-4" />
-              </a>
-              <button
-                onClick={onBook}
                 className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-base font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition"
               >
-                Request a Demo
-              </button>
+                Try it yourself
+              </a>
             </div>
           </m.div>
 
