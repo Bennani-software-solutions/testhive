@@ -1,30 +1,42 @@
 import { motion as m } from "framer-motion";
-import { Users, Compass, Handshake, Eye } from "lucide-react";
+import { Globe, PiggyBank, Users, Handshake, Compass, Eye } from "lucide-react";
 
 const FEATURES = [
   {
-    icon: Users,
-    title: "Multidisciplinary team",
+    icon: Globe,
+    title: "Same timezone, no friction",
     body:
-      "QA engineers who code, automation specialists who understand business, and strategists who have shipped quality at scale. Not just testers.",
+      "Morocco is 0-2 hours from most European cities. Real-time collaboration, no awkward handoffs, no waiting overnight for answers.",
+  },
+  {
+    icon: PiggyBank,
+    title: "Up to 60% cost savings",
+    body:
+      "Senior QA engineers at a fraction of European freelance rates. Same expertise, same work ethic, dramatically lower cost.",
+  },
+  {
+    icon: Users,
+    title: "Multilingual, highly educated talent",
+    body:
+      "Our engineers speak French, English, Dutch, Arabic, and Spanish. Morocco produces 30,000+ STEM graduates annually.",
+  },
+  {
+    icon: Handshake,
+    title: "Embedded in your team",
+    body:
+      "Same Slack channels, same standups, same deadlines. We work inside your team, not alongside it. You will forget we are remote.",
   },
   {
     icon: Compass,
-    title: "Independent advice",
+    title: "Independent, vendor-neutral advice",
     body:
       "We recommend what works for your stack, not what earns us a commission. If open-source Playwright is the right fit, we will tell you.",
   },
   {
-    icon: Handshake,
-    title: "Embedded collaboration",
-    body:
-      "Same Slack channels, same standups, same deadlines. We work inside your team, not alongside it.",
-  },
-  {
     icon: Eye,
-    title: "Transparency & trust",
+    title: "Full transparency",
     body:
-      "Weekly progress reports, shared dashboards, and honest conversations about what is working and what is not.",
+      "Weekly progress reports, shared dashboards, and honest conversations about what is working and what is not. No surprises.",
   },
 ];
 
@@ -51,11 +63,11 @@ export default function WhyTestHive({ onMeet }) {
           transition={{ duration: 0.45, delay: 0.1 }}
           className="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed"
         >
-          We started TestHive because we saw the same pattern everywhere: teams investing in test automation, only to drown in maintenance six months later. We believe quality engineering should accelerate your team, not slow it down.
+          European companies pay €80-150/hour for QA freelancers. We deliver the same senior expertise from Morocco at nearshore rates, with zero timezone friction. Your team gets stronger without blowing the budget.
         </m.p>
 
         {/* Features */}
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, body }, i) => (
             <m.div
               key={title}

@@ -9,7 +9,7 @@ export default function WhyTestHivePage() {
     <>
       <SEO
         title="Why TestHive"
-        description="Discover why teams choose TestHive for AI-powered test automation. Faster releases, fewer bugs, and a platform built for real QA workflows."
+        description="European QA expertise at nearshore rates from Morocco. Same timezone, multilingual engineers, up to 60% cost savings. Embedded in your team, not outsourced to a call center."
         path="whytesthive"
       />
       <WhyTestHive onBook={onBook} />
