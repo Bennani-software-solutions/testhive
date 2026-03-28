@@ -12,16 +12,13 @@ import QAProcessSection from '../components/QAProcessSection'
 import ComparisonSection from '../components/ComparisonSection'
 import CaseStudiesPreview from '../components/CaseStudiesPreview'
 import Testimonials from '../components/Testimonials'
-import useDevMode from '../hooks/useDevMode'
-
 export default function Home() {
   const { onBook } = useOutletContext()
-  const isDev = useDevMode()
 
   return (
     <>
       <SEO
-        description="Write Gherkin scenarios, generate Playwright test code with AI, and run self-healing tests. The modern QA platform for teams that ship fast."
+        description="European QA expertise at nearshore rates. Senior test automation engineers embedded in your team — same timezone, no language barrier, up to 60% cost savings."
       />
       <Hero onBook={onBook} />
       <SocialProof />
@@ -31,7 +28,7 @@ export default function Home() {
       <WhyTestHiveSection onBook={onBook} />
       <ComparisonSection />
       <Logos />
-      {isDev && <CaseStudiesPreview />}
+      <CaseStudiesPreview />
       <QAProcessSection />
       <Testimonials />
       <CTA onBook={onBook} />

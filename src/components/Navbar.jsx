@@ -71,11 +71,11 @@ export default function Navbar({ onBook }) {
 
   const resources = [
     ["Why TestHive?", "/whytesthive"],
+    ["Case Studies", "/case-studies"],
     ["Blog", "/blog"],
     ["FAQ", "/faq"],
     ...(isDev
       ? [
-          ["Case Studies", "/case-studies"],
           ["Integrations", "/integrations"],
           ["Knowledge Base", "/docs"],
         ]

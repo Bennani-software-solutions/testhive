@@ -32,7 +32,7 @@ export default function CaseStudiesPreview() {
     <Section id="case-studies-preview" className="bg-white border-t border-gray-200">
       <div className="text-center mb-12">
         <div className="inline-flex items-center rounded-full bg-indigo-50 px-4 py-1.5 text-xs font-semibold text-indigo-700 mb-4">
-          DUMMY DATA / PLACEHOLDER
+          REAL RESULTS
         </div>
         <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900">
           Trusted by Teams That Ship

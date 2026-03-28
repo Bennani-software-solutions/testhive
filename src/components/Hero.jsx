@@ -106,8 +106,8 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900"
             >
-              Build the QA strategy <br className="hidden sm:block" />
-              your team <span className="text-indigo-600">actually needs</span>
+              Stop shipping bugs. <br className="hidden sm:block" />
+              <span className="text-indigo-600">Start shipping confidence.</span>
             </m.h1>
 
             <m.p
@@ -116,7 +116,7 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Whether you need hands-on testing, a tailored automation strategy, or AI-powered tooling, we help you invest in quality where it matters most. No silver bullets, just the right approach for your context.
+              European QA expertise at nearshore rates. We embed senior test automation engineers in your team — same timezone, no language barrier, a fraction of the cost. From strategy to hands-on Playwright automation.
             </m.p>
 
             <m.div
@@ -166,15 +166,15 @@ export default function Hero({ onBook }) {
             >
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>Assessment-first approach</span>
+                <span>Same timezone as Europe</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>6+ QA disciplines</span>
+                <span>Up to 60% cost savings</span>
               </div>
               <div className="flex items-center gap-1.5">
                 <svg className="h-4 w-4 text-emerald-500" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/></svg>
-                <span>Platform + human expertise</span>
+                <span>Free proof-of-concept</span>
               </div>
             </m.div>
           </m.div>
