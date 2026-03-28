@@ -22,11 +22,11 @@ export default function Home() {
       />
       <Hero onBook={onBook} />
       <SocialProof />
-      <ApproachSection />
       <Features />
-      <PlatformSection />
       <WhyTestHiveSection onBook={onBook} />
       <ComparisonSection />
+      <ApproachSection />
+      <PlatformSection />
       <Logos />
       <CaseStudiesPreview />
       <QAProcessSection />

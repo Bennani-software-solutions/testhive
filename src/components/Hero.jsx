@@ -134,15 +134,13 @@ export default function Hero({ onBook }) {
                 Book a Free Consultation
               </button>
 
-              {/* Secondary: Platform */}
-              <a
-                href="https://app.testhive.ma"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* Secondary: Case Studies */}
+              <HashLink
+                to="/case-studies"
                 className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
               >
-                Explore the Platform
-              </a>
+                View Case Studies
+              </HashLink>
 
               {/* WhatsApp */}
               <a
