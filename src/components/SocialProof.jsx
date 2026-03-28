@@ -1,9 +1,9 @@
 import { motion as m } from "framer-motion";
 
 const stats = [
-  { value: "90 days", label: "From chaos to structured coverage" },
-  { value: "6+", label: "QA disciplines under one roof" },
-  { value: "0", label: "Vendor lock-in" },
+  { value: "0-2h", label: "Timezone difference with Europe" },
+  { value: "5+", label: "Languages spoken by our team" },
+  { value: "40-60%", label: "Average cost savings vs EU rates" },
   { value: "100%", label: "Tailored to your context" },
 ];
 
@@ -48,7 +48,7 @@ export default function SocialProof() {
           className="mt-10 pt-8 border-t border-slate-800 text-center"
         >
           <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">
-            Built for teams in
+            Serving teams in
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
             {industries.map((ind) => (

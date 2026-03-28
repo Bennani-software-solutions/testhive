@@ -75,8 +75,8 @@ export default function ApproachSection() {
           className="mt-10 text-center"
         >
           <p className="text-sm text-slate-500 max-w-xl mx-auto">
-            Our AI platform accelerates what can be automated. Our consultants handle what can't.
-            Together, they cover the full quality spectrum.
+            Our engineers work alongside your team to build a quality practice that lasts.
+            No quick fixes. No one-size-fits-all. Just the right approach for where you are now.
           </p>
         </m.div>
       </div>
