@@ -30,7 +30,7 @@ const FEATURES = [
     icon: Compass,
     title: "Independent, vendor-neutral advice",
     body:
-      "We recommend what works for your stack, not what earns us a commission. If open-source Playwright is the right fit, we will tell you.",
+      "We recommend what works for your stack, not what earns us a commission. No vendor lock-in, no bias. Just the right tools for your situation.",
   },
   {
     icon: Eye,

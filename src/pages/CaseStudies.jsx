@@ -12,7 +12,7 @@ const caseStudies = [
     challenge:
       "Manual regression testing took 3 full days before every release, causing delays and missed deadlines. Critical payment flows were only tested sporadically.",
     solution:
-      "TestHive automated 45 critical regression scenarios using Playwright, integrated into their GitHub Actions pipeline with nightly scheduled runs.",
+      "TestHive automated 45 critical regression scenarios and integrated them into the CI/CD pipeline with nightly scheduled runs.",
     results: [
       { metric: "70%", label: "Faster regression cycles" },
       { metric: "Zero", label: "Critical bugs in production (6 months)" },
@@ -22,7 +22,7 @@ const caseStudies = [
       "TestHive transformed our QA process. What used to take our team 3 days now runs automatically overnight. We ship with confidence every sprint.",
     quotePerson: "David van der Berg",
     quoteRole: "VP Engineering, FinServ Pro",
-    tags: ["Playwright", "GitHub Actions", "Financial Services"],
+    tags: ["Test Automation", "CI/CD", "Financial Services"],
   },
   {
     company: "MediTrack",
@@ -60,7 +60,7 @@ const caseStudies = [
       "The ROI was immediate. Within the first month, automated tests caught a payment gateway regression that would have cost us dearly during Black Friday.",
     quotePerson: "Marc de Vries",
     quoteRole: "Head of Product, RetailFlow",
-    tags: ["Playwright", "GitLab CI", "E-commerce"],
+    tags: ["E2E Testing", "CI/CD", "E-commerce"],
   },
 ];
 

@@ -9,7 +9,7 @@ const defaults = {
 export default function SEO({ title, description, path = "", image }) {
   const fullTitle = title
     ? `${title} | ${defaults.siteName}`
-    : `${defaults.siteName} — AI-Powered Test Automation Platform`;
+    : `${defaults.siteName} | QA Services & Test Automation`;
   const url = `${defaults.siteUrl}${path ? `/#/${path}` : ""}`;
 
   return (

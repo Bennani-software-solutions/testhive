@@ -9,7 +9,7 @@ export default function PricingPage() {
     <>
       <SEO
         title="Pricing"
-        description="Start free, scale when ready. Transparent pricing for AI-powered test automation — no hidden fees, no per-seat charges."
+        description="Start free, scale when ready. Transparent pricing for test automation services. No hidden fees, no per-seat charges."
         path="pricing"
       />
       <Pricing onBookClick={onBook} calendlyUrl={calendlyUrl} />
