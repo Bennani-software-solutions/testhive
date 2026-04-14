@@ -16,15 +16,15 @@ const testimonials = [
         role: "Owner Saro-IT · Analyst at Skylux",
     },
     {
-        quote: "Je AT heeft een redelijk grote gap in de sync logica blootgelegd.",
-        name: "Dev Lead",
-        role: "Benelux pharma distributor",
+        quote: "Je geautomatiseerde tests hebben een redelijk grote gap in onze sync logica blootgelegd.",
+        name: "Danny",
+        role: "Business Analyst · Benelux pharma distributor",
         context: "Integration tests uncovered a missing case in cross-system data sync. Logged as a Jira ticket the team would not have opened otherwise.",
     },
     {
         quote: "Als je zoveel pluimen gaat blijven verdienen, loopt hier binnenkort een kaal kieken rond.",
-        name: "Business contact",
-        role: "Pharma distribution",
+        name: "Mireille",
+        role: "Business Analyst · Benelux pharma distributor",
         context: "After another production sanity test flagged an unlinked offer with no confirmed quantities, before any customer noticed.",
     },
 ];

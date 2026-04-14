@@ -2,16 +2,15 @@ import { motion as m } from "framer-motion";
 
 const stats = [
   { value: "0–1h", label: "Time difference with CET" },
-  { value: "4", label: "Languages spoken" },
-  { value: "10y", label: "QA experience" },
-  { value: "30d", label: "No lock-in, month to month" },
+  { value: "NL·FR·EN", label: "Your team's languages" },
+  { value: "30d", label: "Month to month, no lock-in" },
 ];
 
 export default function SocialProof() {
   return (
     <section className="bg-slate-900 border-y border-slate-800">
       <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           {stats.map((s, i) => (
             <m.div
               key={s.label}
