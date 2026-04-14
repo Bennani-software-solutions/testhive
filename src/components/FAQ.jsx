@@ -34,6 +34,10 @@ export default function FAQ() {
       q: "Can we start with a small trial before committing?",
       a: "Yes. We offer a free Proof of Concept. You pick one or two test cases, we automate them and wire them into your CI pipeline, you get a short demo. No cost. You see the quality before deciding anything."
     },
+    {
+      q: "How do you handle our data?",
+      a: "We sign a Data Processing Agreement with Standard Contractual Clauses for every engagement. The specific technical and organisational measures are documented per project and shared during onboarding. If your legal or procurement team has questions before that, email support@testhive.ma — answer within one working day."
+    },
   ];
 
   return (

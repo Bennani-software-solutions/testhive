@@ -5,7 +5,7 @@ import Section from "./Section";
 const testimonials = [
     {
         quote:
-            "Abdel started with us as a functional tester and grew into our technical lead for test automation. He built our framework, automated regression for our key applications, and now coaches a junior automation engineer working remotely.",
+            "Abdel started with us as a functional tester and grew into our technical lead for test automation. He built our framework, automated regression for our key applications, and now coaches other testers and supports them in implementing automation.",
         name: "Magda De Cock",
         role: "Test Manager · ISTQB & Scrum Certified",
     },
