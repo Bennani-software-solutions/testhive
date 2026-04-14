@@ -8,9 +8,8 @@ const services = [
   ["Test Automation", "/services/automation"],
   ["Functional Testing", "/services/functional-testing"],
   ["Pen Testing", "/services/pen-testing"],
-  ["Consulting", "/services/consulting"],
+  ["Consulting & Nearshoring", "/services/consulting"],
   ["Mentoring", "/services/mentoring"],
-  ["QA Outsourcing", "/services/qa-outsourcing"],
 ];
 
 export default function Footer() {
@@ -50,20 +49,6 @@ export default function Footer() {
 
         {/* Product & Services */}
         <div>
-          <h3 className="text-sm font-semibold text-slate-900 mb-3">Product</h3>
-          <ul className="space-y-2 text-sm mb-5">
-            <li>
-              <Link to="/platform" className="text-slate-600 hover:text-indigo-600 transition-colors">
-                TestHive Platform
-              </Link>
-            </li>
-            <li>
-              <Link to="/pricing" className="text-slate-600 hover:text-indigo-600 transition-colors">
-                Pricing
-              </Link>
-            </li>
-          </ul>
-
           <h3 className="text-sm font-semibold text-slate-900 mb-3">Services</h3>
           <ul className="space-y-2 text-sm">
             {services.map(([label, path]) => (
@@ -93,6 +78,11 @@ export default function Footer() {
             <li>
               <Link to="/faq" className="text-slate-600 hover:text-indigo-600 transition-colors">
                 FAQ
+              </Link>
+            </li>
+            <li>
+              <Link to="/careers" className="text-slate-600 hover:text-indigo-600 transition-colors">
+                Careers
               </Link>
             </li>
             {isDev && (

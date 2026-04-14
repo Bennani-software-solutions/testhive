@@ -4,29 +4,23 @@ import SocialProof from '../components/SocialProof'
 import Logos from '../components/Logos'
 import Features from '../components/Features'
 import CTA from '../components/CTA'
-import PlatformSection from '../components/PlatformSection'
 import WhyTestHiveSection from '../components/WhyTestHive'
 import QAProcessSection from '../components/QAProcessSection'
-import ComparisonSection from '../components/ComparisonSection'
-import CaseStudiesPreview from '../components/CaseStudiesPreview'
 import Testimonials from '../components/Testimonials'
-import useDevMode from '../hooks/useDevMode'
+import ToolPreview from '../components/ToolPreview'
 
 export default function Home() {
   const { onBook } = useOutletContext()
-  const isDev = useDevMode()
 
   return (
     <>
       <Hero onBook={onBook} />
+      <WhyTestHiveSection onBook={onBook} />
       <SocialProof />
       <Features />
-      <PlatformSection />
-      <WhyTestHiveSection onBook={onBook} />
-      <ComparisonSection />
       <Logos />
-      {isDev && <CaseStudiesPreview />}
       <QAProcessSection />
+      <ToolPreview />
       <Testimonials />
       <CTA onBook={onBook} />
     </>

@@ -1,0 +1,22 @@
+{
+  "redirects": [
+    { "source": "/services/:slug*", "destination": "/#/services/:slug*", "permanent": false },
+    { "source": "/whytesthive", "destination": "/#/whytesthive", "permanent": false },
+    { "source": "/pricing", "destination": "/#/pricing", "permanent": false },
+    { "source": "/platform", "destination": "/#/platform", "permanent": false },
+    { "source": "/accelerator", "destination": "/#/accelerator", "permanent": false },
+    { "source": "/partnerprogram", "destination": "/#/partnerprogram", "permanent": false },
+    { "source": "/blog", "destination": "/#/blog", "permanent": false },
+    { "source": "/blog/:slug*", "destination": "/#/blog/:slug*", "permanent": false },
+    { "source": "/faq", "destination": "/#/faq", "permanent": false },
+    { "source": "/privacy", "destination": "/#/privacy", "permanent": false },
+    { "source": "/terms", "destination": "/#/terms", "permanent": false },
+    { "source": "/case-studies", "destination": "/#/case-studies", "permanent": false },
+    { "source": "/integrations", "destination": "/#/integrations", "permanent": false },
+    { "source": "/docs", "destination": "/#/docs", "permanent": false },
+    { "source": "/docs/:slug*", "destination": "/#/docs/:slug*", "permanent": false },
+    { "source": "/pocdetails", "destination": "/#/pocdetails", "permanent": false }
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}
+

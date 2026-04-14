@@ -14,9 +14,8 @@ const services = [
   ["Test Automation", "/services/automation"],
   ["Functional Testing", "/services/functional-testing"],
   ["Pen Testing", "/services/pen-testing"],
-  ["Consulting", "/services/consulting"],
+  ["Consulting & Nearshoring", "/services/consulting"],
   ["Mentoring", "/services/mentoring"],
-  ["QA Outsourcing", "/services/qa-outsourcing"],
 ];
 
 export default function Navbar({ onBook }) {
@@ -73,6 +72,7 @@ export default function Navbar({ onBook }) {
     ["Why TestHive?", "/whytesthive"],
     ["Blog", "/blog"],
     ["FAQ", "/faq"],
+    ["Careers", "/careers"],
     ...(isDev
       ? [
           ["Case Studies", "/case-studies"],
@@ -102,13 +102,6 @@ export default function Navbar({ onBook }) {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex items-center gap-7" ref={dropdownRef}>
-            <NavLink
-              to="/platform"
-              className={({ isActive: a }) => `${base} ${a ? active : idle}`}
-            >
-              Platform
-            </NavLink>
-
             {/* Services dropdown */}
             <div className="relative">
               <button
@@ -222,16 +215,6 @@ export default function Navbar({ onBook }) {
           </div>
 
           <nav className="flex flex-col gap-1 text-slate-700">
-            <NavLink
-              to="/platform"
-              onClick={closeAll}
-              className={({ isActive: a }) =>
-                `block rounded-lg px-3 py-2.5 text-sm font-medium ${a ? "bg-indigo-50 text-indigo-600" : "hover:bg-slate-50"}`
-              }
-            >
-              Platform
-            </NavLink>
-
             <details className="group">
               <summary className="cursor-pointer flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium hover:bg-slate-50">
                 <span>Services</span>

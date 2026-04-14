@@ -16,9 +16,10 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const AutomationService = lazy(() => import("./pages/services/Automation"));
 const FunctionalTestingService = lazy(() => import("./pages/services/FunctionalTesting"));
 const PenTestingService = lazy(() => import("./pages/services/PenTesting"));
-const QAOutsourcingService = lazy(() => import("./pages/services/QAOutsourcing"));
+// QAOutsourcing verwijderd — geconsolideerd in Consulting
 const ConsultingService = lazy(() => import("./pages/services/Consulting"));
 const Mentoring = lazy(() => import("./pages/services/Mentoring"));
+// QAAudit verwijderd — consultancy + nearshoring staat nu in Consulting.jsx
 
 const ToAutomateOrNotToAutomate = lazy(() => import("./pages/blog/ToAutomateOrNotToAutomate"));
 
@@ -29,6 +30,7 @@ const DocsArticle = lazy(() => import("./pages/DocsArticle"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Meeting = lazy(() => import("./pages/Meeting"));
+const Careers = lazy(() => import("./pages/Careers"));
 
 function App() {
   return (
@@ -51,21 +53,19 @@ function App() {
             element={<FunctionalTestingService />}
           />
           <Route path="services/pen-testing" element={<PenTestingService />} />
-          <Route path="services/qa-outsourcing" element={<QAOutsourcingService />} />
+          {/* qa-outsourcing verwijderd — geconsolideerd in /services/consulting */}
           <Route path="services/consulting" element={<ConsultingService />} />
           <Route path="services/mentoring" element={<Mentoring />} />
+          {/* qa-audit route verwijderd — consultancy is nu /services/consulting */}
 
           <Route path="/blog/to-automate-or-not-to-automate" element={<ToAutomateOrNotToAutomate />} />
 
-          {/* Dev-only pages (routes exist but nav links hidden without ?dev=true) */}
-          <Route path="case-studies" element={<CaseStudies />} />
-          <Route path="integrations" element={<Integrations />} />
-          <Route path="docs" element={<KnowledgeBase />} />
-          <Route path="docs/:slug" element={<DocsArticle />} />
+          {/* Dev-only: dummy data, hidden from prospects */}
 
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
 
+          <Route path="careers" element={<Careers />} />
           <Route path="meeting/:room" element={<Meeting />} />
           <Route path="*" element={<NotFound />} />
         </Route>

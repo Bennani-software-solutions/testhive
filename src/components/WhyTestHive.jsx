@@ -1,48 +1,43 @@
 import { motion as m } from "framer-motion";
-import { Users, Compass, Handshake, Eye } from "lucide-react";
+import { Clock, Globe, TrendingDown, Handshake } from "lucide-react";
 
 const FEATURES = [
   {
-    icon: Users,
-    title: "Multidisciplinary team",
-    body:
-      "QA engineers who code, automation specialists who understand business, and strategists who have shipped quality at scale. Not just testers.",
+    icon: Clock,
+    title: "Your working hours",
+    body: "Morocco is on GMT+1 all year. No daylight saving here. In winter that lines up with CET exactly. In summer there is one hour of difference. Your 9am is always our 8am or 9am.",
   },
   {
-    icon: Compass,
-    title: "Independent advice",
-    body:
-      "We recommend what works for your stack, not what earns us a commission. If open-source Playwright is the right fit, we will tell you.",
+    icon: Globe,
+    title: "Your language",
+    body: "Dutch, French, English, Arabic. We talk to your developers, POs and managers directly. No translation layer in between.",
+  },
+  {
+    icon: TrendingDown,
+    title: "Lower cost, same quality",
+    body: "Senior people at a rate that works for you. Not because the work is worth less. Because our cost base is different.",
   },
   {
     icon: Handshake,
-    title: "Embedded collaboration",
-    body:
-      "Same Slack channels, same standups, same deadlines. We work inside your team, not alongside it.",
-  },
-  {
-    icon: Eye,
-    title: "Transparency & trust",
-    body:
-      "Weekly progress reports, shared dashboards, and honest conversations about what is working and what is not.",
+    title: "Embedded, not outsourced",
+    body: "Your Slack, your Jira, your standups. Our testers work inside your team, not as a separate vendor on the side.",
   },
 ];
 
-export default function WhyTestHive({ onMeet }) {
+export default function WhyTestHive({ onBook }) {
   return (
     <section
       id="why-testhive"
       className="relative py-20 bg-gradient-to-b from-white to-slate-50 border-t border-slate-200"
     >
       <div className="max-w-6xl mx-auto px-6 text-center">
-        {/* Heading */}
         <m.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.45 }}
           className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6"
         >
-          Why TestHive?
+          Why nearshore from Morocco?
         </m.h2>
 
         <m.p
@@ -51,10 +46,12 @@ export default function WhyTestHive({ onMeet }) {
           transition={{ duration: 0.45, delay: 0.1 }}
           className="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed"
         >
-          We started TestHive because we saw the same pattern everywhere: teams investing in test automation, only to drown in maintenance six months later. We believe quality engineering should accelerate your team, not slow it down.
+          Most companies know nearshoring from Eastern Europe. Morocco is
+          closer than you think: zero to one hour from Brussels, strong cultural
+          ties with Belgium and the Netherlands, and senior QA talent that
+          speaks your language.
         </m.p>
 
-        {/* Features */}
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map(({ icon: Icon, title, body }, i) => (
             <m.div
@@ -74,7 +71,6 @@ export default function WhyTestHive({ onMeet }) {
             </m.div>
           ))}
         </div>
-
       </div>
     </section>
   );

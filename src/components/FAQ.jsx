@@ -11,21 +11,29 @@ export default function FAQ() {
 
   const faqs = [
     {
-      q: "Can you provide temporary QA capacity?",
-      a: "Yes, absolutely. Whether you need an interim Test Manager, QA Lead, or Automation Specialist, we can step in quickly to strengthen your team. We work flexibly, short-term support, project-based collaboration, or part-time reinforcement depending on your needs."
+      q: "How quickly can a QA engineer start?",
+      a: "Short intake call first, then we match you with the right engineer. Onboarding usually takes one to two weeks. Compare that to three to six months for hiring someone yourself."
     },
     {
-      q: "Do you also help with tool selection?",
-      a: "Certainly. We validate tools through a small Proof of Concept, making sure the chosen setup fits your stack, team skills, and budget. You’ll get a realistic view of how each tool performs before making any long-term commitment."
+      q: "What is the minimum commitment?",
+      a: "Month to month, no long contracts. If the first month does not work out, you stop. We keep working with you because the work is good, not because you signed something."
     },
     {
-      q: "Can I combine in-company training with consulting?",
-      a: "Definitely. We believe people learn best by applying new skills to real situations. That’s why we combine theory with your own scripts, environment, and use cases, so your team builds confidence while solving actual problems."
+      q: "Why not just hire a local QA engineer?",
+      a: "You can. But finding a senior tester in the Netherlands or Belgium usually takes three to six months and costs more than double per year all-in. With us you have someone productive in weeks, without payroll, sick leave or notice periods to manage."
     },
     {
-      q: "How quickly can we get started?",
-      a: "After an initial discovery call to align on your goals and context, we can typically kick off within one to three weeks. We adapt to your planning rhythm and make sure we start with a clear, shared roadmap."
-    }
+      q: "What tools and frameworks do your testers work with?",
+      a: "Playwright, Cypress, Selenium, Robot Framework, Postman, k6, and more. We adapt to your stack. If you use something else, chances are we have worked with it before."
+    },
+    {
+      q: "How does communication work?",
+      a: "Our engineers join your Slack or Teams. They show up in standups and ship code through your Git like any other team member. The only real difference is that they work from Morocco, which is zero to one hour from CET."
+    },
+    {
+      q: "Can we start with a small trial before committing?",
+      a: "Yes. We offer a free Proof of Concept. You pick one or two test cases, we automate them and wire them into your CI pipeline, you get a short demo. No cost. You see the quality before deciding anything."
+    },
   ];
 
   return (

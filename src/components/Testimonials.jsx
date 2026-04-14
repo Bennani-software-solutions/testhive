@@ -6,16 +6,14 @@ const testimonials = [
     {
         quote:
             "TestHive brought a real sense of ownership and precision to our QA process. Their structured approach helped us catch critical issues before release, and communication was always transparent.",
-        name: "Anthony Heebeeck",
-        role: "Engineering Manager at Atlas Systems",
-        avatar: "/assets/clients/anthony.jpg",
+        name: "Anthony H.",
+        role: "Engineering Manager",
     },
     {
         quote:
             "Working with TestHive felt like having an in-house QA team. They adapt fast, understand context, and care deeply about quality. Our automation coverage and confidence improved dramatically.",
-        name: "Nathalie Leys",
-        role: "Product Owner at NovaTech",
-        avatar: "/assets/clients/nathalie.jpg",
+        name: "Nathalie L.",
+        role: "Product Owner",
     },
 ];
 
@@ -41,17 +39,9 @@ export default function Testimonials() {
                         <p className="text-slate-700 leading-relaxed mb-6 italic">“{t.quote}”</p>
 
                         <div className="flex items-center gap-4">
-                            {t.avatar ? (
-                                <img
-                                    src={t.avatar}
-                                    alt={t.name}
-                                    className="h-12 w-12 rounded-full object-cover"
-                                />
-                            ) : (
-                                <div className="h-12 w-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-semibold">
-                                    {t.name.charAt(0)}
-                                </div>
-                            )}
+                            <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-700 font-semibold text-sm">
+                                {t.name.charAt(0)}
+                            </div>
                             <div>
                                 <p className="font-semibold text-slate-900">{t.name}</p>
                                 <p className="text-sm text-slate-600">{t.role}</p>

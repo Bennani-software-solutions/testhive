@@ -1,25 +1,15 @@
 import { motion as m } from "framer-motion";
 
 const stats = [
-  { value: "10x", label: "Faster vs manual test scripting" },
-  { value: "80%", label: "Less maintenance with AI self-healing" },
-  { value: "5 min", label: "Setup to first test" },
-  { value: "24/7", label: "Scheduled test execution" },
-];
-
-const industries = [
-  "Fintech",
-  "Healthcare",
-  "E-commerce",
-  "SaaS",
-  "Insurance",
-  "Logistics",
+  { value: "0–1h", label: "Time difference with CET" },
+  { value: "4", label: "Languages spoken" },
+  { value: "10y", label: "QA experience" },
+  { value: "30d", label: "No lock-in, month to month" },
 ];
 
 export default function SocialProof() {
   return (
     <section className="bg-slate-900 border-y border-slate-800">
-      {/* Stats bar */}
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((s, i) => (
@@ -38,29 +28,6 @@ export default function SocialProof() {
             </m.div>
           ))}
         </div>
-
-        {/* Industry trust line */}
-        <m.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          className="mt-10 pt-8 border-t border-slate-800 text-center"
-        >
-          <p className="text-xs font-semibold tracking-widest text-slate-500 uppercase mb-4">
-            Built for teams in
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {industries.map((ind) => (
-              <span
-                key={ind}
-                className="text-sm font-medium text-slate-400"
-              >
-                {ind}
-              </span>
-            ))}
-          </div>
-        </m.div>
       </div>
     </section>
   );

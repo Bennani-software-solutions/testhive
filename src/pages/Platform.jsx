@@ -27,10 +27,10 @@ import {
 const PLATFORM_URL = "https://app.testhive.ma";
 
 const metrics = [
-  { value: "10x", label: "Faster test creation", sub: "vs manual scripting" },
-  { value: "80%", label: "Less code to write", sub: "AI handles the rest" },
-  { value: "< 5 min", label: "First test generated", sub: "from sign-up" },
-  { value: "24/7", label: "Scheduled execution", sub: "unattended runs" },
+  { value: "Per client", label: "Configured to your stack", sub: "not one-size-fits-all" },
+  { value: "BDD", label: "Plain language test scenarios", sub: "no coding required" },
+  { value: "Isolated", label: "Your data stays yours", sub: "dedicated instance" },
+  { value: "Assisted", label: "AI generates code, you review", sub: "human in the loop" },
 ];
 
 const steps = [
@@ -255,14 +255,21 @@ export default function Platform() {
               TestHive Platform
             </span>
             <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
-              AI-powered test automation
+              AI-assisted test automation.
               <br className="hidden sm:block" />
-              <span className="text-indigo-600">for everyone</span>
+              <span className="text-indigo-600">Configured for your team.</span>
             </h1>
             <p className="mt-5 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
-              Turn requirements into executable tests without writing code.
-              Write what you want to test, let AI generate the code, execute with one click,
-              and get results, all in one platform.
+              TestHive Platform lets non-technical team members write test
+              scenarios in plain language. The AI generates executable test
+              code. But every team is different, and the platform needs to
+              be configured to your stack, your test data, and your security
+              requirements to be useful.
+            </p>
+            <p className="mt-3 max-w-2xl mx-auto text-sm text-slate-500">
+              The online demo shows what the platform can do. For real use,
+              we set up a dedicated instance for your team as part of a
+              consulting engagement. No shortcuts, no generic setup.
             </p>
             <div className="mt-8 flex items-center justify-center gap-4 flex-wrap">
               <a
@@ -271,13 +278,13 @@ export default function Platform() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-base font-semibold text-white shadow-md active:scale-95 transition"
               >
-                Try the Platform Free <ArrowRight className="h-4 w-4" />
+                Try the demo <ArrowRight className="h-4 w-4" />
               </a>
               <button
                 onClick={onBook}
                 className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-6 py-3 text-base font-semibold text-slate-700 shadow-sm hover:bg-slate-50 transition"
               >
-                Request a Demo
+                Discuss your setup
               </button>
             </div>
           </m.div>

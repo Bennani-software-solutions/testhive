@@ -2,29 +2,17 @@
 import { useMemo, useState } from "react";
 import { motion as m, useReducedMotion } from "framer-motion";
 import {
-  HandCoins,
   Clock,
-  Languages,
-  ShieldCheck,
   MapPin,
-  Plane,
   CheckCircle2,
-  ArrowRight,
 } from "lucide-react";
 import ContactForm from "./ContactForm";
 
 const DEFAULTS = {
   savingRange: "30–50%",
-  overlapHours: "6–8h",
+  overlapHours: "0–1h",
   languages: "EN · FR · NL",
   flight: "2–3h to EU hubs",
-  assets: {
-    map: "/assets/map.png",
-    cost: "/assets/money.png",
-    timezone: "/assets/time.png",
-    languages: "/assets/languages.png",
-    security: "/assets/security.png",
-  },
 };
 
 const EASE = [0.22, 1, 0.36, 1];
@@ -42,39 +30,11 @@ function useFadeUp() {
 
 const group = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
-function Img({ src, alt, ratio = "aspect-[3/2]", fit = "object-cover", className = "" }) {
-  const [ok, setOk] = useState(true);
-  const [loaded, setLoaded] = useState(false);
-  return (
-    <div className={`${ratio} w-full overflow-hidden rounded-2xl bg-white relative`}>
-      {!loaded && (
-        <div className="absolute inset-0 animate-pulse bg-gradient-to-br from-slate-100 to-slate-200" />
-      )}
-      {ok ? (
-        <img
-          src={src}
-          alt={alt}
-          loading="lazy"
-          onLoad={() => setLoaded(true)}
-          onError={() => setOk(false)}
-          className={`h-full w-full ${fit} transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"
-            } ${className}`}
-        />
-      ) : (
-        <div className="absolute inset-0 grid place-items-center text-sm text-slate-500">
-          Image unavailable
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
+export default function NearshoreMoroccoSection({ onBook, metrics }) {
   const fadeUp = useFadeUp();
   const [showForm, setShowForm] = useState(false);
 
   const M = { ...DEFAULTS, ...(metrics || {}) };
-  const A = { ...DEFAULTS.assets, ...(assets || {}) };
 
   return (
     <section
@@ -117,10 +77,10 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
 
             <p>
               Nearshoring to Morocco offers a practical and sustainable alternative. You gain access to senior
-              test automation specialists who work in the same time zone and communicate fluently in English,
-              French, or Dutch. During the winter, Morocco and most of Europe share the same time. In summer,
-              the difference is just one hour, which means daily collaboration stays smooth and natural
-              throughout the year.
+              test automation specialists who communicate fluently in English, French, or Dutch and work
+              nearly the same hours. Morocco is on GMT+1 all year. There is no daylight saving here.
+              In winter that lines up with CET exactly. In summer Europe moves to CEST (GMT+2), so
+              the gap becomes one hour. Your 9am is always our 8am or 9am.
             </p>
 
             <p>
@@ -138,54 +98,8 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
           </m.div>
         </m.div>
 
-        {/* Visual + Proofs */}
-        <div className="mt-10 grid gap-10 lg:grid-cols-2">
-          <m.figure
-            initial={{ opacity: 0, scale: 0.985 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.25 }}
-            transition={{ duration: 0.45, ease: EASE }}
-            className="relative rounded-3xl border border-gray-200 bg-slate-50 p-4 shadow-sm"
-          >
-            {/* EU–Morocco connection illustration */}
-            <div className="aspect-[4/3] sm:aspect-[16/10] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-indigo-50 via-white to-emerald-50 flex items-center justify-center">
-              <svg viewBox="0 0 400 240" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-                {/* EU region */}
-                <rect x="40" y="30" width="120" height="80" rx="12" className="fill-white stroke-indigo-200" strokeWidth="1.5"/>
-                <text x="100" y="55" textAnchor="middle" className="fill-indigo-700 text-[11px] font-bold">Europe</text>
-                <text x="100" y="72" textAnchor="middle" className="fill-slate-500 text-[8px]">NL  BE  DE  FR  UK</text>
-                <circle cx="65" cy="90" r="4" className="fill-indigo-400"/>
-                <circle cx="82" cy="85" r="4" className="fill-indigo-400"/>
-                <circle cx="100" cy="88" r="4" className="fill-indigo-300"/>
-                <circle cx="118" cy="86" r="4" className="fill-indigo-400"/>
-                <circle cx="135" cy="90" r="4" className="fill-indigo-300"/>
-                {/* Morocco region */}
-                <rect x="240" y="120" width="120" height="80" rx="12" className="fill-white stroke-emerald-200" strokeWidth="1.5"/>
-                <text x="300" y="148" textAnchor="middle" className="fill-emerald-700 text-[11px] font-bold">Morocco</text>
-                <text x="300" y="165" textAnchor="middle" className="fill-slate-500 text-[8px]">Casablanca  Rabat</text>
-                <circle cx="280" cy="180" r="4" className="fill-emerald-400"/>
-                <circle cx="300" cy="178" r="4" className="fill-emerald-500"/>
-                <circle cx="320" cy="180" r="4" className="fill-emerald-400"/>
-                {/* Connection lines */}
-                <path d="M160 80 C200 80, 200 160, 240 160" className="stroke-indigo-300" strokeWidth="2" strokeDasharray="6 4"/>
-                <path d="M160 70 C210 70, 210 150, 240 150" className="stroke-emerald-300" strokeWidth="2" strokeDasharray="6 4"/>
-                {/* Labels */}
-                <rect x="175" y="105" width="55" height="22" rx="6" className="fill-indigo-600"/>
-                <text x="202" y="119" textAnchor="middle" className="fill-white text-[8px] font-semibold">Same TZ</text>
-                {/* Plane icon */}
-                <text x="195" y="100" textAnchor="middle" className="fill-slate-400 text-[14px]">✈</text>
-                <text x="195" y="145" textAnchor="middle" className="fill-slate-400 text-[7px]">2-3h flight</text>
-              </svg>
-            </div>
-            <div className="pointer-events-none absolute left-4 sm:left-6 top-4 sm:top-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-indigo-700 ring-1 ring-indigo-100 backdrop-blur">
-              <Clock className="h-4 w-4" /> 6–8 h CET / UK overlap (seasonal)
-            </div>
-            <div className="pointer-events-none absolute right-4 sm:right-6 bottom-4 sm:bottom-6 inline-flex items-center gap-2 rounded-full bg-white/85 px-2.5 sm:px-3 py-1 text-[11px] sm:text-xs font-medium text-emerald-700 ring-1 ring-emerald-100 backdrop-blur">
-              <Plane className="h-4 w-4" /> {M.flight}
-            </div>
-          </m.figure>
-
-          {/* Stats + bullets */}
+        {/* Stats + bullets */}
+        <div className="mt-10">
           <m.div
             variants={group}
             initial="hidden"
@@ -196,7 +110,7 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
             <m.ul variants={group} className="grid gap-4 sm:grid-cols-3">
               {[
                 { k: M.savingRange, v: "Cost efficiency" },
-                { k: M.overlapHours, v: "CET/UK overlap" },
+                { k: M.overlapHours, v: "Difference with CET" },
                 { k: M.languages, v: "Multilingual" },
               ].map(({ k, v }) => (
                 <m.li
@@ -281,9 +195,9 @@ export default function NearshoreMoroccoSection({ onBook, metrics, assets }) {
             </p>
 
             <p>
-              Combined with a European-friendly time zone, multilingual teams, and strong cultural alignment,
-              Morocco offers a dependable foundation for sustainable QA partnerships that balance cost,
-              collaboration, and quality.
+              Combined with a near-identical time zone (0–1h difference most of the year), multilingual teams,
+              and strong cultural alignment, Morocco offers a dependable foundation for sustainable QA
+              partnerships that balance cost, collaboration, and quality.
             </p>
           </m.div>
 
