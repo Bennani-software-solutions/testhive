@@ -8,6 +8,11 @@ import { motion as m } from "framer-motion";
     { name: "Playwright", src: "/assets/Playwright.png" },
     { name: "Cypress", src: "/assets/cypress.png" },
     { name: "Selenium", src: "/assets/selenium.png" },
+    { name: "JMeter", src: "/assets/jmeter.svg" },
+    { name: "Burp Suite", src: "/assets/burpsuite.svg" },
+    { name: "Jira", src: "/assets/jira.svg" },
+    { name: "Xray", src: "/assets/xray.svg" },
+    { name: "Asana", src: "/assets/asana.svg" },
   ]
 
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };

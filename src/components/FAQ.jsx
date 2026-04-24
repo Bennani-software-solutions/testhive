@@ -24,7 +24,7 @@ export default function FAQ() {
     },
     {
       q: "What tools and frameworks do your testers work with?",
-      a: "Playwright, Cypress, Selenium, Robot Framework, Postman, k6, and more. We adapt to your stack. If you use something else, chances are we have worked with it before."
+      a: "Playwright, Cypress, Selenium, Robot Framework, Postman, k6, JMeter, Burp Suite, and more. For test management we work with Jira, Xray, Asana, or whatever your team uses."
     },
     {
       q: "How does communication work?",

@@ -33,7 +33,8 @@ export default function Hero({ onBook }) {
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
               Senior testers from Morocco who show up in your standups and
-              ship work from week one. First month risk-free.
+              ship work from week one. Monthly contracts, no lock-in. We stay
+              because the work speaks for itself.
             </m.p>
 
             <m.div
