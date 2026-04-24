@@ -9,7 +9,7 @@ const requirements = [
   "Experience with CI/CD pipelines (GitHub Actions, GitLab CI, Jenkins)",
   "API testing experience (Postman, REST Assured or similar)",
   "Working proficiency in Dutch, French or English",
-  "Based in Morocco (remote, GMT+1 — aligned with CET)",
+  "Based in Morocco (remote, GMT+1)",
 ];
 
 const niceToHave = [

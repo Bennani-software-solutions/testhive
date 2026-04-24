@@ -38,9 +38,8 @@ export default function AutomationService() {
                     Test Automation Services
                 </h1>
                 <p className="text-lg text-slate-700 max-w-3xl">
-                    Automation is not just about speed. It is about giving your team the
-                    confidence to ship quality at scale. At TestHive, we keep automation
-                    practical, human, and tuned to real business outcomes.
+                    We set up and maintain automated tests that run in your CI/CD pipeline.
+                    The goal is simple: fewer surprises after a release.
                 </p>
             </section>
 
@@ -179,9 +178,8 @@ export default function AutomationService() {
                     The TestHive approach
                 </h2>
                 <p className="text-slate-700 max-w-3xl">
-                    Many teams hit friction because automation feels complex or brittle. We coach your team,
-                    pick the right tools, and right size the scope so you get stable tests that support real work.
-                    That is how you earn trust in every release.
+                    Many teams hit friction because automation feels complex or brittle. We pick the
+                    right tools, right-size the scope, and build tests that stay stable as your product changes.
                 </p>
             </section>
 
@@ -191,8 +189,7 @@ export default function AutomationService() {
                     Choose your Automation Package
                 </h2>
                 <p className="text-slate-700 max-w-3xl mb-12">
-                    Teams are at different stages. These three options meet you where you are. Each path includes
-                    personal guidance, clear outcomes, and transparent communication.
+                    Three options depending on where your team is right now.
                 </p>
 
                 <div className="grid md:grid-cols-3 gap-8">

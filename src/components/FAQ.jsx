@@ -36,7 +36,7 @@ export default function FAQ() {
     },
     {
       q: "How do you handle our data?",
-      a: "We sign a Data Processing Agreement with Standard Contractual Clauses for every engagement. The specific technical and organisational measures are documented per project and shared during onboarding. If your legal or procurement team has questions before that, email support@testhive.ma — answer within one working day."
+      a: "We sign a Data Processing Agreement with Standard Contractual Clauses for every engagement. The specific technical and organisational measures are documented per project and shared during onboarding. If your legal or procurement team has questions before that, email support@testhive.ma. We reply within one working day."
     },
   ];
 
@@ -52,8 +52,7 @@ export default function FAQ() {
             Frequently Asked Questions
           </h2>
           <p className="mt-3 text-slate-700 max-w-2xl mx-auto">
-            We’ve gathered a few common questions from teams considering
-            TestHive. If you don’t see your question here, just reach out, we’re happy to help.
+            Questions we hear often. Something missing? Send us a message.
           </p>
         </div>
 

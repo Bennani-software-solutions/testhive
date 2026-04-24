@@ -1,5 +1,5 @@
 // src/pages/services/Consulting.jsx
-import { useOutletContext } from "react-router-dom";
+import { useOutletContext, Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 export default function ConsultingService() {
@@ -16,14 +16,13 @@ export default function ConsultingService() {
           <p className="text-slate-700 leading-relaxed">
             Someone senior, in your team, in two weeks. They join your
             standups and write in your Jira like any other team member.
-            You pay monthly. If the first month does not work, you stop
-            without paying.
+            If the first month does not work, you stop without paying.
           </p>
           <ul className="space-y-2 text-slate-700">
-            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> Speaks your language (Dutch, French, English)</li>
-            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> Works your hours (0&ndash;1h from CET)</li>
-            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> Productive in two weeks instead of six months</li>
-            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> First month free of risk &mdash; you only pay if it works</li>
+            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> Dutch, French, English, Arabic</li>
+            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> 0-1h from CET, no daylight saving</li>
+            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> Productive in weeks, not months</li>
+            <li className="flex gap-2"><span className="text-emerald-500">&#10003;</span> First month risk-free</li>
           </ul>
           <button
             onClick={onBook}
@@ -53,34 +52,30 @@ export default function ConsultingService() {
         </p>
         <ul className="space-y-4 text-slate-700">
           <li className="flex gap-3">
-            <span className="text-slate-400 mt-1">—</span>
+            <span className="text-indigo-400 mt-1">&bull;</span>
             <span>
-              Morocco runs on GMT+1 all year with no daylight saving.
-              In winter that matches CET exactly. In summer the difference
-              is one hour. Your 9am is always our 8am or 9am.
+              GMT+1 all year, no daylight saving. Your 9am is always our 8am or 9am.
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-slate-400 mt-1">&mdash;</span>
+            <span className="text-indigo-400 mt-1">&bull;</span>
             <span>
-              Dutch and French as working languages. Our testers have worked
-              with Benelux companies before and can talk to your developers,
-              POs and managers without a translator.
+              Dutch and French as working languages. Our testers talk to your
+              developers, POs and managers directly. No translator needed.
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-slate-400 mt-1">&mdash;</span>
+            <span className="text-indigo-400 mt-1">&bull;</span>
             <span>
-              Senior people at a lower rate than a local hire. Not because the
-              work is worth less. Because our cost base is different.
+              Senior people at a lower rate. Not because the work is worth less.
+              Because our cost base is different.
             </span>
           </li>
           <li className="flex gap-3">
-            <span className="text-slate-400 mt-1">&mdash;</span>
+            <span className="text-indigo-400 mt-1">&bull;</span>
             <span>
-              Cultural proximity. There is a large Moroccan community in
-              Belgium and the Netherlands. We know how Benelux companies
-              actually work, which cuts onboarding time in half.
+              Large Moroccan community in Belgium and the Netherlands. We know
+              how Benelux companies work, which cuts onboarding time.
             </span>
           </li>
         </ul>
@@ -128,11 +123,6 @@ export default function ConsultingService() {
         <h2 className="text-2xl font-bold text-slate-900">
           How we work together
         </h2>
-        <p className="text-slate-700 leading-relaxed">
-          Our testers work as part of your team. They use your tools, attend
-          your ceremonies, follow your rhythm. The only difference is that
-          they work remotely and you pay monthly instead of hiring permanently.
-        </p>
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 space-y-4 text-slate-700">
           <p>
             A typical setup: you need testing capacity but you do not want
@@ -141,8 +131,7 @@ export default function ConsultingService() {
             they work like they have always been there.
           </p>
           <p>
-            Month to month, no long contracts. We keep our spot through
-            results, not signatures.
+            We keep our spot through results, not signatures.
           </p>
         </div>
       </section>
@@ -153,16 +142,10 @@ export default function ConsultingService() {
           What it costs
         </h2>
         <p className="text-slate-700 leading-relaxed">
-          Final price depends on who you need and how much of their time.
-          We work that out on a short call. No setup fees.
+          Day rates from €150 (medior) to €250 (senior). You only pay for
+          days worked. See the full breakdown on our{" "}
+          <Link to="/pricing" className="text-indigo-600 hover:underline">pricing page</Link>.
         </p>
-        <button
-          onClick={onBook}
-          className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-6 py-3 font-medium text-white hover:bg-slate-800 transition"
-        >
-          Get a quote
-          <ChevronRight className="h-4 w-4" />
-        </button>
       </section>
 
       {/* About TestHive */}

@@ -6,35 +6,35 @@ import { Zap, CheckCircle, Shield, GraduationCap, Users, Compass } from "lucide-
 const features = [
   {
     title: "Automation",
-    desc: "Fast-track your test automation with expert engineers and proven frameworks.",
+    desc: "We build and maintain your automated tests. Playwright, Cypress, Selenium, whatever fits your stack.",
     link: "/services/automation",
     icon: Zap,
     color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Functional Testing",
-    desc: "Ensure critical workflows perform flawlessly with dedicated testers.",
+    desc: "Dedicated testers who know your application and catch issues before your users do.",
     link: "/services/functional-testing",
     icon: CheckCircle,
     color: "bg-violet-100 text-violet-600",
   },
   {
     title: "Pen Testing",
-    desc: "Protect your systems with simulated attacks and vulnerability assessments.",
+    desc: "We test your web apps and APIs for security holes before someone else does.",
     link: "/services/pen-testing",
     icon: Shield,
     color: "bg-amber-100 text-amber-600",
   },
   {
     title: "Mentoring",
-    desc: "Work hands-on with experienced QA mentors to build lasting automation skills.",
+    desc: "Hands-on coaching for your team. Small groups, real projects, practical skills.",
     link: "/services/mentoring",
     icon: GraduationCap,
     color: "bg-indigo-100 text-indigo-600",
   },
   {
     title: "Nearshore QA",
-    desc: "Senior testers from Morocco. Same working day, same language as your team, monthly billing.",
+    desc: "Senior testers from Morocco, embedded in your team. Same hours, same language.",
     link: "/services/consulting",
     icon: Users,
     color: "bg-violet-100 text-violet-600",
@@ -53,7 +53,7 @@ export default function Features() {
     <section id="features" aria-label="Our QA services" className="py-16">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
-          Tailored QA & Testing Services
+          What we do
         </h2>
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map((f, idx) => (

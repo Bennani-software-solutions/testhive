@@ -5,12 +5,12 @@ import { useState } from "react";
 const screenshots = [
   {
     src: "/assets/platform/app-test-panel.png",
-    alt: "TestHive Platform — test scenario management with BDD descriptions and one-click execution",
+    alt: "TestHive Platform: test scenario management with BDD descriptions and one-click execution",
     caption: "Manage and run test scenarios per project",
   },
   {
     src: "/assets/platform/app-dashboard.png",
-    alt: "TestHive Platform — test dashboard with pass rate, duration and flaky test tracking",
+    alt: "TestHive Platform: test dashboard with pass rate, duration and flaky test tracking",
     caption: "Track pass rates, duration and flaky tests over time",
   },
 ];

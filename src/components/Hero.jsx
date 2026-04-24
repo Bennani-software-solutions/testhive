@@ -32,9 +32,8 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Senior testers from Morocco who join your team. They show up
-              in your standups and ship work from week one. Month to month.
-              If the first month does not work, you stop without paying.
+              Senior testers from Morocco who show up in your standups and
+              ship work from week one. First month risk-free.
             </m.p>
 
             <m.div

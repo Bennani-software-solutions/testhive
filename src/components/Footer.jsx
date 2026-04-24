@@ -43,7 +43,7 @@ export default function Footer() {
         <div>
           <img src="/assets/testHive.png" alt="TestHive" className="h-12 mb-3" />
           <p className="text-sm text-slate-600">
-            TestHive is your partner in delivering reliable software through expert QA services, tailored to your needs.
+            Senior QA engineers from Morocco, embedded in European teams.
           </p>
         </div>
 

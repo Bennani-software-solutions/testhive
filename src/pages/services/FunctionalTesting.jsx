@@ -35,13 +35,11 @@ export default function FunctionalTesting() {
                     className="text-center"
                 >
                     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900">
-                        Real Testing, Real Confidence
+                        Functional Testing
                     </h1>
                     <p className="mt-4 text-base sm:text-lg leading-relaxed text-slate-700 max-w-3xl mx-auto">
-                        Functional testing is about more than just finding bugs. It’s about making sure your
-                        software truly works for your users and supports your business goals. We combine
-                        hands-on expertise with clear structure so your product performs exactly as intended,
-                        release after release.
+                        We test whether your software actually does what it should. Not just the happy path,
+                        but the edge cases and the workflows your users depend on every day.
                     </p>
                 </m.div>
 
@@ -105,12 +103,11 @@ export default function FunctionalTesting() {
                     className="mt-14 space-y-4"
                 >
                     <h2 className="text-2xl font-bold text-slate-900">
-                        What We Want to Achieve for You
+                        What we work towards
                     </h2>
                     <p className="text-slate-700 leading-relaxed">
-                        Our goal is simple: to help your team deliver faster and more confidently.
-                        Functional testing is not just about catching bugs; it’s about building trust in your product and
-                        giving your developers and business teams space to focus on progress, not firefighting.
+                        Fewer bugs in production, faster releases, and a team that trusts
+                        the quality of what they ship.
                     </p>
 
                     <div className="mt-6 grid gap-6 sm:grid-cols-2">
@@ -118,22 +115,22 @@ export default function FunctionalTesting() {
                             {
                                 icon: Users,
                                 title: "Early collaboration with development",
-                                text: "We join your team early in the process, during refinement or even before development starts, so testing becomes a natural part of building, not an afterthought.",
+                                text: "We join during refinement or before development starts. Testing is part of building, not something that happens after.",
                             },
                             {
                                 icon: ClipboardCheck,
                                 title: "Realistic test environments",
-                                text: "We help set up or improve staging and test environments that reflect real-world usage, so test results truly represent your users’ experience.",
+                                text: "We help set up staging and test environments that match production, so test results mean something.",
                             },
                             {
                                 icon: FileText,
                                 title: "Structured documentation & regression suites",
-                                text: "We document test cases clearly and build or expand regression sets that grow with your product, keeping your releases consistent and predictable.",
+                                text: "We document test cases and build regression sets that grow with your product.",
                             },
                             {
                                 icon: ArrowRight,
                                 title: "Continuous and open feedback",
-                                text: "We share insights continuously, not just at the end of a sprint, creating a transparent feedback loop that helps your team improve faster and smarter.",
+                                text: "We share findings as we go, not just at the end of a sprint. Short feedback loops catch problems early.",
                             },
                         ].map(({ icon: Icon, title, text }) => (
                             <div

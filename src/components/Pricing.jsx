@@ -4,8 +4,8 @@ export default function Pricing({ onBookClick = () => {} }) {
     <section id="pricing" className="mx-auto w-full max-w-6xl px-6 py-16">
       <h2 className="text-2xl font-bold tracking-tight">Pricing</h2>
       <p className="mt-2 max-w-2xl text-gray-600">
-        Senior testers from Morocco who join your team like any other engineer.
-        You only pay for days worked. No recruitment fees.
+        You pay per day worked. If someone is sick or on leave, you don't pay.
+        No recruitment fees, no setup costs.
       </p>
 
       <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -68,8 +68,7 @@ export default function Pricing({ onBookClick = () => {} }) {
       </div>
 
       <p className="mt-6 text-sm text-gray-500">
-        You only pay for days worked. If an engineer is sick or on leave, you
-        don't pay. No setup fees, no long-term contracts.
+        No long-term contracts. Cancel any time with 30 days notice.
       </p>
     </section>
   );
