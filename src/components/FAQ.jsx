@@ -23,10 +23,6 @@ export default function FAQ() {
       a: "You can. But finding a senior tester in the Netherlands or Belgium usually takes three to six months and costs more than double per year all-in. With us you have someone productive in weeks, without payroll, sick leave or notice periods to manage."
     },
     {
-      q: "What tools and frameworks do your testers work with?",
-      a: "Playwright, Cypress, Selenium, Robot Framework, Postman, k6, JMeter, Burp Suite, and more. For test management we work with Jira, Xray, Asana, or whatever your team uses."
-    },
-    {
       q: "How does communication work?",
       a: "Our engineers join your Slack or Teams. They show up in standups and ship code through your Git like any other team member. The only real difference is that they work from Morocco, which is zero to one hour from CET."
     },

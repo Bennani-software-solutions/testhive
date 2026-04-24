@@ -32,9 +32,9 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Senior testers from Morocco who show up in your standups and
-              ship work from week one. Monthly contracts, no lock-in. We stay
-              because the work speaks for itself.
+              Experienced testers from Morocco who show up in your standups
+              and ship work from week one. Monthly contracts, no lock-in.
+              We stay because we deliver results, not because you signed a contract.
             </m.p>
 
             <m.div
@@ -70,7 +70,7 @@ export default function Hero({ onBook }) {
               <span className="text-slate-300">|</span>
               <span>Dutch, English, French, Arabic</span>
               <span className="text-slate-300">|</span>
-              <span>Senior testers only</span>
+              <span>Experienced testers only</span>
             </m.div>
           </m.div>
 
