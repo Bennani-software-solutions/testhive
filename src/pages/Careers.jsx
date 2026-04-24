@@ -1,5 +1,4 @@
 // src/pages/Careers.jsx
-import { useOutletContext } from "react-router-dom";
 import { ChevronRight, MapPin, Clock, Globe, Code } from "lucide-react";
 
 const requirements = [
@@ -13,7 +12,7 @@ const requirements = [
 ];
 
 const niceToHave = [
-  "Experience working with European SaaS companies",
+  "Experience working with European companies",
   "Performance testing tools (k6, JMeter, Gatling)",
   "Security/pen testing basics",
   "ISTQB certification or equivalent",
@@ -22,14 +21,12 @@ const niceToHave = [
 const perks = [
   "Remote work from anywhere in Morocco",
   "Competitive monthly rate (paid in MAD or EUR)",
-  "Long-term engagements with European SaaS clients",
+  "Long-term engagements with European clients",
   "Work directly embedded in client teams, not on a bench",
   "Mentoring and knowledge sharing within the TestHive network",
 ];
 
 export default function Careers() {
-  const { onBook } = useOutletContext();
-
   return (
     <div className="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-16">
       {/* Header */}
@@ -41,9 +38,9 @@ export default function Careers() {
           Join the TestHive network
         </h1>
         <p className="text-slate-700 leading-relaxed max-w-2xl">
-          We are building a network of senior QA engineers in Morocco for
-          European SaaS clients. No bench time. You start on real client
-          work from day one.
+          We are building a network of experienced QA engineers in Morocco
+          for European clients. When we find an assignment that fits your
+          profile, we reach out. No bench time, real client work.
         </p>
       </section>
 
@@ -82,10 +79,9 @@ export default function Careers() {
             own the test strategy and make sure nothing ships broken.
           </p>
           <p className="text-slate-700 leading-relaxed">
-            Our clients are SaaS companies in the Netherlands, Belgium and
-            Germany. They need testers who can think for themselves and
-            communicate without hand-holding. If that sounds like you,
-            we want to talk.
+            Our clients range from SaaS startups to enterprise companies
+            in the Netherlands, Belgium and Germany. They need testers who
+            can think for themselves and communicate without hand-holding.
           </p>
         </div>
 
@@ -140,30 +136,30 @@ export default function Careers() {
           </ul>
         </div>
 
-        {/* How to apply */}
+        {/* How to join */}
         <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 space-y-4">
           <h3 className="text-lg font-semibold text-slate-900">
-            How to apply
+            How it works
           </h3>
           <p className="text-slate-700 leading-relaxed">
-            Send us a short message. No formal cover letter. Tell us what
-            tools you work with, what you have tested, and when you could
-            start.
+            Join our WhatsApp group. When we have an assignment that matches
+            your skills, we post it there. You decide if it fits. No
+            obligations, no formal application process.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://wa.me/212715931703?text=Hi%20TestHive%2C%20I%27m%20interested%20in%20the%20Senior%20QA%20Engineer%20role."
+              href="https://chat.whatsapp.com/INVITE_LINK_HERE"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 font-medium text-white hover:bg-emerald-700 transition"
             >
-              Apply via WhatsApp
+              Join TestHive Network on WhatsApp
             </a>
             <a
-              href="mailto:careers@testhive.ma?subject=Senior%20QA%20Engineer%20Application"
+              href="mailto:careers@testhive.ma?subject=TestHive%20Network"
               className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-5 py-3 font-medium text-white hover:bg-slate-800 transition"
             >
-              Apply via Email
+              Or send us an email
             </a>
           </div>
         </div>
@@ -172,20 +168,13 @@ export default function Careers() {
       {/* General CTA */}
       <section className="space-y-4">
         <h2 className="text-2xl font-bold text-slate-900">
-          Not the right fit?
+          Not sure yet?
         </h2>
         <p className="text-slate-700 leading-relaxed">
-          We always need good QA people in Morocco. Even if this specific
-          role does not fit, reach out. We will keep you in mind for future
-          projects.
+          Join the group anyway. No pressure, no commitment. You see what
+          assignments come in and decide when something fits. We always
+          need good QA people in Morocco.
         </p>
-        <button
-          onClick={onBook}
-          className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-6 py-3 font-medium text-white hover:bg-slate-800 transition"
-        >
-          Get in touch
-          <ChevronRight className="h-4 w-4" />
-        </button>
       </section>
     </div>
   );
