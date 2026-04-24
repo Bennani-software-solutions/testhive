@@ -25,7 +25,7 @@ const testimonials = [
         quote: "Als je zoveel pluimen gaat blijven verdienen, loopt hier binnenkort een kaal kieken rond.",
         name: "Mireille",
         role: "Business Analyst · Benelux pharma distributor",
-        context: "After another production sanity test flagged an unlinked offer with no confirmed quantities, before any customer noticed.",
+        context: "Issue caught by daily sanity checks in production, before any customer noticed.",
     },
 ];
 
