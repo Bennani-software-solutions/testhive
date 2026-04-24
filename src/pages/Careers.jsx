@@ -143,12 +143,11 @@ export default function Careers() {
           </h3>
           <p className="text-slate-700 leading-relaxed">
             Join our WhatsApp group. When we have an assignment that matches
-            your skills, we post it there. You decide if it fits. No
-            obligations, no formal application process.
+            your skills, we post it there.
           </p>
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://chat.whatsapp.com/INVITE_LINK_HERE"
+              href="https://chat.whatsapp.com/FydtGvmWpfPAFb8yikOobd"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-emerald-600 px-5 py-3 font-medium text-white hover:bg-emerald-700 transition"
