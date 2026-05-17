@@ -25,7 +25,7 @@ const steps = [
 
 export default function SeamlessQAProcess() {
   return (
-    <section className="relative py-20 bg-white border-t border-slate-200 overflow-hidden">
+    <section id="process" className="relative py-20 bg-white border-t border-slate-200 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <m.h2
           initial={{ opacity: 0, y: 16 }}

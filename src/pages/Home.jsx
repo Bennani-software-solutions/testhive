@@ -8,6 +8,7 @@ import WhyTestHiveSection from '../components/WhyTestHive'
 import QAProcessSection from '../components/QAProcessSection'
 import Testimonials from '../components/Testimonials'
 import ToolPreview from '../components/ToolPreview'
+import Team from '../components/Team'
 
 export default function Home() {
   const { onBook } = useOutletContext()
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero onBook={onBook} />
       <WhyTestHiveSection onBook={onBook} />
       <SocialProof />
+      <Team />
       <Features />
       <Logos />
       <QAProcessSection />

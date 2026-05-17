@@ -22,8 +22,8 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.05 }}
               className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900"
             >
-              A senior QA engineer in your team{" "}
-              <span className="text-indigo-600">within 2 weeks.</span>
+              Senior QA in your team,{" "}
+              <span className="text-indigo-600">working your hours.</span>
             </m.h1>
 
             <m.p
@@ -32,9 +32,9 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.12 }}
               className="mt-5 max-w-xl text-lg md:text-xl text-slate-700"
             >
-              Experienced testers from Morocco who show up in your standups
-              and ship work from week one. Monthly contracts, no lock-in.
-              We stay because we deliver results, not because you signed a contract.
+              Experienced testers from Morocco, embedded in European product teams.
+              They show up in your standups, ship from week one, and there is one
+              name on the invoice you can call when something breaks.
             </m.p>
 
             <m.div
@@ -48,15 +48,15 @@ export default function Hero({ onBook }) {
                 onClick={onBook}
                 className="inline-flex items-center rounded-xl bg-indigo-600 hover:bg-indigo-700 px-6 py-3 text-sm font-semibold text-white shadow-md active:scale-95 transition"
               >
-                Book a free consultation
+                Book a 20-min call
               </button>
 
               <HashLink
                 smooth
-                to="/#features"
+                to="/#process"
                 className="inline-flex items-center rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50 active:scale-95 transition"
               >
-                See our services
+                See how we work
               </HashLink>
             </m.div>
 
@@ -66,26 +66,44 @@ export default function Hero({ onBook }) {
               transition={{ duration: 0.6, delay: 0.35 }}
               className="mt-8 flex items-center gap-6 flex-wrap text-sm text-slate-500"
             >
-              <span>0–1h from CET</span>
+              <span>Same hours as you (CET)</span>
               <span className="text-slate-300">|</span>
               <span>Dutch, English, French, Arabic</span>
               <span className="text-slate-300">|</span>
-              <span>Experienced testers only</span>
+              <span>Every test reviewed by an engineer</span>
             </m.div>
           </m.div>
 
-          {/* Right — Photo */}
+          {/* Right — Founder photo + caption */}
           <m.figure
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="relative"
+            className="relative flex flex-col items-center"
           >
             <img
               src="/assets/abdelaziz.jpg"
-              alt="TestHive team"
-              className="w-full max-w-md mx-auto rounded-3xl shadow-xl object-cover"
+              alt="Abdelaziz Bannani, founder of TestHive"
+              className="w-full max-w-md rounded-3xl shadow-xl object-cover"
             />
+            <figcaption className="mt-4 max-w-md text-sm text-slate-600 text-center">
+              <strong className="text-slate-900">Abdelaziz Bannani</strong>
+              {" · "}founder
+              <br />
+              <span className="text-slate-500">
+                [10+ years] of QA across [previous employers].
+                One owner you can call.
+              </span>
+              {" · "}
+              <a
+                href="https://www.linkedin.com/in/[linkedin-handle]/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-indigo-600 hover:text-indigo-700 font-medium"
+              >
+                LinkedIn
+              </a>
+            </figcaption>
           </m.figure>
         </div>
       </div>
