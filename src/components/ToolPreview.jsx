@@ -22,7 +22,7 @@ export default function ToolPreview() {
     <section className="py-16 border-t border-slate-200 bg-slate-50/50">
       <div className="mx-auto max-w-5xl px-6">
         <m.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45 }}
@@ -49,7 +49,7 @@ export default function ToolPreview() {
 
         {/* Screenshot viewer */}
         <m.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.45, delay: 0.1 }}

@@ -59,7 +59,7 @@ export default function Features() {
           {features.map((f, idx) => (
             <m.li
               key={idx}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.07 }}

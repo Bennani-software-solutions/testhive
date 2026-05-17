@@ -28,7 +28,7 @@ export default function SeamlessQAProcess() {
     <section id="process" className="relative py-20 bg-white border-t border-slate-200 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 text-center">
         <m.h2
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-12"
@@ -61,7 +61,7 @@ export default function SeamlessQAProcess() {
           {steps.map((s, i) => (
             <m.div
               key={s.number}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
               className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 hover:shadow-md transition"

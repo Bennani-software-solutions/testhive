@@ -14,7 +14,7 @@ export default function SocialProof() {
           {stats.map((s, i) => (
             <m.div
               key={s.label}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.08 }}
